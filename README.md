@@ -4,15 +4,17 @@ Repositório com os exercícios que fiz ao longo da disciplina de POO
 
 # Enunciados
 
-[Semana 3](#semana3)
-[Semana 4](#semana4)
-[Semana 5](#semana5)
-[Semana 6](#semana6)
-[Semana 7](#semana7)
-[Semana 8](#semana8)
-[Semana 9](#semana9)
-[Semana 10](#semana10)
-[Bonus](#bonus)
+<ul>
+<li>[Semana 3](##semana-3---construtores-sobrecargas)</li>
+<li>[Semana 4](##semana-4---herança-polimorfismo)</li>
+<li>[Semana 5](##semana-5---interfaces-polimorfismo)</li>
+<li>[Semana 6](##semana-6---construtores-cópia-de-objetos-final)</li>
+<li>[Semana 7](##semana-7---estruturas-lineares-no-contexto-de-orientação-a-objetos)</li>
+<li>[Semana 8](##semana-8---tratamento-de-exceções)</li>
+<li>[Semana 9](##semana-9---generics)</li>
+<li>[Semana 10](#semana-10---padrões-de-projeto-de-software)</li>
+<li>[Bonus](#bonus)</li>
+</ul>
 
 ----------------------------------------------------------------------------------------------------
 
