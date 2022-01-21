@@ -489,6 +489,613 @@ Saída
 verificação inicial das classes
 resultados obtidos após executar cada uma das operações
  
+---
+ 
+### Navegador
+ 
+O professor ABC projetou um Navegador que possui diferentes tipos de abas. Cada tipo de aba será específico para um tipo de aplicação, como buscador e rede social.
+
+Neste exercício, deverão ser submetidos 4 arquivos (todas as classes a seguir são públicas e devem estar no pacote navegador):
+
+Classe Navegador
+Classe abstrata AbaNavegador
+Classes AbaBuscador e AbaRedeSocial (ambas subclasses de AbaNavegador)
+A seguir são apresentados os métodos necessários em cada classe. Esses métodos podem ser usados pelo sistema de correção e por isso devem seguir a especificação apresentada no enunciado. Você pode incluir atributos e métodos auxiliares adicionais que considerar necessários durante a implementação.
+
+Classe Navegador:
+
+public Navegador(int limiteAbas): construtor que armazena a quantidade limite de abas que podem estar abertas simultaneamente.
+public AbaNavegador abrirAba(int tipo, String titulo): instancia uma nova aba no navegador, inclui na lista de abas abertas e retorna esta aba (se atingir o limite de abas, retorna null). A nova aba deve ser do tipo especificado no parâmetro tipo e com o título passado no parâmetro titulo.  Tipos de abas:
+tipo 1: AbaBuscador
+tipo 2: AbaRedeSocial
+public void fecharAba(AbaNavegador aba): rebece uma instância de AbaNavegador e fecha a aba (remove da lista de abas abertas). A instância recebida no parâmetro sempre será uma instância de AbaNavegador que foi instanciada em algum momento anterior pelo método abrirAba.
+public String[] getAbas(): retorna uma lista com os tipos e títulos de todas as abas abertas no formato "<tipo aba> <título aba>". A lista deve ser na ordem em que as abas foram abertas (iniciando com a aba aberta mais antiga).
+public String[] getHistorico(): retorna uma lista com o histórico do navegador. O histórico deve retornar uma lista com o que foi feito em cada aba em ordem cronológica (iniciando com a ocorrência mais antiga). O histórico deve considerar o que ocorreu em todas abas: tanto as abertas no momento como as que já foram fechadas. Neste exercícios, assuma que haverá no máximo 100 itens/ocorrências no histórico.
+Classe abstrata AbaNavegador:
+
+protected String titulo: atributo com o título da aba
+public String getTitulo(): retorna o título da aba atual
+public abstract String getTipo(): retorna uma string com o tipo da aba. O retorno depende da subclasse que implementar este método.
+Classe AbaBuscador: subclasse de AbaNavegador
+
+public void buscar(String expressao): registra operação de busca como "Busca: <expressao>", em que <expressao> é o valor passado no parâmetro expressao. Esse registro vai para o histórico do navegador.
+public String getTipo(): retorna a string "Buscador".
+Classe AbaRedeSocial: subclasse de AbaNavegador
+
+public void postar(String texto): registra operação de postar texto como "Post: <texto>", em que <texto> é o valor passado no parâmetro texto. Esse registro vai para o histórico do navegador.
+public String getTipo(): retorna a string "RedeSocial".
+
+
+Importante: Submeta apenas as classes públicas descritas no enunciado (todas devem estar no pacote navegador). O programa principal já existe no sistema de correção automática. As classes submetidas não podem realizar impressão de dados ou utilizar import.
+
+
+
+Casos de teste
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+
+Entrada:
+
+limite de abas abertas simultaneamente no navegador
+operações no formato: [nome operação] (paramêtros da operação). Algumas operações utilizam um índice de aba. Esse índice é um controle interno do sistema de correção para identificar as abas, cada aba aberta tem a indicação de um índice, exibido na saída.
+operação: abrirAba (parâmetros: tipo e título)
+operação: buscar (parâmetros: índice da aba e expressão)
+operação: postar (parâmetros: índice da aba e texto)
+operação: fecharAba (parâmetros: índice da aba)
+operação: getAbas
+operação: getHistorico
+Saída:
+
+verificação das classes
+instanciação da classe Navegador
+métodos executados e saídas obtidas
+
+
+Exercício de Paulo H. Pisani - Programação Orientada a Objetos - 2020 (exercício atualizado em 2021)
+ 
+---
+ 
+## Semana 6
+ 
+---
+ 
+### Arquivos multimídia 
+ 
+Neste exercício, serão utilizadas classes para representar arquivos multimídia. Haverá uma classe abstrata chamada ArquivoMultimidia e essa classe possui duas subclasses: ArquivoVideo e ArquivoAudio. A classe ArquivoMultimidia já está implementada na atividade e pode ser acessada na aba Editar (o código desta classe não pode ser modificado). Portanto, neste exercício, devem ser implementadas apenas as subclasses ArquivoVideo e ArquivoAudio, conforme definido a seguir (todas as classes devem estar no pacote multimidia):
+
+Classe ArquivoVideo (subclasse de ArquivoMultimidia):
+
+Construtor: public ArquivoVideo(String nomeArquivo, int largura, int altura) - instancia um ArquivoVideo especificando o nome do arquivo e a resolução (largura e altura).
+Método: public String toString() - sobrescreve o método toString() de Object. O retorno do método deve ser no formato "Video: %s (%d x %d)" (observe que não há acento), em que %s é o nome do arquivo e os dois inteiros indicados com %d são respectivamente largura e altura do vídeo.
+Classe ArquivoAudio (subclasse de ArquivoMultimidia):
+
+Construtor: public ArquivoAudio(String nomeArquivo, boolean audioHD) - instancia um ArquivoAudio especificando o nome do arquivo e se este arquivo tem áudio HD ou não.
+Método: public String toString() - sobrescreve o método toString() de Object. O retorno do método deve ser no formato "Audio: %s (HD = %s)" (obseve que não há acento), em que o primeiro %s é o nome do arquivo e o segundo %s pode assumir o valor "true" ou "false" (true se o arquivo tem áudio HD e false caso contrário).
+
+
+Importante: Submeta apenas as classes públicas descritas no enunciado (todas devem estar no pacote multimidia). O programa principal já existe no sistema de correção automática. As classes submetidas não podem realizar impressão de dados ou utilizar import.
+
+
+
+Casos de teste
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+
+Entrada
+quantidade de arquivos a serem instanciados
+lista de arquivos a serem instanciados no formato [tipo] [nome do arquivo] [valores de atributos]
+Saída
+resultado da chamada ao método toString() de cada arquivo instanciado
+ 
+---
+ 
+### Perfil de usuário
+ 
+Escreva as classes PerfilRedeSocial e PerfilAnonimo (pacote usuarios) conforme descrito a seguir:
+
+
+
+Classe PerfilUsuario: o código desta classe está pronto e foi disponibilizado na aba Editar. O código desta classe não pode ser modificado.
+
+
+
+Classe PerfilRedeSocial (subclasse de PerfilUsuario):
+
+PerfilRedeSocial(String nome, String login): construtor que inicializa nome e login. Esses atributos devem ser atribuídos na superclasse PerfilUsuario.
+PerfilRedeSocial(String nome, String login, String mensagemPaginaInicial): construtor que inicializa nome e login. Esses atributos devem ser atribuídos na superclasse PerfilUsuario. Esse construtor recebe também uma mensagem para a página inicial.
+String getPerfil(): retorna uma string no formato: "<nome> <mensagemPaginaInicial>"
+
+
+Classe PerfilAnonimo (subclasse de PerfilUsuario):
+
+PerfilAnonimo(): construtor que inicializa o nome com a string "Anonimo". Esse atributo deve ser atribuído na superclasse PerfilUsuario.
+
+
+Importante: O programa principal já existe no sistema de correção automática, assim como a classe PerfilUsuario. Submeta apenas as duas classes públicas especificadas (que pertencem ao pacote usuarios). As classes não pode realizar impressão de dados ou utilizar import.
+
+
+
+Casos de teste
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+
+Entrada:
+
+nome
+login
+mensagem página inicial
+Saída:
+
+verificação das classes
+métodos executados e saídas obtidas
+ 
+---
+ 
+### Playlist
+ 
+Neste exercício, deve ser implementada uma classe chamada Playlist, que irá armazenar uma playlist de arquivos multimídia. Para isso, neste exercício, devem ser implementadas as classes Playlist, ArquivoMultimidia, ArquivoVideo e ArquivoAudio (todas as classes devem estar no pacote multimidia).
+
+
+
+Classe abstrata ArquivoMultimidia:
+
+Construtor: public ArquivoMultimidia(String nomeArquivo) - construtor que inicializa o nome do arquivo
+Métodos:
+public final String getNomeArquivo() - retorna o nome do arquivo
+public final void setNomeArquivo(String nomeArquivo) - alterna o nome do arquivo
+Classe ArquivoVideo (subclasse de ArquivoMultimidia):
+
+Construtor: public ArquivoVideo(String nomeArquivo, int largura, int altura) - instancia um ArquivoVideo especificando o nome do arquivo e a resolução (largura e altura).
+Método: public String toString() - sobrescreve o método toString() de Object. O retorno do método deve ser no formato "Video: %s (%d x %d)" (observe que não há acento), em que %s é o nome do arquivo e os dois inteiros indicados com %d são respectivamente largura e altura do vídeo.
+Classe ArquivoAudio (subclasse de ArquivoMultimidia):
+
+Construtor: public ArquivoAudio(String nomeArquivo, boolean audioHD) - instancia um ArquivoAudio especificando o nome do arquivo e se este arquivo tem áudio HD ou não.
+Método: public String toString() - sobrescreve o método toString() de Object. O retorno do método deve ser no formato "Audio: %s (HD = %s)" (observe que não há acento), em que o primeiro %s é o nome do arquivo e o segundo %s pode assumir o valor "true" ou "false" (true se o arquivo tem áudio HD e false caso contrário).
+
+Classe Playlist:
+
+Construtor: esta classe deve possuir apenas o construtor sem parâmetros, que inicializa a playlist sem nenhum arquivo. Uma playlist pode ter no máximo 100 arquivos.
+Métodos:
+public void adicionarItem(ArquivoMultimidia arquivo) - adiciona um arquivo mulmídia no final da lista de arquivos.
+public void renomearItem(int indiceArquivo, String novoNomeArquivo) - altera o nome de um arquivo na lista de arquivos da playlist.
+public void moverParaInicio(int indiceArquivo) - move o arquivo especificado para o início da lista.
+public String[] listarArquivos() - retorna um vetor de String com os nomes dos arquivos na playlist. O comprimento desse vetor é a quantidade de arquivos adicionados na playlist.
+public Playlist clone() - sobrescreve o método clone de Object. Esse método deve realizar uma cópia profunda do objeto Playlist. Nessa cópia profunda, inclusive as instâncias dos arquivos devem ser copiadas na nova instância retornada.
+
+
+Importante: Submeta apenas as classes públicas descritas no enunciado (todas devem estar no pacote multimidia). O programa principal já existe no sistema de correção automática. As classes submetidas não podem realizar impressão de dados ou utilizar import.
+
+
+
+Casos de teste
+Para realizar os testes, o programa de correção instancia um objeto Playlist (playlist1). Ao longo do teste, o programa chama o método clone de playlist1 e assim obtêm uma instância que é armazenada em playlist2. Além disso, diversos métodos são chamados ao longo do teste. Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+
+Entrada
+quantidade de arquivos a serem instanciados
+lista de arquivos a serem instanciados no formato [tipo] [nome do arquivo] [valores de atributos]
+métodos chamados
+Saída
+verificação da classe ArquivoMultimidia
+arquivos instanciados
+instanciação da classe Playlist
+métodos chamados
+ 
+---
+ 
+### Relatório com plugins
+ 
+O diretor de uma empresa projetou uma classe para produzir relatórios. A classe trabalha com o conceito de plugins para processar o texto e para imprimir o texto de diferentes formas. Os plugins devem seguir uma interface predefinida. Dessa forma, se futuramente for necessário incluir um novo tipo de processamento de texto ou de impressão, bastaria implementar classes que sigam a interface para o plugin.
+
+O diretor já implementou uma classe abstrata para o relatório e também duas interfaces (uma para plugin de texto e outra para plugin de impressão). Essa classe e as duas interfaces estão prontas e disponíveis na aba Editar (esses três arquivos não podem ser modificados).
+
+Classe abstrata Relatorio
+Interface PluginTexto
+Interface PluginImpressao
+Entretanto, ainda falta implementar diversas partes para viabilizar o uso dessa classe para produzir relatórios com plugins. Neste exercício, deverão ser submetidos 5 arquivos (todas as classes descritas a seguir são públicas e devem estar no pacote relatorio):
+
+Classe RelatorioComPlugins
+Classes TextoTitulo e TextoData (implementações de plugin de processamento de texto)
+Classes ImpressaoSimples e ImpressaoLimiteLargura (implementações de plugin de impressão)
+A seguir são apresentados os métodos necessários em cada classe. Esses métodos podem ser usados pelo sistema de correção e por isso devem seguir a especificação apresentada no enunciado. Você pode incluir atributos e métodos auxiliares adicionais que considerar necessários durante a implementação.
+
+
+
+Classe RelatorioComPlugins
+Essa classe deve ser subclasse da classe Relatorio e possuir os métodos a seguir:
+
+public RelatorioComPlugins(String autor): construtor que armazena o texto passado no parâmetro autor.
+public void aplicarPluginTexto(PluginTexto plugin): aplica o plugin de processamento sobre o texto armazenado na instância de RelatorioComPlugins e substitui o texto armazenado pelo obtido após a aplicação do plugin.
+public void setPluginImpressao(PluginImpressao p) : armazena uma referência a uma instância de um plugin de impressão. Essa instância será usada posteriormente pelo método imprimirRelatorio.
+public void imprimirRelatorio(): imprime o texto armazenado na instância de RelatorioComPlugins usando o plugin de impressão especificado por setPluginImpressao.
+
+
+Plugins de processamento de texto
+Os plugins de processamento de texto devem implementar a interface PluginTexto. Essa interface já está pronta e pode ser encontrada na aba Editar. Há apenas um método nessa interface:
+
+String aplicar(String texto): método que recebe um texto e retorna uma nova string com o resultado do processamento de texto aplicado. A regra de processamento de texto dependerá de cada classe que implementar este método.
+Neste exercício, devem ser implementados dois plugins de processamento de texto:
+
+Classe TextoTitulo: implementação de PluginTexto que adiciona um título ao texto do relatório.
+
+public TextoTitulo(String titulo): construtor que instancia um plugin e armazena um título na instância de TextoTitulo.
+public String aplicar(String texto): adiciona um título no início do texto no formato: "(TITULO: %s>) ", em que %s é o título do relatório (observe que não há acento). Por exemplo, para o texto "Este eh um teste." e título "Relatorio1", o retorno do método aplicar seria "(TITULO: Relatorio1) Este eh um teste."
+Classe TextoData: implementação de PluginTexto que adiciona uma data ao texto do relatório.
+
+public TextoData(int dia, int mes, int ano): construtor que instancia um plugin e armazena a data (dia, mês e ano).
+public String aplicar(String texto): adiciona a data ao final do texto no formato " (DATA: %d/%d/%d)", em que cada um dos inteiros %d são respectivamente dia, mês e ano. Por exemplo, para o texto "Este eh um teste." e data 10/10/1000, o retorno do método aplicar seria "Este eh um teste. (DATA: 10/10/1000)".
+
+
+Plugins de impressão
+Os plugins de impressão devem implementar a interface PluginImpressao. Essa interface já está pronta e pode ser encontrada na aba Editar. Há apenas um método nessa interface:
+
+void imprimir(Relatorio r): método que recebe uma instância de Relatorio e imprime o texto do relatório (observe que RelatorioComPlugins é subclasse de Relatorio e, portanto, o argumento passado pode ser uma instância de RelatorioComPlugins). A regra de impressão dependerá de cada classe que implementar este método. Importante: para impressão use apenas o método Impressao.imprimirLinha(String textoLinha). A classe Impressao e este método imprimirLinha já existem no sistema de correção automática.
+Neste exercício, devem ser implementados dois plugins de impressão:
+
+Classe ImpressaoSimples: implementação de PluginImpressao que faz uma impressão simples.
+public ImpressaoSimples(): essa classe deve possuir apenas o construtor sem parâmetros (esse construtor é implicitamente criado se nenhum outro construtor for implementado na classe).
+void imprimir(Relatorio r): faz uma impressão simples, ou seja, apenas chama o método imprimirLinha com o texto do relatório.
+Classe ImpressaoLimiteLargura: implementação de PluginImpressao que imprime o texto considerando que há uma largura limite para impressão.
+
+public ImpressaoLimiteLargura(int largura): construtor que armazena a largura máxima de linha passada no parâmetro largura.
+void imprimir(Relatorio r): imprime o texto considerando que há uma largura limite para impressão, ou seja, nenhuma linha impressa pode passar de um determinado número caracteres. Ao realizar esse tipo de impressão, algumas regras devem ser observadas:
+as palavras não podem ser separadas. Portanto, se não tiver espaço disponível para incluir uma palavra em uma linha, ela deverá ser incluída na próxima. Por exemplo, para o texto "Frase teste" e largura de linha 8, a divisão seria em duas linhas "Frase" e "teste" (não há espaço na primeira linha para incluir "Frase teste". Se a largura de linha for 11, apenas uma linha é suficiente.
+datas não podem ser separadas: a regra anterior se aplica a datas também (e.g. 10/10/1000).
+toda linha deve iniciar com uma letra, ou seja, nenhuma linha deve iniciar com o caractere espaço ou com pontuação (ponto, vírgula, etc). Se algum sinal de pontuação ficar exatamente após uma quebra de linha, a palavra que precede o sinal deve ser passada para a próxima linha, de forma que nenhuma linha inicie com pontuação. Por exemplo, para o texto "Neste teste, a frase possui pontuacao." e largura de linha 11, a divisão seria em cinco linhas: "Neste", "teste, a", "frase", "possui", "pontuacao."
+um caractere espaço que fique exatamente após uma quebra de linha deve ser suprimido, de forma que a próxima linha inicie com uma palavra (e não com um caractere espaço). Por exemplo, para o texto "Texto para teste ABCD" e largura 10, a divisão seria em duas linhas: "Texto para" e "teste ABCD".
+
+Arquivos a serem submetidos
+Neste exercício, deverão ser submetidos 5 arquivos:
+
+Classe RelatorioComPlugins
+Classes TextoTitulo e TextoData
+Classes ImpressaoSimples e ImpressaoLimiteLargura
+Essa atividade disponibiliza também outros 3 arquivos com código pronto: Relatorio.java, PluginTexto.java e PluginImpressao.java. Não altere o conteúdo desses três arquivos.
+
+Importante: Não é permitido o uso de expressão regular, assim como dos métodos indexOf, join, lastIndexOf, replace, replaceAll, replaceFirst, split, startsWith, trim. O programa principal já existe no sistema de correção automática. As classes submetidas não podem realizar impressão de dados ou utilizar import (apenas os plugins de impressão podem imprimir dados, mas devem usar Impressao.imprimirLinha(texto), método que já existe no sistema de correção).
+
+
+Casos de teste
+O programa de correção mantém um vetor com diversas instâncias de plugins e usa essas instâncias para realizar os testes (mais detalhes podem ser observados na sáida produzida pela correção automática). Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+
+Entrada
+texto do relatório
+quantidade de plugins de processamento de texto a serem instanciados
+nomes das classes dos plugins de processamento de texto a serem instanciados (e seus parâmetros para inicialização)
+quantidade de plugins de impressão a serem instanciados
+nomes das classes dos plugins de impressão a serem instanciados (e seus parâmetros para inicialização)
+operações:
+aplicarPluginTexto [índice plugin]: chama o método aplicarPluginTexto de RelatorioComPlugins e passa o plugin de texto especificado.
+setPluginImpressao [índice plugin]: chama o método aplicarPluginTexto de RelatorioComPlugins e passa o plugin de impressão especificado.
+imprimirRelatorio: chama o método imprimirRelatorio de Relatorio
+aplicar [índice plugin] [texto]: chama o método aplicar de uma instância de plugin de processamento de texto (faz uma chamada direta ao plugin sem usar a classe RelatorioComPlugins).
+Saída
+classes instanciadas
+métodos executados e saídas obtidas
+ 
+ ---
+ 
+ ## Semana 7 - Estruturas lineares no contexto de orientação a objetos
+ 
+ ---
+ 
+ ### Dispositivos inteligentes
+ 
+Uma empresa está desenvolvendo um programa para gerenciar dispositivos inteligentes. O programa vai gerenciar três tipos de dispositivos: lâmpada, tomada e interruptor.
+
+Neste exercício, implemente as 5 classes a seguir (todas as classes devem estar no pacote dispositivos). As classes DispositivoInteligente, LampadaInteligente, TomadaInteligente e InterruptorInteligente tem acesso package. A classe Gerenciador tem acesso public.
+
+
+
+Classe abstrata DispositivoInteligente: essa classe possui um atributo do tipo boolean para armazenar o estado, que indica se o dispositivo está ligado (true) ou desligado (false). Todo dispositivo criado inicia desligado (estado = false).
+
+public void ligar(): liga o dispositivo (muda o estado para true).
+public void desligar(): desliga o dispositivo (muda o estado para false).
+public boolean getEstado(): retorna o valor do atributo estado.
+Classe LampadaInteligente (subclasse de DispositivoInteligente):
+
+public void ligar(): liga o dispositivo (muda o estado para true).
+public void desligar(): desliga o dispositivo (muda o estado para false).
+public boolean getEstado(): retorna o valor do atributo estado.
+Classe TomadaInteligente (subclasse de DispositivoInteligente):
+
+public void ligar(): liga o dispositivo (muda o estado para true).
+public void desligar(): desliga o dispositivo (muda o estado para false).
+public boolean getEstado(): retorna o valor do atributo estado.
+Classe InterruptorInteligente (subclasse de DispositivoInteligente):
+public void ligar(): liga o dispositivo (muda o estado para true).
+public void desligar(): desliga o dispositivo (muda o estado para false).
+public boolean getEstado(): retorna o valor do atributo estado.
+
+Classe Gerenciador: armazena uma lista de dispositivos inteligentes. A classe pode ter no máximo 10 dispositivos nesta lista.
+
+public void adicionarDispositivo(DispositivoInteligente d): adiciona o dispositivo d (armazena uma referência ao dispositivo d) na lista de dispositivos armazenados no gerenciador.
+public void ligarTodosDispositivos(): liga todos os dispositivos.
+public void desligarTodosDispositivos(): desliga todos os dispositivos.
+
+
+Observação: apenas a classe Gerenciador é pública. Todas as demais tem acesso package.
+
+Importante: Submeta apenas as classes descritas no enunciado (todas devem estar no pacote dispositivos). O programa principal já existe no sistema de correção automática. As classes submetidas não podem realizar impressão de dados, utilizar import ou java.util. Todas as classes devem possuir o construtor sem parâmetros.
+
+
+
+Casos de teste
+O programa de correção mantém uma lista com diversas instâncias de dispositivos inteligentes e também mantém uma instância da classe Gerenciador. Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+
+Entrada
+adicionar [tipo do dispositivo]
+ligar [índice do dispositivo]
+desligar [índice do dispositivo]
+ligarTodosDispositivos
+desligarTodosDispositivos
+Saída
+verificação das classes
+operações executas e saídas obtidas
+ 
+---
+ 
+### Conjuntos
+ 
+Escreva a classe Conjunto que implementa a interface Lista, conforme indicado no diagrama a seguir (a classe deve estar no pacote estruturas, a interface Lista está no mesmo pacote).
+
+![image](https://user-images.githubusercontent.com/57016670/150584454-e5e48155-cefc-4b08-866c-10ec678631b4.png)
+Interface Lista e Classe Conjunto, que implementa a interface Lista
+
+Classe Conjunto: classe que gerencia um conjunto de números (em um conjunto, não há números repetidos).
+
+getQtd(): int - retorna a quantidade de itens/números no conjunto;
+adicionar(numero: int) - adiciona um número no conjunto de números
+remover(numero: int) - remove um número do conjunto de números.
+buscar(numero: int): int - busca um número e retorna o índice (o primeiro item deve ter índice 0). Se o número não for encontrado, o método retorna -1. O índice corresponde à ordem em que o número foi adicionado no conjunto.
+toString(): String - retorna uma String com os números do conjunto na ordem em que foram adicionados. Coloque um espaço entre cada número (não há espaço após o último número).
+uniao(a: Conjunto, b: Conjunto): Conjunto - retorna uma nova instância de Conjunto com a união dos conjuntos a e b. A ordem dos elementos no novo conjunto deve ser a mesma do conjunto a, com os elementos exclusivos de b adicionados ao final na mesma ordem que aparecem em b. Por exemplo, para os conjuntos a={2, 9, 1} e b={3, 8, 9, 5}, o resultado da união seria {2, 9, 1, 3, 8, 5}.
+intersecao(a: Conjunto, b: Conjunto): Conjunto - retorna uma nova instância de Conjunto com a interseção dos conjuntos a e b. A ordem dos elementos no novo conjunto deve ser a mesma do conjunto a. Por exemplo, para os conjuntos a={2, 9, 1} e b={1, 8, 9, 5}, o resultado da interseção seria {9, 1}.
+Observação: os métodos uniao e intersecao são static.
+
+Importante: Submeta apenas a classe pública Conjunto (pacote estruturas). O programa principal já existe no sistema de correção automática, assim como a interface Lista. A classe submetida não pode realizar impressão de dados, java.util ou utilizar import.
+
+Casos de teste
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+
+Entrada:
+
+[operação] (índice) (número)
+Operação 1: adicionar
+Operação 2: remover
+Operação 3: buscar
+Operação 4: união
+Operação 5: interseção
+Operação 9: getQtd
+Saída:
+métodos executados e saídas obtidas
+ 
+---
+ 
+### Lista de mensagens
+ 
+O professor ABC está desenvolvendo um programa de chat, mas falta implementar algumas classes. Neste exercício, implemente as classes ListaMensagens, Mensagem, MensagemTexto e MensagemImagem (todas as classes são do pacote chat).
+
+[acesso public] classe abstrata Mensagem:
+
+like() - incrementa em uma unidade a quantidade de likes (quando a classe é instanciada, a quantidade de likes é inicializada com zero).
+responder(resposta: Mensagem) - recebe uma instância de Mensagem e faz uma ligação entre a mensagem atual e a resposta de forma que seja possível identificar que a mensagem é resposta da mensagem atual.
+Por exemplo, assuma que há uma instância de mensagem A com o texto "Quanto eh 1 + 1?" e outra instância de mensagem B com o texto "O resultado eh 2.". Nesse caso, a mensagem B será a resposta de A. Então, o programa poderia realizar a seguinte chamada: msgA.responder(msgB); // Nesse caso msgA e msgB seriam as instâncias com as mensagens A e B respectivamente. Dessa forma, msgA foi respondida com msgB.
+getRepresentacao(): String - método abstrato que retorna uma representação em String da mensagem (a representação depende da subclasse)
+[acesso package] classe MensagemTexto (subclasse de Mensagem):
+
+MensagemTexto(texto: String) - construtor que armazena o texto da mensagem na instância atual.
+getRepresentacao(): String - retorna uma String no seguinte formato: "<texto> (likes=<qtd>)"
+Se a mensagem atual for uma resposta a outra mensagem, a String deve ter o seguinte formato: "<texto> RESPOSTA A [<getRepresentacao() da mensagem respondida sem a parte dos likes>] (likes=<qtd>)"
+Observações: <texto> é o texto da mensagem, <qtd> é a quantidade de likes da resposta.
+Exemplo 1: para o texto "teste2" que é uma resposta à mensagem "teste1", a representação será: "teste2 RESPOSTA A [teste1] (likes=0)" (a quantidade de likes é a referente à resposta, nesse exemplo, "teste2" é o texto da resposta).
+Exemplo 2: para o texto "teste2" que é uma resposta à imagem "figura1 10x10", a representação será: "teste2 RESPOSTA A [figura1 10x10] (likes=0)" (a quantidade de likes é a referente à resposta, nesse exemplo, "teste2" é o texto da resposta).
+[acesso package] classe MensagemImagem (subclasse de Mensagem):
+
+MensagemImagem(arquivoImagem: String, largura: int, altura: int) - construtor que armazena o arquivo da imagem e suas dimensões (largura e altura) na instância atual.
+getRepresentacao(): String - retorna uma String no seguinte formato: "<arqImg> <largura>x<altura> (likes=<qtd>)"
+Se a mensagem atual for uma resposta a outra mensagem, a String deve ter o seguinte formato: "<arqImg> <largura>x<altura>  RESPOSTA A [<getRepresentacao() da mensagem respondida sem a parte dos likes>] (likes=<qtd>)"
+Observações: <arqImg> é o arquivo da imagem, <largura> é a largura da imagem, <altura> é a altura da imagem, <qtd> é a quantidade de likes da resposta.
+Exemplo 1: para a imagem "img2 20x20" que é uma resposta à mensagem "teste1", a representação será: "img2 20x20 RESPOSTA A [teste1] (likes=0)" (a quantidade de likes é a referente à resposta).
+Exemplo 2: para a imagem "img2 20x20" que é uma resposta à imagem "figura1 10x10", a representação será: "img2 20x20 RESPOSTA A [figura1 10x10] (likes=0)" (a quantidade de likes é a referente à resposta).
+
+[acesso public] classe ListaMensagens: essa classe gerencia uma lista de mensagens
+
+ListaMensagens() - construtor sem parâmetros da classe ListaMensagens.
+adicionarMensagem(mensagem: Mensagem) - adiciona mensagem ao final da lista de mensagens.
+responderMensagem(indiceMensagemOriginal: int, resposta: Mensagem) - responde a mensagem no índice especificado e adiciona a resposta ao final da lista de mensagens. 
+getMensagens(): Mensagem[] - retorna vetor com as mensagens da lista. O comprimento do vetor retornado deve ser igual à quantidade de mensagens adicionadas na lista. Observe que a lista de mensagens é composta pelas pelas mensagens originais, assim como pelas mensagens resposta.
+getMensagensString(): String[] - funciona da mesma forma que o método getMensagens, mas ao invés de retornar instâncias de Mensagem, retorna uma lista de Strings. Cada String é o retorno obtido por getRepresentacao() de cada mensagem.
+like(indiceMensagem: int) - aumenta a quantidade de likes da mensagem no índice especificado.
+
+
+Observação: as classes Mensagem e ListaMensagem são públicas, e as classes MensagemTexto e MensagemImagem tem acesso package. Todos os métodos apresentados devem ter acesso público.
+
+Importante: O programa principal já existe no sistema de correção automática. Submeta apenas as classes especificadas (pacote chat). A classes não podem realizar impressão de dados, java.util ou utilizar import.
+
+
+
+Casos de teste
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+
+Entrada:
+
+[operação] (índice da mensagem) (dados da mensagem)
+operação 1: adicionar mensagem de texto
+operação 2: adicionar mensagem de imagem
+operação 3: responder com mensagem de texto
+operação 4: responder com mensagem de imagem
+operação 9: like
+operação 10: getMensagens
+operação 11: getMensagensString
+Saída:
+
+verificação das classes
+métodos executados e saídas obtidas
+ 
+---
+ 
+## Semana 8 - Tratamento de exceções
+ 
+---
+ 
+### Lâmpada Inteligente com exceções
+ 
+Uma empresa está desenvolvendo um aplicativo para gerenciar lâmpadas inteligentes. Cada lâmpada inteligente é representada por uma instância da classe LampadaInteligente (essa classe já está implementada no sistema de correção automática e encontra-se no pacote dispositivos). 
+
+A classe LampadaInteligente possui os seguintes métodos:
+
+public void ligar(): liga a lâmpada;
+public void desligar(): desliga a lâmpada;
+public boolean getEstado(): retorna o estado da lâmpada (true=ligada, false=desligada).
+Para este aplicativo, é necessário implementar a classe GerenciadorLampadas, que gerencia instâncias de lâmpadas inteligentes (ou seja, instâncias da classe LampadaInteligente). A seguir são apresentados os métodos necessários na classe GerenciadorLampadas. Esses métodos podem ser usados pelo sistema de correção e por isso devem seguir a especificação apresentada no enunciado. Você pode incluir atributos e métodos auxiliares adicionais que considerar necessários durante a implementação.
+
+Classe GerenciadorLampadas:
+
+public void adicionarLampada(): instancia uma nova lâmpada inteligente e adiciona a um vetor de LampadaInteligente. Considere que o tamanho máximo desse vetor é 10.
+public void ligarLampada(int indiceLampada): liga a lâmpada instanciada no índice informado. Antes de ligar a lâmpada, o método deve verificar se a lâmpada já está ligada. É possível saber se a lâmpada está ligada por meio do método getEstado() presente na classe LampadaInteligente. Se a lâmpada já estiver ligada, a lâmpada não deve ser ligada novamente e o método deve lançar a exceção LampadaEstaLigada. A exceção LampadaEstaLigada é subclasse de Exception (mas não de RuntimeException). A exceção LampadaEstaLigada deve chamar o construtor da superclasse Exception com a seguinte mensagem: "A lampada ja esta ligada." (observe que não há acento na mensagem).
+public void desligarLampada(int indiceLampada): desliga a lâmpada instanciada no índice informado. Antes de desligar a lâmpada, o método deve verificar se a lâmpada já está desligada. É possível saber se a lâmpada está ligada por meio do método getEstado() presente na classe LampadaInteligente.  Se a lâmpada já estiver desligada, a lâmpada não deve ser desligada novamente e o método deve lançar a exceção LampadaEstaDesligada. A exceção LampadaEstaDesligada é subclasse de Exception (mas não de RuntimeException). A exceção LampadaEstaDesligada deve chamar o construtor da superclasse Exception com a seguinte mensagem: "A lampada ja esta desligada." (observe que não há acento na mensagem).
+
+
+Importante: A classe GerenciadorLampadas possui acesso público, as exceções LampadaEstaLigada e LampadaEstaDesligada possuem acesso package (sem modificador de acesso). Submeta as classes  LampadaEstaLigada, LampadaEstaDesligada e GerenciadorLampadas conforme descrito no enunciado (todas as classes submetidas devem estar no pacote "sem nome", ou seja, não inclua a linha package no código). A classe submetida não pode realizar impressão de dados, utilizar java.util e System.out.
+
+
+
+Casos de teste
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+
+Entrada:
+
+operações no formato: [código operação] (índice lâmpada)
+operação 1: adicionar lâmpada
+operação 2: ligar lâmpada
+operação 3: desligar lâmpada
+Saída:
+
+métodos executados e saídas obtidas
+ 
+---
+ 
+### Autenticação usuário
+ 
+Neste exercício, será usada a classe Usuario. Essa classe guarda o login e senha de um Usuario.
+
+
+Classe Usuario (esta classe já está implementada no pacote acesso no sistema de correção automática):
+
+Usuario(login: String, senha: String) - construtor de Usuario que armazena o login e a senha.
+getLogin(): String - retorna o login da instância atual da classe Usuario.
+autenticar(senha: String) - verifica se a senha passada é correta e, caso não seja, lança a exceção SenhaInvalida ou UsuarioBloqueado.
+
+
+Escreva um programa para autenticar usuários com login e senha que use a classe Usuario, conforme descrito a seguir (o programa deverá ser implementado na classe AutenticacaoUsuario):
+
+Lê um inteiro n, que é a quantidade de usuários a serem cadastrados.
+Depois o programa receberá uma sequência de n pares "login senha". O programa deve instanciar a classe Usuario uma vez para cada usuário. O construtor de Usuario recebe o login e senha como argumentos, por exemplo: new Usuario("login", "senha");
+Após instanciar todos os usuários, o programa recebe mais um inteiro (k), que representa a quantidade de tentativas de autenticação a serem realizadas.
+Depois o programa receberá uma sequência de k pares "login senha". Desta vez, o programa deverá chamar o método autenticar do usuário correspondente ao login e, para esse usuário, passar a senha lida como argumento (assuma que sempre será passado um login de um usuário que existe). Após chamar o método autenticar, o programa deverá imprimir o resultado usando a classe Impressao de acordo com o caso (os três métodos são static na classe Impressao):
+Impressao.imprimirUsuarioAutenticado(login: String): quando o método autenticar não lança exceção
+Impressao.imprimirSenhaInvalida(login: String): quando o método autenticar lançar a exceção SenhaInvalida (ocorre se a senha passada é incorreta)
+Impressao.imprimirUsuarioBloqueado(login: String): quando o método autenticar lançar a exceção UsuarioBloqueado (essa exceção é lançada se a senha é incorreta 3 ou mais vezes seguidas)
+Observação: as classes das exceções SenhaInvalida e UsuarioBloqueado possuem um método chamado getLogin(): String, que pode ser usado para obter o login do usuário de onde a exceção foi lançada.
+
+
+
+As classes Usuario, SenhaInvalida, UsuarioBloqueado e Impressao estão no pacote acesso e já existem no sistema de correção automática (portanto, não devem ser submetidas). Na aba Editar, há uma implementação inicial do programa com os imports necessários já incluídos.
+
+
+
+
+Importante: Submeta apenas o programa principal (o programa deve estar no pacote sem nome, ou seja, sem a linha package). A impressão de dados é permitida apenas com a classe Impressao, usando os três métodos static especificados.
+
+
+
+Casos de teste
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+
+Entrada:
+
+n (quantidade de usuários)
+sequência de "login senha" (para cadastro dos usuários)
+k (quantidade de tentativas)
+sequência de "login senha" (para chamar o método autenticar)
+Saída:
+
+dados impressos pelas classes Usuario, SenhaInvalida e UsuarioBloqueado ao longo do programa
+saída dos métodos da classe Impressao
+ 
+---
+ 
+### Playlist com exceções
+ 
+ Neste exercício, deve ser implementada uma classe chamada Playlist, que irá armazenar uma playlist de arquivos multimídia. Para isso, neste exercício, devem ser implementadas as classes públicas Playlist, ArquivoMultimidia, ArquivoVideo e ArquivoAudio (todas as classes devem estar no pacote multimidia). Além disso, também podem ser lançadas dois tipos de exceções e as classes para essas exceções devem ser implementadas também: IndiceArquivoInvalido e QuantidadeLimiteArquivos. A seguir são descritos detalhes sobre as situações em que essas exceções são lançadas e o que essas classes com as exceções devem conter.
+
+
+
+Classe abstrata ArquivoMultimidia:
+
+Construtor: public ArquivoMultimidia(String nomeArquivo, int tamanho) - construtor que inicializa o nome do arquivo e o tamanho.
+Métodos:
+public final String getNomeArquivo() - retorna o nome do arquivo.
+public final int getTamanhoArquivo() - retorna o tamanho do arquivo.
+public final void setNomeArquivo(String nomeArquivo) - alterna o nome do arquivo.
+Classe ArquivoVideo (subclasse de ArquivoMultimidia):
+
+Construtor: public ArquivoVideo(String nomeArquivo, int tamanho, int largura, int altura) - instancia um ArquivoVideo especificando o nome do arquivo, o tamanho e a resolução (largura e altura).
+Método: public String toString() - sobrescreve o método toString() de Object. O retorno do método deve ser no formato "Video: %s (%d)" (observe que não há acento), em que %s é o nome do arquivo e o inteiro indicado com %d é o tamanho do arquivo.
+Classe ArquivoAudio (subclasse de ArquivoMultimidia):
+
+Construtor: public ArquivoAudio(String nomeArquivo, int tamanho, boolean audioHD) - instancia um ArquivoAudio especificando o nome do arquivo, o tamanho e se este arquivo tem áudio HD ou não.
+Método: public String toString() - sobrescreve o método toString() de Object. O retorno do método deve ser no formato "Audio: %s (%d)" (observe que não há acento), em que %s é o nome do arquivo e o inteiro indicado com %d é o tamanho do arquivo.
+
+Classe Playlist:
+
+Construtor: esta classe deve possuir apenas o construtor sem parâmetros, que inicializa a playlist sem nenhum arquivo. Uma playlist pode ter no máximo 10 arquivos.
+Métodos:
+public void adicionarItem(ArquivoMultimidia arquivo) - adiciona um arquivo mulmídia no final da lista de arquivos. Se, ao adicionar um arquivo, a playlist já estava com 10 arquivos (limite máximo), deve ser lançada a exceção QuantidadeLimiteArquivos e o arquivo não é adicionado. A exceção QuantidadeLimiteArquivos é subclasse de Exception (mas não de RuntimeException) e seu construtor deve chamar o construtor da superclasse Exception com a mensagem "Quantidade limite de arquivos foi atingida.".
+public void renomearItem(int indiceArquivo, String novoNomeArquivo) - altera o nome de um arquivo na lista de arquivos da playlist. Se o índice especificado não for válido (não há arquivo no índice especificado), deve ser lançada a exceção IndiceArquivoInvalido. A exceção IndiceArquivoInvalido é subclasse de Exception (mas não de RuntimeException) e seu construtor deve chamar o construtor da superclasse Exception com a mensagem "Indice de arquivo invalido = %d" (observe que não há acento na mensagem), em que o inteiro representado por %d é o valor do índice inválido que foi passado como argumento no método.
+public void moverParaInicio(int indiceArquivo) - move o arquivo especificado para o início da lista. Se o índice especificado não for válido (não há arquivo no índice especificado), deve ser lançada a exceção IndiceArquivoInvalido. A exceção IndiceArquivoInvalido é a mesma que o método renomearItem pode lançar e que foi descrita anteriormente.
+public String[] listarArquivos() - retorna um vetor de String com os retornos do método toString() dos arquivos na playlist. O comprimento desse vetor é a quantidade de arquivos adicionados na playlist.
+public void ordenarArquivos(int tipo) - ordena os arquivos da playlist de acordo com o tipo de ordenação especificado no parâmetro tipo.
+tipo=1 - Ordena os arquivos em ordem alfabética (lexicográfica) de nome. Caso a lista tenha mais de um arquivo com o mesmo nome, use a ordem crescente do tamanho do arquivo para desempate.
+tipo=2 - Ordena os arquivos em ordem crescente de tamanho do arquivo. Caso a lista tenha mais de um arquivo com o mesmo tamanho, use a ordem alfabética (lexicográfica) para desempate.
+Dica: para comparar duas Strings, é possível usar o método compareTo da classe String. Por exemplo:
+
+String str1 = "ABC";
+String str2 = "DEF";
+int comparacao = str1.compareTo(str2);
+O retorno pode ser um valor negativo (quando str1 vem antes de str2 na ordem lexicográfica), positivo (quando str2 vem antes de str1 na ordem lexicográfica) ou zero (quando str1 é igual a str2). Mais detalhes em: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#compareTo(java.lang.String)
+
+
+
+Observação: Não é permitido o uso de funções de ordenação prontas (por exemplo, sort). Implemente um algoritmo de ordenação. Também não use o termo "sort" em nenhuma parte do código.
+
+
+
+Importante: Submeta apenas as classes públicas descritas no enunciado (todas devem estar no pacote multimidia) e também as classes das duas exceções: IndiceArquivoInvalido e QuantidadeLimiteArquivos (as duas classes das exceções tem acesso package). O programa principal já existe no sistema de correção automática. As classes submetidas não podem realizar impressão de dados, utilizar import e java.util.
+
+
+
+Casos de teste
+Para realizar os testes, o programa de correção instancia um objeto Playlist (playlist1). Após isso, diversos métodos são chamados ao longo do teste. Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+
+Entrada
+quantidade de arquivos a serem instanciados
+lista de arquivos a serem instanciados no formato [tipo] [nome do arquivo] [valores de atributos]
+métodos chamados
+Saída
+verificação da classe ArquivoMultimidia e das classes das exceções QuantidadeLimiteArquivos e IndiceArquivoInvalido
+arquivos instanciados
+instanciação da classe Playlist
+métodos chamados
+ 
+---
+ 
+ ## Semana 9 - Generics
+ 
+---
+ 
+### 
+ 
+ 
+ 
+ 
  
  
  
