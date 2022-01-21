@@ -11,13 +11,13 @@ Repositório com os exercícios que fiz ao longo da disciplina de POO
 [Semana 7](#semana7)
 [Semana 8](#semana8)
 [Semana 9](#semana9)
-[Semana 10](##semana10)
-[Bonus](##bonus)
+[Semana 10](#semana10)
+[Bonus](#bonus)
 <a href="##semana10">Heading IDs</a>
 
 ----------------------------------------------------------------------------------------------------
 
-## Semana3 - Construtores, sobrecargas #semana3
+## Semana 3 - Construtores, sobrecargas {semana3}
 
 ----------------------------------------------------------------------------------------------------
 
@@ -231,7 +231,7 @@ TESTE(L=0 C=1: Coluna-1)
  
 ----------------------------------------------------------------------------------------------------
  
-##Semana 4 - Herança, polimorfismo {#semana4}
+## Semana 4 - Herança, polimorfismo {#semana4}
  
 ----------------------------------------------------------------------------------------------------
  
