@@ -4,7 +4,13 @@ Repositório com os exercícios que fiz ao longo da disciplina de POO
 
 # Enunciados
 
-## Semana3
+[Semana 3](#semana3)
+
+----------------------------------------------------------------------------------------------------
+
+## Semana3 - Construtores, sobrecargas {#semana3}
+
+----------------------------------------------------------------------------------------------------
 
 ### Paralelogramo
 
@@ -61,7 +67,7 @@ Exemplo de uso da classe
     // imprime "Paralelogramo quadrado"
     System.out.println(oQueSou.getTipo());
  
- ---
+----------------------------------------------------------------------------------------------------
  
  ### ContaCorrente (construtor) 2
  
@@ -111,7 +117,7 @@ Saída:
 
 resultados obtidos após executar cada uma das operações
  
- ---
+----------------------------------------------------------------------------------------------------
  
  ### Frações (construtor) 2
  
@@ -161,7 +167,7 @@ Saída:
 
 resultados obtidos após executar cada uma das operações
  
- ---
+----------------------------------------------------------------------------------------------------
  
  ### Caça palavras
  
@@ -214,9 +220,11 @@ buscar palavras: 2
 palavras encontradas: 1
 TESTE(L=0 C=1: Coluna-1)
  
----
+----------------------------------------------------------------------------------------------------
  
- ##Semana 4
+##Semana 4 - Herança, polimorfismo
+ 
+----------------------------------------------------------------------------------------------------
  
  ### Vínculo com a Universidade
  
@@ -255,7 +263,7 @@ Saída dos métodos getEmail() e getVinculo() para uma instância de Pessoa
 Saída dos métodos getEmail() e getVinculo() para uma instância de Aluno
 Saída dos métodos getEmail() e getVinculo() para uma instância de Professor
  
- ---
+----------------------------------------------------------------------------------------------------
  
  ### Veículos
  
@@ -279,7 +287,7 @@ Resultado de getNumeroPortas() para o Carro
 Resultado de getTipo() para a Motocicleta
 Resultado de getTemCarroLateral para a Motocicleta
  
----
+----------------------------------------------------------------------------------------------------
  
 ### Quadriláteros
  
@@ -312,7 +320,7 @@ Saída
 classes instanciadas
 métodos executados e saídas obtidas (o caso de teste indica o índice do quadrilátero envolvido em cada operação)
  
----
+----------------------------------------------------------------------------------------------------
  
 ### Cartões
  
@@ -360,9 +368,11 @@ Saída
 <li>métodos executados e saídas obtidas (o caso de teste indica o índice do cartão envolvido em cada operação)</li>
 </ul>
  
----
+----------------------------------------------------------------------------------------------------
  
-## Semana 5 
+## Semana 5 - Interfaces, polimorfismo
+ 
+----------------------------------------------------------------------------------------------------
  
 ### Cifra de César
  
@@ -398,7 +408,7 @@ instanciação de CifraCesar 2
 cifrar usando instância 1
 decifrar usando instância 2
  
----
+----------------------------------------------------------------------------------------------------
  
 ### ZENIT-POLAR
  
@@ -432,7 +442,7 @@ instanciação de ZenitPolar
 cifrar
 decifrar
  
----
+----------------------------------------------------------------------------------------------------
  
 ### Crachá
  
@@ -489,7 +499,7 @@ Saída
 verificação inicial das classes
 resultados obtidos após executar cada uma das operações
  
----
+----------------------------------------------------------------------------------------------------
  
 ### Navegador
  
@@ -552,11 +562,11 @@ métodos executados e saídas obtidas
 
 Exercício de Paulo H. Pisani - Programação Orientada a Objetos - 2020 (exercício atualizado em 2021)
  
----
+----------------------------------------------------------------------------------------------------
  
-## Semana 6
+## Semana 6 - Construtores, cópia de objetos, final
  
----
+----------------------------------------------------------------------------------------------------
  
 ### Arquivos multimídia 
  
@@ -585,7 +595,7 @@ lista de arquivos a serem instanciados no formato [tipo] [nome do arquivo] [valo
 Saída
 resultado da chamada ao método toString() de cada arquivo instanciado
  
----
+----------------------------------------------------------------------------------------------------
  
 ### Perfil de usuário
  
@@ -626,7 +636,7 @@ Saída:
 verificação das classes
 métodos executados e saídas obtidas
  
----
+----------------------------------------------------------------------------------------------------
  
 ### Playlist
  
@@ -677,7 +687,7 @@ arquivos instanciados
 instanciação da classe Playlist
 métodos chamados
  
----
+----------------------------------------------------------------------------------------------------
  
 ### Relatório com plugins
  
@@ -769,11 +779,11 @@ Saída
 classes instanciadas
 métodos executados e saídas obtidas
  
- ---
+----------------------------------------------------------------------------------------------------
  
  ## Semana 7 - Estruturas lineares no contexto de orientação a objetos
  
- ---
+----------------------------------------------------------------------------------------------------
  
  ### Dispositivos inteligentes
  
@@ -829,7 +839,7 @@ Saída
 verificação das classes
 operações executas e saídas obtidas
  
----
+----------------------------------------------------------------------------------------------------
  
 ### Conjuntos
  
@@ -866,7 +876,7 @@ Operação 9: getQtd
 Saída:
 métodos executados e saídas obtidas
  
----
+----------------------------------------------------------------------------------------------------
  
 ### Lista de mensagens
  
@@ -929,11 +939,11 @@ Saída:
 verificação das classes
 métodos executados e saídas obtidas
  
----
+----------------------------------------------------------------------------------------------------
  
 ## Semana 8 - Tratamento de exceções
  
----
+----------------------------------------------------------------------------------------------------
  
 ### Lâmpada Inteligente com exceções
  
@@ -970,7 +980,7 @@ Saída:
 
 métodos executados e saídas obtidas
  
----
+----------------------------------------------------------------------------------------------------
  
 ### Autenticação usuário
  
@@ -1020,7 +1030,7 @@ Saída:
 dados impressos pelas classes Usuario, SenhaInvalida e UsuarioBloqueado ao longo do programa
 saída dos métodos da classe Impressao
  
----
+----------------------------------------------------------------------------------------------------
  
 ### Playlist com exceções
  
@@ -1085,31 +1095,291 @@ arquivos instanciados
 instanciação da classe Playlist
 métodos chamados
  
----
+----------------------------------------------------------------------------------------------------
  
  ## Semana 9 - Generics
  
----
+----------------------------------------------------------------------------------------------------
  
-### 
+### Pasta Compactada
  
+Considere a seguinte hierarquia de classes de arquivos (essas classes já estão implementadas no sistema de correção automática dentro do pacote arquivos). Essas classes podem ser instanciadas com o construtor sem parâmetros.
+
+![image](https://user-images.githubusercontent.com/57016670/150585966-4377128d-56dd-4650-929c-2117202c116b.png)
+Classe Arquivo e subclasses
+
+Descrição das classes no diagrama:
+
+Classe Arquivo;
+Classes Texto e Imagem, que são subclasses de Arquivo;
+Classes TextoTXT e TextoDOCX, que são subclasses de Texto;
+Classes ImagemPNG e ImagemJPEG, que são subclasses de Imagem.
+
+
+Escreva um programa (pacote arquivos) para guardar arquivos de texto e de imagem em pastas compactadas. O programa deverá guardar duas pastas compactadas, uma para guardar apenas arquivos de texto e outra para guardar apenas arquivos de imagem.
+
+Uma pasta compactada é representada por uma instância da classe PastaCompactada<T>. A classe PastaCompactada<T> já está implementada e possui um parâmetro de tipo T. Portanto, para instancar uma pasta compactada que armazenará apenas arquivos de Texto:
+
+PastaCompactada<Texto> pastaTextos = new PastaCompactada<Texto>();
+Os métodos da classe são:
+
+adicionar(arquivo: T) - adicionar um arquivo (tipo T) na pasta compactada.
+imprimir() - imprime os arquivos na pasta compactada.
+O programa deve:
+Instanciar duas pastas compactadas: uma para arquivos de texto e outra para arquivos de imagem;
+Ler um número (quantidade de arquivos a serem adicionados);
+Ler uma sequência de tipos de arquivos (cada tipo é uma String que corresponde ao nome da classe do arquivo). Ao ler um tipo, instancie a classe respectiva. Se o arquivo instanciado for uma imagem, ele deve ser adicionado na pasta de imagens e, se for um texto, na pasta de textos.
+Após terminar de adicionar todos os arquivos, o programa deve chamar o método imprimir da pasta de textos e depois da pasta de imagens.
+
+Importante: Submeta apenas o programa principal, que deverá estar na classe pública CompactaArquivos (o programa deve estar no pacote arquivos). O programa não pode realizar impressão de dados. A impressão de dados é permitida apenas com o método imprimir das pastas. Também não é permitido utilizar java.util ou import. Apenas o import java.util.Scanner é permitido.
+
+
+
+Casos de teste
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+
+Entrada:
+
+quantidade de arquivos a serem lidos (int)
+lista de tipos de arquivos (sequência de String)
+o tipo corresponde ao nome da classe que deve ser instanciada, conforme hierarquia de classes apresentada no enunciado
+Saída:
+saída do método imprimir para a pasta compactada com arquivos de texto
+saída do método imprimir para a pasta compactada com arquivos de imagem 
  
+----------------------------------------------------------------------------------------------------
  
+### Fila de arquivos
  
+Considere a seguinte hierarquia de classes de arquivos (essas classes já estão implementadas no sistema de correção automática dentro do pacote arquivos). Essas classes podem ser instanciadas com o construtor sem parâmetros.
+
+![image](https://user-images.githubusercontent.com/57016670/150586133-0cd207a3-46d2-41b5-8793-7726c1dfe806.png)
+Classe Arquivo e subclasses
+
+Descrição das classes no diagrama:
+
+
+Classe Arquivo;
+Classes Texto e Imagem, que são subclasses de Arquivo;
+Classes TextoTXT e TextoDOCX, que são subclasses de Texto;
+Classes ImagemPNG e ImagemJPEG, que são subclasses de Imagem.
+
+
+Escreva a classe FilaArquivos (pacote arquivos) que gerencia uma fila de arquivos e possui um parâmetro de tipo T. Nessa fila, os arquivos são organizados pela ordem que foram enfileirados. Quem é enfileirado primeiro é desenfileirado primeiro também (FIFO - first in first out).
+
+A classe FilaArquivos deve implementar a interface Fila<T>. O código da interface pode ser consultado na aba "Editar" (esta interface não pode ser modificada).
+
+Métodos da classe FilaArquivos:
+
+FilaArquivos(n: int) - construtor que inicializa uma fila de arquivos com capacidade para armazenar n arquivos.
+enfileirar(arquivo: T): boolean - adiciona um arquivo ao final da fila. Se conseguir enfileirar (há espaço na fila), retorne true. Se a fila estiver cheia e o arquivo não for enfileirado, retorne false.
+desenfileirar(): T - retira o primeiro arquivo da fila e retorna. Se a fila estiver vazia, retorne null. O retorno do método é do tipo T.
+Importante: Submeta apenas a classe pública FilaArquivos (pacote arquivos). A classe não pode realizar impressão de dados, utilizar java.util ou import. Apenas import java.util.ArrayList é permitido.
+
+
+
+Casos de teste
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática). O programa de teste instancia duas filas (uma para textos e outra para imagens).
+
+Entrada:
+
+capacidade da fila de textos
+capacidade da fila de imagens
+lista de [fila] [operação] (tipo arquivo)
+Saída:
+
+verificação da classe FilaArquivos
+resultado das operações executadas
  
+----------------------------------------------------------------------------------------------------
  
+### Maior e menor elemento
  
+Escreva a classe Cubo (pacote geometria) que implementa a interface Comparable. Métodos da classe Cubo:
+
+Cubo(lado: double) - construtor da classe Cubo que recebe o comprimento do lado do cubo.
+area(): double - retorna a área do cubo conforme a fórmula a seguir 6×lado2
+compareTo(c: Cubo) - implementação do método compareTo da interface Comparable (mais detalhes de como implementar este método nos slides e na vídeoaula sobre esta interface).
+toString(): String - sobreposição do método toString() de Object. Retorna "cubo de area " + valor da área com uma casa decimal. Pode usar String.format("cubo de area %.1f", area());
+
+
+É possível fazer um método simples para encontrar o maior inteiro em uma lista, ou o menor real em outra, mas e se quisermos esse comportamento generalizado para outros tipo de dados? Utilizamos Generics! Implemente os métodos menorElemento e maiorElemento, que recebem um array de um tipo T (sendo que T deve implementar a interface Comparable) e retornam o menor e maior elemento, respectivamente. Caso seja passado um array vazio, retorne null. Esses métodos estarão na classe Comparacao, conforme descrito a seguir.
+
+Escreva a classe Comparacao (pacote geometria) que possui dois métodos static para retornar o maior e o menor elemento do vetor v:
+
+public static <T extends Comparable<T>> T maiorElemento(T[] v) 
+public static <T extends Comparable<T>> T menorElemento(T[] v) 
+
+
+Importante: O programa principal já existe no sistema de correção automática. Submeta apenas as classes especificadas (pacote geometria). A classes não podem realizar impressão de dados, utilizar java.util ou import. O sistema de correção já possui uma classe chamada Esfera que implementa Comparable. Nesta classe, o método compareTo retorna -1, 0 ou +1 dependendo do caso (para mais detalhes do significado do retorno do método compareTo, veja a vídeoaula sobre a interface Comparable). O código submetido não deve usar esta classe Esfera. A classe Esfera existe no sistema apenas para testar os métodos maiorElemento e menorElemento, que devem funcionar para qualquer vetor com objetos que implementem Comparable.
+
+
+
+Casos de teste
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+
+Entrada:
+
+cubos [quantidade de cubos]
+lados dos cubos
+esferas [quantidade de esferas]
+raios das esferas
+Saída:
+menor e maior cubo
+menor e maior esfera
  
+----------------------------------------------------------------------------------------------------
  
+Semana 10 - Padrões de projeto de software
  
+----------------------------------------------------------------------------------------------------
  
+### Jogo da velha
  
+O funcionário de uma empresa escreveu um programa para o Jogo da Velha, mas gostaria de adicionar algumas estratégias de jogo automáticas. Para isso, outro funcionário sugeriu utilizar o padrão de projeto Strategy, de forma que a classe com o tabuleiro utilize um algoritmo por meio de uma interface que pode ser implementada de diversas formas diferentes. Cada implementação representaria uma estratégia de jogo.
+
+Um tabuleiro é representado por uma matriz de char conforme a seguir:
+
+![image](https://user-images.githubusercontent.com/57016670/150587512-e2adb4f7-264f-4bb4-8be3-38732097f012.png)
+Tabuleiro - jogo da velha.
+
+Duas estratégias que devem ser implementadas são: Estratégia A e Estratégia B (há também uma Estratégia C que já está implementada no sistema de correção automática). As estratégias seguem a ideia de percorrer a matriz e retornam como próxima jogada a primeira célula que encontram livre. O percurso das estratégias A e B é apresentado a seguir:
+
+![image](https://user-images.githubusercontent.com/57016670/150587558-60e651d9-9bcf-432b-85e6-7cd5b4902223.png)
+Estratégias A e B para o jogo da velha.
+
+
+
+A classe Tabuleiro e a interface EstrategiaJogo já estão implementadas no sistema de correção automática (o código pode ser consultado na aba Editar).
+
+Classe Tabuleiro:
+
+public Tabuleiro() - construtor da classe Tabuleiro. Inicializa todas as posições do tabuleiro com o caractere ponto: '.'
+public char[][] getTabuleiro() - retorna uma cópia dos dados do tabuleiro (matriz 3x3)
+public char getJogadorVencedor() - returna o jogador vencedor: 'X' ou 'O'. Se não existir vencedor, retorna ponto '.'. Caso seja empate, retorna hífen '-'.
+public void jogar(char jogador, int linha, int coluna) - recebe o jogador (pode ser 'X' ou 'O') e joga na posição informada. O método também imprime o tabuleiro depois de realizar a jogada.
+Interface EstrategiaJogo:
+
+int[] getProximaJogada(char[][] dadosTabuleiro, char jogador) - a implementação deve retornar as coordenadas da próxima jogada. O retorno é um vetor de duas posições, em que a posição 0 representa a linha e a posição 1 a coluna.
+
+
+Tarefa
+Escreva as classes TabuleiroEstrategia, EstrategiaA e EstrategiaB conforme descrito a seguir (todas as classes devem estar no pacote jogo):
+
+[acesso public] Classe TabuleiroEstrategia (estende a classe Tabuleiro)
+
+public void setStrategyJogador1(EstrategiaJogo jogador1) - armazena uma referência para a implementação de EstrategiaJogo para o jogador 1.
+public void setStrategyJogador2(EstrategiaJogo jogador2) - armazena uma referência para a implementação de EstrategiaJogo para o jogador 2.
+public void jogarPartida() - executa uma partida de jogo da velha completa. A cada jogada, o método getProximaJogada da estratégia correspondente é chamado e ele retorna as coordenadas para a próxima jogada. Ao receber as coordenadas, deve ser chamado o método jogar (herdado da classe Tabuleiro) passando as coordenadas e o jogador ('X' ou 'O'). O método jogarPartida deve intercalar jogadas do jogador 1 e do jogador 2 até o jogo terminar. Para saber se o jogo terminou, use o método getJogadorVencedor (herdado da classe Tabuleiro). Considere que sempre o jogador 1 começa e que ele utiliza 'X', portanto, o jogador 2 utiliza 'O'.
+[acesso package] Classe EstrategiaA (implementa a interface EstrategiaJogo)
+
+public int[] getProximaJogada(char[][] dadosTabuleiro, char jogador) - retorna as coordenadas da próxima jogada seguindo a estratégia A.
+[acesso package] Classe EstrategiaB (implementa a interface EstrategiaJogo)
+
+public int[] getProximaJogada(char[][] dadosTabuleiro, char jogador) - retorna as coordenadas da próxima jogada seguindo a estratégia B.
+
+
+Importante: O programa principal já existe no sistema de correção automática. Submeta apenas as classes especificadas (pacote jogo): TabuleiroEstrategia, EstrategiaA e EstrategiaB.
+
+A classes submetidas não podem realizar impressão de dados, java.util ou utilizar import (observação: a única forma de impressão permitida é por meio do método jogar da classe Tabuleiro, que imprime o tabuleiro a cada jogada realizada).
+A classe Tabuleiro e a interface EstrategiaJogo já estão prontos (não altere o código desses arquivos).
+O sistema de correção também possui uma estratégia já implementada (a EstrategiaC) que é usada apenas para testar o código submetido. Não é necessário conhecer o funcionamento da estratégia C para realizar este exercício. Ao utilizar o padrão de projeto Strategy, a classe TabuleiroEstrategia deve funcionar para qualquer implementação da interface EstrategiaJogo.
+
+
+Casos de teste
+
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+
+Entrada:
+
+estratégia para o jogador 1 ('X')
+estratégia para o jogador 2 ('O')
+Saída:
+
+verificação das classes
+comandos executados e saídas obtidas
  
+----------------------------------------------------------------------------------------------------
  
+## Bonus
  
+----------------------------------------------------------------------------------------------------
  
+### Parte 1 - Lista de exemplos
  
- 
+Nesta primeira parte do exercício, deve ser implementada uma lista de exemplos. A lista de exemplos neste exercício é um conjunto de dados formado por uma tabela. Cada linha da tabela é um exemplo.
+
+A figura a seguir mostra uma lista de exemplos:
+
+Lista de exemplos
+
+Nessa tabela, cada linha é um exemplo. Os atributos a1, a2 e a3 serão chamados de atributos de entrada e o último atributo (última coluna) será chamado de rótulo da classe. Neste exercício, todos os atributos de entrada são do tipo double e o rótulo da classe será representado por um número inteiro.
+
+Esses dados da lista de exemplos serão usados em [Bonus] Parte 2 - Algoritmo de classificação para que um algoritmo possa predizer o rótulo da classe ao receber novos valores dos atributos de entrada (dados de teste).
+
+
+
+Ordenação pela distância
+Conforme será descrito mais a frente, uma funcionalidade que deverá ser implementada neste exercício é a ordenação dos exemplos pela distância com relação a um determinado conjunto de valores de atributos de entrada.
+
+No caso deste exercício, a distância utilizada será a distância Euclidiana, que é calculada de acordo com a fórmula a seguir:
+
+∑i=1n(xi−yi)2−−−−−−−−−−√
+
+Cálculo da distância Euclidiana entre x=[1,2,1] e y=[3,0,9]
+
+(1−3)2+(2−0)2+(1−9)2−−−−−−−−−−−−−−−−−−−−−−−√=4+4+64−−−−−−−−√=8,49
+
+No caso da lista de exemplos, é possível calcular a distância de cada exemplo na tabela com relação um determinado conjunto de valores de atributos de entrada (o cálculo da distância considera apenas os atributos de entrada, no caso a1, a2 e a3). A tabela a seguir, mostra a distância entre cada exemplo na lista e os valores [5, 7, 1]:
+
+Lista de exemplos e distâncias
+
+A partir das distâncias, os exemplos podem ser ordenados pela distância (ordem crescente), conforme apresentado a seguir:
+
+Lista de exemplos ordenada pela distância
+
+
+
+Classes a serem implementadas
+Duas classes devem ser implementadas nesta parte 1 do exercício: Exemplo e ListaExemplos (as duas classes devem estar no pacote classificacao). A seguir, são apresentados os métodos necessários em cada uma das classes.
+
+[acesso package] Classe Exemplo
+
+public Exemplo(double[] atributosEntrada, int rotuloClasse) - construtor que inicializa o exemplo com os valores dos atributos de entrada e o rótulo da classe.
+public double[] getAtributosEntrada() - retorna os valores dos atributos de entrada.
+public int getRotuloClasse() - retorna o valor do rótulo da classe.
+[acesso public] Classe ListaExemplos
+
+public ListaExemplos(int maxQtd) - construtor que recebe como parâmetro a quantidade máxima (maxQtd) de exemplos que a lista pode possuir.
+public void adicionarExemplo(Exemplo exemplo) - adiciona um exemplo ao final da lista de exemplos.
+public void ordenarPelaDistancia(double[] atributosEntrada) - ordena os exemplos da lista em ordem crescente considerando a distância Euclidiana de cada exemplo com relação aos valores de atributos de entrada passados como parâmetro para o método. Uma explicação mais detalhada sobre como essa ordenação deve ser realizada é apresentada neste enunciado na seção Ordenação pela distância.
+public int getQtdExemplos() - retorna a quantidade de exemplos na lista.
+public Exemplo[] getExemplos() - retorna todos os exemplos armazenados na lista.
+public Exemplo[] getPrimeirosExemplos(int n) - retorna os primeiros n exemplos na lista.
+public Exemplo[] getUltimosExemplos(int n) - retorna os últimos n exemplos na lista.
+
+
+Observação: Não é permitido o uso de funções de ordenação prontas (por exemplo, sort). Implemente um algoritmo de ordenação. Também não use o termo "sort" em nenhuma parte do código.
+
+
+
+Importante: Submeta apenas as classes Exemplo e ListaExemplos descritas no enunciado (todas as classes devem estar no pacote classificacao). As classes submetidas não podem realizar impressão de dados, utilizar import e java.util.
+
+
+
+Casos de teste
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+
+Entrada
+Sequência de operações no formato:
+instanciarListaExemplos [qtdMax]
+lista [índice lista] adicionarExemplo [qtd_atributos_entrada] (valores dos atributos de entrada) [rótulo da classe]
+lista [índice lista] ordenarPelaDistancia [qtd_atributos_entrada] (valores dos atributos de entrada) [rótulo da classe]
+lista [índice lista] getExemplos
+lista [índice lista] getPrimeirosExemplos [n]
+lista [índice lista] getUltimosExemplos [n]
+Saída
+Operações executadas e saídas obtidas
  
  
  
