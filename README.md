@@ -4,17 +4,17 @@ Repositório com os exercícios que fiz ao longo da disciplina de POO
 
 # Enunciados
 
-<ul>
-<li>[Semana 3](##semana-3---construtores-sobrecargas)</li>
-<li>[Semana 4](##semana-4---herança-polimorfismo)</li>
-<li>[Semana 5](##semana-5---interfaces-polimorfismo)</li>
-<li>[Semana 6](##semana-6---construtores-cópia-de-objetos-final)</li>
-<li>[Semana 7](##semana-7---estruturas-lineares-no-contexto-de-orientação-a-objetos)</li>
-<li>[Semana 8](##semana-8---tratamento-de-exceções)</li>
-<li>[Semana 9](##semana-9---generics)</li>
-<li>[Semana 10](#semana-10---padrões-de-projeto-de-software)</li>
-<li>[Bonus](#bonus)</li>
-</ul>
+
+- [Semana 3](##semana-3---construtores-sobrecargas)
+- [Semana 4](##semana-4---herança-polimorfismo)
+- [Semana 5](##semana-5---interfaces-polimorfismo)
+- [Semana 6](##semana-6---construtores-cópia-de-objetos-final)
+- [Semana 7](##semana-7---estruturas-lineares-no-contexto-de-orientação-a-objetos)
+- [Semana 8](##semana-8---tratamento-de-exceções)
+- [Semana 9](##semana-9---generics)
+- [Semana 10](#semana-10---padrões-de-projeto-de-software)
+- [Bonus](#bonus)
+
 
 ----------------------------------------------------------------------------------------------------
 
@@ -1240,7 +1240,7 @@ menor e maior esfera
  
 ----------------------------------------------------------------------------------------------------
  
-Semana 10 - Padrões de projeto de software
+## Semana 10 - Padrões de projeto de software
  
 ----------------------------------------------------------------------------------------------------
  
