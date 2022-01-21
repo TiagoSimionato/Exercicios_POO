@@ -1315,12 +1315,13 @@ comandos executados e saídas obtidas
  
 ----------------------------------------------------------------------------------------------------
  
-### Parte 1 - Lista de exemplos
+### [Bonus] Parte 1 - Lista de exemplos
  
 Nesta primeira parte do exercício, deve ser implementada uma lista de exemplos. A lista de exemplos neste exercício é um conjunto de dados formado por uma tabela. Cada linha da tabela é um exemplo.
 
 A figura a seguir mostra uma lista de exemplos:
 
+![image](https://user-images.githubusercontent.com/57016670/150592012-7e2dcf2c-3723-4bf5-afba-71d0c90bd649.png)
 Lista de exemplos
 
 Nessa tabela, cada linha é um exemplo. Os atributos a1, a2 e a3 serão chamados de atributos de entrada e o último atributo (última coluna) será chamado de rótulo da classe. Neste exercício, todos os atributos de entrada são do tipo double e o rótulo da classe será representado por um número inteiro.
@@ -1342,10 +1343,12 @@ Cálculo da distância Euclidiana entre x=[1,2,1] e y=[3,0,9]
 
 No caso da lista de exemplos, é possível calcular a distância de cada exemplo na tabela com relação um determinado conjunto de valores de atributos de entrada (o cálculo da distância considera apenas os atributos de entrada, no caso a1, a2 e a3). A tabela a seguir, mostra a distância entre cada exemplo na lista e os valores [5, 7, 1]:
 
+![image](https://user-images.githubusercontent.com/57016670/150592061-8505d104-f3c5-4cde-b893-e1eb9967581e.png)
 Lista de exemplos e distâncias
 
 A partir das distâncias, os exemplos podem ser ordenados pela distância (ordem crescente), conforme apresentado a seguir:
 
+![image](https://user-images.githubusercontent.com/57016670/150592235-090b1322-923d-447d-8ded-25428566cff7.png)
 Lista de exemplos ordenada pela distância
 
 
@@ -1391,10 +1394,72 @@ lista [índice lista] getUltimosExemplos [n]
 Saída
 Operações executadas e saídas obtidas
  
+----------------------------------------------------------------------------------------------------
  
+### [Bonus] Parte 2 - Algoritmo de classificação
  
- 
- 
- 
+Na área de Aprendizado de Máquina (Faceli et al., 2021), um algoritmo que pode ser usado para classificação e regressão é o k-Vizinhos mais próximos (k-Nearest Neighbours - k-NN). Neste exercício, deverá ser implemetada uma versão para classificação, conforme descrito a seguir.
+
+k-NN
+Antes de ser utilizado para classificação, o algoritmo precisa de dados de treinamento. Os dados de treinamento serão representados por uma lista de exemplos, como exemplificado a seguir. Cada exemplo possui atributos de entrada e um rótulo de classe correspondente.
+
+![image](https://user-images.githubusercontent.com/57016670/150592621-2e564460-061d-4b66-880f-e134fa9074bf.png)
+Lista de exemplos de treinamento
+
+A partir dos dados de treinamento, o algoritmo realizará predições dos rótulos de classe para novos dados. Para os valores de atributos de entrada [5, 7, 1], um algoritmo de classificação poderia predizer o rótulo de classe 2. Essa predição será o resultado da classificação realizada pelo algoritmo.
+
+No k-NN, a predição do rótulo de classe para novos valores de atributos de entrada (dados de teste) é realizada da seguinte forma:
+Calcule a distância entre os valores dos atributos de entrada passados (dados de teste) e cada um dos exemplos nos dados de treinamento (utilize distância Euclidiana);
+Determine quais são os k exemplos mais próximos (ou seja, os que tem as k menores distâncias). O valor de k é definido previamente.
+O rótulo de classe predito (resultado da classificação) será aquele mais frequente dentre os rótulos dos k exemplos mais próximos.
+
+
+Demonstração de classificação considerando os dados de treinamento da tabela anterior e os valores de atributos de entrada [5, 7, 1]
+
+1. Distância entre os valores dos atributos de entrada de teste [5, 7, 1] e cada um dos exemplos de treinamento (o cálculo da distância considera apenas os atributos de entrada, no caso a1, a2 e a3):
+
+![image](https://user-images.githubusercontent.com/57016670/150592649-a3b9598c-117b-4d84-8df8-ac7a105d21dc.png)
+Lista de exemplos com distâncias
+
+2. Para k=3, os k mais próximos são destacados a seguir:
+
+![image](https://user-images.githubusercontent.com/57016670/150592679-2a3fa323-cb53-4aca-bade-8fdbbe69af60.png)
+Lista de exemplos ordenada pela distância e com destaque aos 3 mais próximos.
+
+3. Entre os k=3 exemplos mais próximos, o rótulo de classe mais frequente é o 2 . Portanto, o resultado da predição é 2.
+
+
+Classes a serem implementadas
+Devem ser implementadas as classes KNN e ExcecaoDadosInvalidos. Além disso, também submeta o código das classes Exemplo e ListaExemplos. Essas duas classes foram descritas em [Bonus] Parte 1 - Lista de exemplos e são necessárias para a implementação da classe KNN.
+
+[acesso package] Classe ExcecaoDadosInvalidos (subclasse de Exception - não é RuntimeException): esta exceção é lançada pelo método predizer quando a quantidade de atributos de entrada é inválida (mais detalhes na descrição do método predizer da classe KNN).
+public int getQtdAtributosTreinamento() - retorna a quantidade de atributos de entrada nos dados de treinamento. Esse valor deve ser sido armazenado dentro da instância da exceção no momento em que a exceção é criada.
+public int getQtdAtributosPredizer() - retorna a quantidade de atributos de entrada do parâmetro passado ao método predizer. Esse valor deve ser sido armazenado dentro da instância da exceção no momento em que a exceção é criada.
+
+[acesso public] Classe KNN:
+public KNN(int k) - construtor que recebe k e armazena na instância da classe.
+public void setDadosTreinamento(ListaExemplos lista) - armazena uma lista de exemplos como conjunto de dados de treinamento.
+public int predizer(double[] atributosEntrada) - recebe valores dos atributos de entrada (dados de teste) e retorna o rótulo de classe predito pelo algoritmo k-NN, conforme procedimento descrito no início do enunciado deste exercício. Esse método predizer deve lançar exceção em algumas situações:
+Chamar o método predizer sem possuir dados de treinamento: deve ser lançada uma exceção do tipo Exception com o texto "Dados de treinamento - nao inicializado" (observe que não há acento na mensagem). Use o seguinte construtor, já existente na classe Exception: Exception(String message).
+Chamar o método predizer com um exemplo que possui quantidade de atributos diferente da quantidade de atributos dos exemplos de treinamento: deve ser lançada uma exceção do tipo ExcecaoDadosInvalidos informado a quantidade de atributos de entrada nos exemplos de treinamento e nos dados passados para o método predizer.
+
+
+Importante: O programa principal já existe no sistema de correção automática. Submeta apenas as classes especificadas (todas devem estar no pacote classificacao). A classes não podem realizar impressão de dados, java.util ou utilizar import. Os códigos submetidos não podem utilizar métodos prontos para ordenação (por exemplo, sort). Para ordenação, implemente um método e inclua na submissão. Também não use o termo "sort" em nenhuma parte do código.
+
+
+
+Casos de teste
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+
+Entrada
+Sequência de operações no formato:
+instanciarListaExemplos [qtdMax]
+lista [índice lista] adicionarExemplo [qtd_atributos_entrada] (valores dos atributos de entrada) [rótulo da classe]
+instanciarKNN [k]
+knn setDadosTreinamento [índice da lista de exemplos]
+knn predizer [qtd_atributos_entrada] (valores dos atributos de entrada)
+Saída
+Verificação das classes
+Operações executadas e saídas obtidas
  
  
