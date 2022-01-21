@@ -5,7 +5,7 @@ Repositório com os exercícios que fiz ao longo da disciplina de POO
 # Enunciados
 
 [Semana 3](#semana3)
-[Semana 4](#semana4)
+[Semana 4](#paralelogramo)
 [Semana 5](#semana5)
 [Semana 6](#semana6)
 [Semana 7](#semana7)
