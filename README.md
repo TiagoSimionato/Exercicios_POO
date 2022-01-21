@@ -11,9 +11,9 @@ Repositório com os exercícios que fiz ao longo da disciplina de POO
 [Semana 7](#semana7)
 [Semana 8](#semana8)
 [Semana 9](#semana9)
-[Semana 10](#semana10)
-[Bonus](#bonus)
-<a href="#semana10">Heading IDs</a>
+[Semana 10](##semana10)
+[Bonus](##bonus)
+<a href="##semana10">Heading IDs</a>
 
 ----------------------------------------------------------------------------------------------------
 
