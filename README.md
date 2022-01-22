@@ -1601,130 +1601,136 @@ Saída
  
 ### Pasta Compactada
  
-Considere a seguinte hierarquia de classes de arquivos (essas classes já estão implementadas no sistema de correção automática dentro do pacote arquivos). Essas classes podem ser instanciadas com o construtor sem parâmetros.
+Considere a seguinte hierarquia de classes de arquivos (essas classes já estão implementadas no sistema de correção automática dentro do pacote arquivos). *Essas classes podem ser instanciadas com o construtor sem parâmetros.*
 
 ![image](https://user-images.githubusercontent.com/57016670/150585966-4377128d-56dd-4650-929c-2117202c116b.png)
-Classe Arquivo e subclasses
 
-Descrição das classes no diagrama:
+**Descrição das classes no diagrama:**
 
-Classe Arquivo;
-Classes Texto e Imagem, que são subclasses de Arquivo;
-Classes TextoTXT e TextoDOCX, que são subclasses de Texto;
-Classes ImagemPNG e ImagemJPEG, que são subclasses de Imagem.
+- Classe Arquivo;
+- Classes Texto e Imagem, que são subclasses de Arquivo;
+- Classes TextoTXT e TextoDOCX, que são subclasses de Texto;
+- Classes ImagemPNG e ImagemJPEG, que são subclasses de Imagem.  
 
 
-Escreva um programa (pacote arquivos) para guardar arquivos de texto e de imagem em pastas compactadas. O programa deverá guardar duas pastas compactadas, uma para guardar apenas arquivos de texto e outra para guardar apenas arquivos de imagem.
+**Escreva um programa (pacote arquivos)** para guardar arquivos de texto e de imagem em pastas compactadas. O programa deverá guardar *duas pastas compactadas*, uma para guardar apenas arquivos de texto e outra para guardar apenas arquivos de imagem.  
 
-Uma pasta compactada é representada por uma instância da classe PastaCompactada<T>. A classe PastaCompactada<T> já está implementada e possui um parâmetro de tipo T. Portanto, para instancar uma pasta compactada que armazenará apenas arquivos de Texto:
+Uma pasta compactada é representada por uma instância da classe PastaCompactada\<T\>. A classe PastaCompactada\<T\> já está implementada e possui um parâmetro de tipo T. Portanto, para instancar uma pasta compactada que armazenará apenas arquivos de Texto:  
 
-PastaCompactada<Texto> pastaTextos = new PastaCompactada<Texto>();
-Os métodos da classe são:
+``PastaCompactada<Texto> pastaTextos = new PastaCompactada<Texto>();``  
 
-adicionar(arquivo: T) - adicionar um arquivo (tipo T) na pasta compactada.
-imprimir() - imprime os arquivos na pasta compactada.
+ Os métodos da classe são:  
+
+- **adicionar(arquivo: T)** - adicionar um arquivo (tipo T) na pasta compactada.
+- **imprimir()** - imprime os arquivos na pasta compactada.  
+
 O programa deve:
-Instanciar duas pastas compactadas: uma para arquivos de texto e outra para arquivos de imagem;
-Ler um número (quantidade de arquivos a serem adicionados);
-Ler uma sequência de tipos de arquivos (cada tipo é uma String que corresponde ao nome da classe do arquivo). Ao ler um tipo, instancie a classe respectiva. Se o arquivo instanciado for uma imagem, ele deve ser adicionado na pasta de imagens e, se for um texto, na pasta de textos.
-Após terminar de adicionar todos os arquivos, o programa deve chamar o método imprimir da pasta de textos e depois da pasta de imagens.
+1. Instanciar duas pastas compactadas: uma para arquivos de texto e outra para arquivos de imagem;
+2. Ler um número (quantidade de arquivos a serem adicionados);
+3. Ler uma sequência de tipos de arquivos (cada tipo é uma String que corresponde ao nome da classe do arquivo). Ao ler um tipo, instancie a classe respectiva. Se o arquivo instanciado for uma imagem, ele deve ser adicionado na pasta de imagens e, se for um texto, na pasta de textos.
+4. Após terminar de adicionar todos os arquivos, o programa deve chamar o método imprimir da pasta de textos e depois da pasta de imagens.
 
-Importante: Submeta apenas o programa principal, que deverá estar na classe pública CompactaArquivos (o programa deve estar no pacote arquivos). O programa não pode realizar impressão de dados. A impressão de dados é permitida apenas com o método imprimir das pastas. Também não é permitido utilizar java.util ou import. Apenas o import java.util.Scanner é permitido.
+**Importante**: Submeta apenas *o programa principal, que deverá estar na classe pública **CompactaArquivos*** (o programa deve estar no **pacote arquivos**). O programa não pode realizar impressão de dados. A impressão de dados é permitida apenas com o método imprimir das pastas. Também não é permitido utilizar java.util ou import. Apenas o import java.util.Scanner é permitido.
 
 
 
-Casos de teste
-Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+#### Casos de teste
 
-Entrada:
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):  
 
-quantidade de arquivos a serem lidos (int)
-lista de tipos de arquivos (sequência de String)
-o tipo corresponde ao nome da classe que deve ser instanciada, conforme hierarquia de classes apresentada no enunciado
-Saída:
-saída do método imprimir para a pasta compactada com arquivos de texto
-saída do método imprimir para a pasta compactada com arquivos de imagem 
+Entrada:  
+
+- quantidade de arquivos a serem lidos (int)
+- lista de tipos de arquivos (sequência de String)
+    - o tipo corresponde ao nome da classe que deve ser instanciada, conforme hierarquia de classes apresentada no enunciado  
+
+Saída:  
+- saída do método imprimir para a pasta compactada com arquivos de texto
+- saída do método imprimir para a pasta compactada com arquivos de imagem 
  
 ----------------------------------------------------------------------------------------------------
  
 ### Fila de arquivos
  
-Considere a seguinte hierarquia de classes de arquivos (essas classes já estão implementadas no sistema de correção automática dentro do pacote arquivos). Essas classes podem ser instanciadas com o construtor sem parâmetros.
+Considere a seguinte hierarquia de classes de arquivos (essas classes já estão implementadas no sistema de correção automática dentro do pacote arquivos). *Essas classes podem ser instanciadas com o construtor sem parâmetros.*
 
 ![image](https://user-images.githubusercontent.com/57016670/150586133-0cd207a3-46d2-41b5-8793-7726c1dfe806.png)
-Classe Arquivo e subclasses
 
-Descrição das classes no diagrama:
-
-
-Classe Arquivo;
-Classes Texto e Imagem, que são subclasses de Arquivo;
-Classes TextoTXT e TextoDOCX, que são subclasses de Texto;
-Classes ImagemPNG e ImagemJPEG, que são subclasses de Imagem.
+**Descrição das classes no diagrama:**
 
 
-Escreva a classe FilaArquivos (pacote arquivos) que gerencia uma fila de arquivos e possui um parâmetro de tipo T. Nessa fila, os arquivos são organizados pela ordem que foram enfileirados. Quem é enfileirado primeiro é desenfileirado primeiro também (FIFO - first in first out).
-
-A classe FilaArquivos deve implementar a interface Fila<T>. O código da interface pode ser consultado na aba "Editar" (esta interface não pode ser modificada).
-
-Métodos da classe FilaArquivos:
-
-FilaArquivos(n: int) - construtor que inicializa uma fila de arquivos com capacidade para armazenar n arquivos.
-enfileirar(arquivo: T): boolean - adiciona um arquivo ao final da fila. Se conseguir enfileirar (há espaço na fila), retorne true. Se a fila estiver cheia e o arquivo não for enfileirado, retorne false.
-desenfileirar(): T - retira o primeiro arquivo da fila e retorna. Se a fila estiver vazia, retorne null. O retorno do método é do tipo T.
-Importante: Submeta apenas a classe pública FilaArquivos (pacote arquivos). A classe não pode realizar impressão de dados, utilizar java.util ou import. Apenas import java.util.ArrayList é permitido.
+- Classe Arquivo;
+- Classes Texto e Imagem, que são subclasses de Arquivo;
+- Classes TextoTXT e TextoDOCX, que são subclasses de Texto;
+- Classes ImagemPNG e ImagemJPEG, que são subclasses de Imagem.  
 
 
+**Escreva a classe FilaArquivos (pacote arquivos)** que gerencia uma fila de arquivos e possui um parâmetro de tipo T. Nessa fila, os arquivos são organizados pela ordem que foram enfileirados. Quem é enfileirado primeiro é desenfileirado primeiro também (FIFO - *first in first out*).
 
-Casos de teste
-Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática). O programa de teste instancia duas filas (uma para textos e outra para imagens).
+A classe FilaArquivos **deve implementar a interface Fila\<T\>**. O código da interface pode ser consultado na aba "Editar" (esta interface não pode ser modificada).  
 
-Entrada:
+Métodos da classe FilaArquivos:  
 
-capacidade da fila de textos
-capacidade da fila de imagens
-lista de [fila] [operação] (tipo arquivo)
-Saída:
+- **FilaArquivos(n: int)** construtor que inicializa uma fila de arquivos com capacidade para armazenar n arquivos.
+- **enfileirar**(arquivo: T)boolean - adiciona um arquivo ao final da fila. Se conseguir enfileirar (há espaço na fila), retorne true. Se a fila estiver cheia e o arquivo não for enfileirado, retorne false.
+- **desenfileirar**(): T - retira o primeiro arquivo da fila e retorna. Se a fila estiver vazia, retorne null. O retorno do método é do tipo T.
+**Importante**: Submeta apenas *a classe pública **FilaArquivos*** (**pacote arquivos**). A classe não pode realizar impressão de dados, utilizar java.util ou import. Apenas import java.util.ArrayList é permitido.  
 
-verificação da classe FilaArquivos
-resultado das operações executadas
+
+
+#### Casos de teste
+
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática). O programa de teste instancia duas filas (uma para textos e outra para imagens).  
+
+Entrada:  
+
+- capacidade da fila de textos
+- capacidade da fila de imagens
+- lista de \[fila\] \[operação\] \(tipo arquivo\)  
+
+Saída:  
+
+- verificação da classe FilaArquivos
+- resultado das operações executadas
  
 ----------------------------------------------------------------------------------------------------
  
 ### Maior e menor elemento
  
-Escreva a classe Cubo (pacote geometria) que implementa a interface Comparable. Métodos da classe Cubo:
+**Escreva a classe Cubo (pacote geometria)** que implementa a interface Comparable. Métodos da classe Cubo:  
 
-Cubo(lado: double) - construtor da classe Cubo que recebe o comprimento do lado do cubo.
-area(): double - retorna a área do cubo conforme a fórmula a seguir 6×lado2
-compareTo(c: Cubo) - implementação do método compareTo da interface Comparable (mais detalhes de como implementar este método nos slides e na vídeoaula sobre esta interface).
-toString(): String - sobreposição do método toString() de Object. Retorna "cubo de area " + valor da área com uma casa decimal. Pode usar String.format("cubo de area %.1f", area());
-
-
-É possível fazer um método simples para encontrar o maior inteiro em uma lista, ou o menor real em outra, mas e se quisermos esse comportamento generalizado para outros tipo de dados? Utilizamos Generics! Implemente os métodos menorElemento e maiorElemento, que recebem um array de um tipo T (sendo que T deve implementar a interface Comparable) e retornam o menor e maior elemento, respectivamente. Caso seja passado um array vazio, retorne null. Esses métodos estarão na classe Comparacao, conforme descrito a seguir.
-
-Escreva a classe Comparacao (pacote geometria) que possui dois métodos static para retornar o maior e o menor elemento do vetor v:
-
-public static <T extends Comparable<T>> T maiorElemento(T[] v) 
-public static <T extends Comparable<T>> T menorElemento(T[] v) 
+- **Cubo(lado: double)** - construtor da classe Cubo que recebe o comprimento do lado do cubo.
+- **area()**: double - retorna a área do cubo conforme a fórmula a seguir 6×lado2
+- **compareTo(c: Cubo)** - implementação do método compareTo da interface Comparable (***mais detalhes de como implementar este método nos slides e na vídeoaula sobre esta interface***).
+- *toString()*: String - sobreposição do método toString() de Object. Retorna "cubo de area " + valor da área com uma casa decimal. Pode usar String.format("cubo de area %.1f", area());  
 
 
-Importante: O programa principal já existe no sistema de correção automática. Submeta apenas as classes especificadas (pacote geometria). A classes não podem realizar impressão de dados, utilizar java.util ou import. O sistema de correção já possui uma classe chamada Esfera que implementa Comparable. Nesta classe, o método compareTo retorna -1, 0 ou +1 dependendo do caso (para mais detalhes do significado do retorno do método compareTo, veja a vídeoaula sobre a interface Comparable). O código submetido não deve usar esta classe Esfera. A classe Esfera existe no sistema apenas para testar os métodos maiorElemento e menorElemento, que devem funcionar para qualquer vetor com objetos que implementem Comparable.
+É possível fazer um método simples para encontrar o maior inteiro em uma lista, ou o menor real em outra, mas e se quisermos esse comportamento generalizado para outros tipo de dados? Utilizamos Generics! Implemente os métodos menorElemento e maiorElemento, que recebem um array de um tipo T (sendo que T deve implementar a interface Comparable) e retornam o menor e maior elemento, respectivamente. Caso seja passado um array vazio, retorne null. Esses métodos estarão na classe Comparacao, conforme descrito a seguir.  
+
+**Escreva a classe Comparacao (pacote geometria)** que possui dois métodos static para retornar o maior e o menor elemento do vetor v:  
+
+``public static <T extends Comparable<T>> T maiorElemento(T[] v) 
+public static <T extends Comparable<T>> T menorElemento(T[] v)``  
+
+
+**Importante**: O programa principal já existe no sistema de correção automática. Submeta apenas as classes especificadas (**pacote geometria**). A classes não podem realizar impressão de dados, utilizar java.util ou import. O sistema de correção já possui uma classe chamada Esfera que implementa Comparable. Nesta classe, o método compareTo retorna -1, 0 ou +1 dependendo do caso (*para mais detalhes do significado do retorno do método compareTo, veja a vídeoaula sobre a interface Comparable*). O código submetido não deve usar esta classe Esfera. A classe Esfera existe no sistema apenas para testar os métodos maiorElemento e menorElemento, que devem funcionar para qualquer vetor com objetos que implementem Comparable.  
 
 
 
-Casos de teste
-Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+### Casos de teste
 
-Entrada:
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):  
 
-cubos [quantidade de cubos]
-lados dos cubos
-esferas [quantidade de esferas]
-raios das esferas
-Saída:
-menor e maior cubo
-menor e maior esfera
+Entrada:  
+
+- cubos \[quantidade de cubos\]
+- lados dos cubos
+- esferas \[quantidade de esferas\]
+- raios das esferas  
+
+Saída:  
+- menor e maior cubo
+- menor e maior esfera
  
 ----------------------------------------------------------------------------------------------------
  
