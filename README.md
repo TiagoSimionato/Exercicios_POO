@@ -161,6 +161,7 @@ Entrada
 - Comprimento (n)
 - n elementos do primeiro vetor
 - n elementos do segundo vetor  
+
 Saída  
 - SIM/NAO (dependendo se um vetor for o resultado de uma múltiplicação de todos os exemplos do outro por um mesmo valor)
 
@@ -189,6 +190,7 @@ Entrada
 - Valores da matriz (mapa do campo minado)
 - Linha da célula a ser consultada
 - Coluna da célula a ser consultada
+
 Saída  
 - Quantidade de bombas na vizinhança da célula
 
@@ -355,6 +357,7 @@ Entrada:
     - operação 3: desligar lâmpada
     - operação 4: ligar todas as lâmpadas
     - operação 5: desligar todas as lâmpadas  
+
 Saída:  
 
 - métodos executados e saídas obtidas
@@ -447,44 +450,47 @@ if (texto.charAt(0) == 'A') {
 
 Exercício de programação orientada a objetos. Implementação de uma classe que represente um paralelogramo, com sobrecarga de construtor.
 
-Tarefa
-Para esse exercício, queremos uma classe que represente um paralelogramo, figura geométrica de 4 lados onde os lados opostos são paralelos (para este exercício, assuma que todos os ângulo são de 90 graus e, portanto, a figura geométrica poderá ser um retângula ou um quadrado). O construtor deve ser sobrecarregado para receber um único valor (nesse caso, estamos criando um quadrado) ou dois valores (nesse caso, o paralelogramo é um retângulo se os valores forem diferentes).
+#### Tarefa  
 
-Construtores da classe Paralelogramo:
+Para esse exercício, queremos uma classe que represente um paralelogramo, figura geométrica de 4 lados onde os lados opostos são paralelos (para este exercício, assuma que todos os ângulo são de 90 graus e, portanto, a figura geométrica poderá ser um retângula ou um quadrado). O construtor deve ser sobrecarregado para receber um único valor (nesse caso, estamos criando um quadrado) ou dois valores (nesse caso, o paralelogramo é um retângulo se os valores forem diferentes).  
 
-Paralelogramo(ladoA : int)
-Construtor que recebe apenas um valor de lado, indicando que todos os lados são iguais. Neste caso, o paralelogramo criado é um quadrado.
-Paralelogramo(ladoA : int, ladoB : int)
-Construtor que recebe dois valores de lado, cada valor corresponde a um par de lados opostos. Neste caso se os lados forem de tamanhos diferentes, o paralelogramo criado é um retângulo, caso contrário, é um quadrado.
-Métodos da classe Paralelogramo:
+Construtores da classe Paralelogramo:  
 
-getArea() : int
-Calcula e retorna a área do paralelogramo.
-getTipo() : String
-Retorna uma String no formato "Paralelogramo <tipo>", onde "<tipo>" é "quadrado" caso todos os lados sejam de mesmo tamanho, ou "retangulo" caso cada par de lados opostos tenha tamanhos diferentes.
-Crie a classe Paralelogramo em um arquivo contendo apenas a implementação da classe (nomeie o arquivo como <Paralelogramo.java> para a submissão).
+- **Paralelogramo(ladoA : int)**
+    - Construtor que recebe apenas um valor de lado, indicando que todos os lados são iguais. Neste caso, o paralelogramo criado é um quadrado.
+- **Paralelogramo(ladoA : int, ladoB : int)**
+    - Construtor que recebe dois valores de lado, cada valor corresponde a um par de lados opostos. Neste caso se os lados forem de tamanhos diferentes, o paralelogramo criado é um retângulo, caso contrário, é um quadrado.   
+Métodos da classe Paralelogramo:  
 
-Importante: O programa principal já existe no sistema de correção automática. Submeta apenas a classe Paralelogramo. A classe Paralelogramo não pode realizar impressão de dados ou utilizar import.
+- **getArea() : int**
+    - Calcula e retorna a área do paralelogramo.
+- **getTipo() : String**
+    - Retorna uma String no formato "Paralelogramo <**tipo**>", onde "<**tipo**>" é "quadrado" caso todos os lados sejam de mesmo tamanho, ou "retangulo" caso cada par de lados opostos tenha tamanhos diferentes.   
 
-Casos de teste
+Crie a classe **Paralelogramo** em um arquivo contendo apenas a implementação da classe (nomeie o arquivo como <**Paralelogramo.java**> para a submissão).
+
+**Importante**: O programa principal já existe no sistema de correção automática. Submeta apenas a classe Paralelogramo. A classe Paralelogramo não pode realizar impressão de dados ou utilizar import.
+
+#### Casos de teste
+
 Sua solução deve implementar apenas a classe, sem realizar leitura de entrada.
 
-Sua classe passará por vários casos de teste onde a primeira linha consiste no número n de valores que será passado para o seu construtor. Em seguida, n valores serão lidos e um paralelogramo será criado. Finalmente, o retorno dos métodos getArea e getTipo serão impressos para verificação do resultado.
+Sua classe passará por vários casos de teste onde a primeira linha consiste no número n de valores que será passado para o seu construtor. Em seguida, n valores serão lidos e um paralelogramo será criado. Finalmente, o retorno dos métodos **getArea** e **getTipo** serão impressos para verificação do resultado.
 
-Exemplo de entrada e saída esperada de um caso teste
-Entrada	Saída
-1
-10
-100
-Paralelogramo quadrado
-2
-10
-12
-120
-Paralelogramo retangulo
+#### Exemplo de entrada e saída esperada de um caso teste
+ 
+| **Entrada**	| **Saída**               |
+|-------------|-------------------------|
+| 1           | 100                     |
+| 10          | Paralelogramo quadrado  |
+| 2           | 120                     |
+| 10          | Paralelogramo retangulo |
+| 12          |                         |
 
-Main
-Exemplo de uso da classe
+### Main
+
+#### Exemplo de uso da classe
+ 
     Paralelogramo quadrado  = new Paralelogramo(10);
     Paralelogramo retangulo = new Paralelogramo(10, 20);
     Paralelogramo oQueSou   = new Paralelogramo(15, 15);
@@ -496,7 +502,7 @@ Exemplo de uso da classe
     System.out.println(retangulo.getTipo());
 
     // imprime "Paralelogramo quadrado"
-    System.out.println(oQueSou.getTipo());
+    System.out.println(oQueSou.getTipo()); 
  
 ----------------------------------------------------------------------------------------------------
  
@@ -504,49 +510,51 @@ Exemplo de uso da classe
  
  Este exercício é uma versão adaptada e estendida do exercício Conta Corrente com Construtores de Guilherme Aldeia (2020).
 
-Escreva uma classe com o nome ContaCorrente para representar uma conta corrente conforme especificado a seguir.
+Escreva uma classe com o nome **ContaCorrente** para representar uma conta corrente conforme especificado a seguir.
 
-Construtores da classe ContaCorrente (todos os construtores são públicos):
+Construtores da classe **ContaCorrente** (todos os construtores são públicos):
 
-ContaCorrente(String nome)
-construtor que armazena o nome do titular da conta e inicializa o saldo com zero.
-ContaCorrente(String nome, double saldo)
-construtor que armazena o nome do titular da conta e inicializa o saldo com o valor especificado no parâmetro.
-Métodos da classe ContaCorrente:
+- **ContaCorrente(String nome)**
+    - construtor que armazena o nome do titular da conta e inicializa o saldo com zero.
+- **ContaCorrente(String nome, double saldo)**
+    - construtor que armazena o nome do titular da conta e inicializa o saldo com o valor especificado no parâmetro.   
+Métodos da classe ContaCorrente:  
 
-public double getSaldo()
-retorna o saldo da conta.
-public String getTitular()
-retorna uma string com o nome do titular da conta.
-public boolean depositar(double valor)
-recebe um valor para ser depositado, verifica se é um valor positivo válido. Apenas valores positivos podem ser depositados. O método deve retornar true ou false, indicando se o depósito ocorreu (true) ou não (false).
-public boolean sacar(double valor)
-recebe um valor para ser retirado da conta. Apenas valores positivos podem ser retirados. Além disso, a operação só ocorre se a conta tiver saldo disponível. O método não realiza retirada parcial, portanto, é necessário que a conta tenha saldo disponível suficiente para que a operação seja realizada. O método deve retornar true ou false, indicando se a retirada ocorreu (true) ou não (false).
-public static boolean transferir(ContaCorrente de, ContaCorrente para, double valor)
-Realiza a transferência do valor informado da primeira conta (de) para a segunda (para), se isso for possível. Se não for possível, o saldo de nenhuma das contas deve ser alterado. O método deve retornar true ou false, indicando se a transferência ocorreu (true) ou não (false).
-public static int getQuantidadeContas()
-Retorna a quantidade de instâncias de ContaCorrente (dica: use um campo static para realizar a contagem de instâncias)
+- **public double getSaldo()**
+    - retorna o saldo da conta.
+- **public String getTitular()**
+    - retorna uma string com o nome do titular da conta.
+- **public boolean depositar(double valor)**
+    - recebe um valor para ser depositado, verifica se é um valor positivo válido. Apenas valores positivos podem ser depositados. O método deve retornar true ou false, indicando se o depósito ocorreu (true) ou não (false).
+- **public boolean sacar(double valor)**
+    - recebe um valor para ser retirado da conta. Apenas valores positivos podem ser retirados. Além disso, a operação só ocorre se a conta tiver saldo disponível. O método não realiza retirada parcial, portanto, é necessário que a conta tenha saldo disponível suficiente para que a operação seja realizada. O método deve retornar true ou false, indicando se a retirada ocorreu (true) ou não (false).
+- ***public static boolean transferir(ContaCorrente de, ContaCorrente para, double valor)***
+    - Realiza a transferência do valor informado da primeira conta (de) para a segunda (para), se isso for possível. Se não for possível, o saldo de nenhuma das contas deve ser alterado. O método deve retornar true ou false, indicando se a transferência ocorreu (true) ou não (false).
+- ***public static int getQuantidadeContas()***
+    - Retorna a quantidade de instâncias de ContaCorrente (dica: use um campo static para realizar a contagem de instâncias)
 
 
-Importante: O programa principal já existe no sistema de correção automática. Submeta apenas a classe ContaCorrente. A classe ContaCorrente não pode realizar impressão de dados, utilizar import, java.util e System.out.
+**Importante**: O programa principal já existe no sistema de correção automática. *Submeta apenas a classe **ContaCorrente**.* A classe ContaCorrente não pode realizar impressão de dados, utilizar import, java.util e System.out.
 
-Casos de teste
+#### Casos de teste
+
 Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
 
-Entrada:
+Entrada:  
 
-nomes das operações executadas (a cada conta instanciada, o programa de correção armazena em um vetor):
-instanciar_nome [nome_titular]
-instanciar_nome_saldo [nome_titular] [saldo]
-getTitular [índice da conta]
-getSaldo [índice da conta]
-depositar [índice da conta] [valor]
-sacar [índice da conta] [valor]
-transferir [índice da conta 1] [índice da conta 2] [valor]
-getQuantidadeContas
-Saída:
+- nomes das operações executadas (a cada conta instanciada, o programa de correção armazena em um vetor):
+    - instanciar_nome [nome_titular]
+    - instanciar_nome_saldo [nome_titular] [saldo]
+    - getTitular [índice da conta]
+    - getSaldo [índice da conta]
+    - depositar [índice da conta] [valor]
+    - sacar [índice da conta] [valor]
+    - transferir [índice da conta 1] [índice da conta 2] [valor]
+    - getQuantidadeContas  
 
-resultados obtidos após executar cada uma das operações
+Saída:  
+
+- resultados obtidos após executar cada uma das operações
  
 ----------------------------------------------------------------------------------------------------
  
@@ -554,102 +562,105 @@ resultados obtidos após executar cada uma das operações
  
  Este exercício é uma versão adaptada e estendida do exercício Classe Fração com Construtores de Guilherme Aldeia (2020).
 
-Escreva uma classe com o nome Fracao (a classe deve estar no pacote matematica) para representar um número racional conforme especificado a seguir (numerador e denominador são números inteiros, mas o denominador não pode ser zero).
+Escreva uma classe com o nome **Fracao** (a classe deve estar no ***pacote matematica***) para representar um número racional conforme especificado a seguir (numerador e denominador são números inteiros, mas o denominador não pode ser zero).
 
-Construtores da classe Fracao (todos os construtores são públicos):
+Construtores da classe **Fracao** (todos os construtores são públicos):
 
-Fracao()
-construtor sem parâmetros, inicializa o numerador e o denominador como 1.
-Fracao(int numerador)
-construtor que recebe apenas o valor do numerador (o denominador é definido como 1).
-Fracao(int numerador, int denominador)
-construtor que recebe os valores do numerador e do denominador, simplifica a fração e então armazena o valores de numerador e denominador após a simplificação.
-Métodos da classe Fracao:
+- **Fracao()**
+    - construtor sem parâmetros, inicializa o numerador e o denominador como 1.
+- **Fracao(int numerador)**
+    - construtor que recebe apenas o valor do numerador (o denominador é definido como 1).
+- **Fracao(int numerador, int denominador)**
+    - construtor que recebe os valores do numerador e do denominador, *simplifica a fração* e então armazena o valores de numerador e denominador após a simplificação.  
+Métodos da classe **Fracao**:  
 
-public String getRepresentacao()
-retorna uma String com a fração no formato "numerador/denominador".
-public Fracao somar(Fracao f2)
-retorna uma nova instância de Fracao, que é resultado da soma da instância atual (this) com a fração f2.
-public static Fracao somar(Fracao f1, Fracao f2)
-recebe duas frações e retorna uma nova instância de Fracao correspondendo à soma das frações;
-public static Fracao somar(Fracao[] fracoes)
-recebe um vetor de frações e retona uma nova instância de Fracao com o resultado do somatório de todas as frações no vetor.
-public static Fracao multiplicar(Fracao f1, Fracao f2)
-recebe duas frações e retorna uma nova instância de Fracao correspondendo ao produto das frações.
+- **public String getRepresentacao()**
+    - retorna uma String com a fração no formato "numerador/denominador".
+- **public Fracao somar(Fracao f2)**
+    - retorna uma nova instância de Fracao, que é resultado da soma da instância atual (this) com a fração f2.
+- ***public static Fracao somar(Fracao f1, Fracao f2)***
+    - recebe duas frações e retorna uma nova instância de Fracao correspondendo à soma das frações;
+- ***public static Fracao somar(Fracao[] fracoes)***
+    - recebe um vetor de frações e retona uma nova instância de Fracao com o resultado do somatório de todas as frações no vetor.
+- ***public static Fracao multiplicar(Fracao f1, Fracao f2)***
+    - recebe duas frações e retorna uma nova instância de Fracao correspondendo ao produto das frações.
 
 
-Importante: O programa principal já existe no sistema de correção automática. Submeta apenas a classe Fracao (que deve estar no pacote matematica). A classe Fracao não pode realizar impressão de dados, utilizar import, java.util e System.out.
+**Importante**: O programa principal já existe no sistema de correção automática. *Submeta apenas a classe **Fracao (que deve estar no pacote matematica).*** A classe Fracao não pode realizar impressão de dados, utilizar import, java.util e System.out.  
 
-Casos de teste
-Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+#### Casos de teste
 
-Entrada:
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):  
 
-nomes das operações executadas (a cada conta instanciada, o programa de correção armazena em um vetor)
-instanciar
-instanciar_numerador [numerador]
-instanciar_numerador_denominador [numerador] [denominador]
-getRepresentacao [índice da fração]
-somar_this [índice da fração 1] [índice da fração 2]
-somar_static_fracoes [índice da fração 1] [índice da fração 2]
-somar_static_vetor [frações instanciadas no vetor]
-multiplicar [índice da fração 1] [índice da fração 2]
-Saída:
+Entrada:  
 
-resultados obtidos após executar cada uma das operações
+- nomes das operações executadas (a cada conta instanciada, o programa de correção armazena em um vetor)
+    - instanciar
+    - instanciar_numerador \[numerador\]
+    - instanciar_numerador_denominador \[numerador\] \[denominador\]
+    - getRepresentacao \[índice da fração\]
+    - somar_this \[índice da fração 1\] \[índice da fração 2\]
+    - somar_static_fracoes \[índice da fração 1\] \[índice da fração 2\]
+    - somar_static_vetor \[frações instanciadas no vetor\]
+    - multiplicar \[índice da fração 1\] \[índice da fração 2\]
+
+Saída:  
+
+- resultados obtidos após executar cada uma das operações
  
 ----------------------------------------------------------------------------------------------------
  
  ### Caça palavras
  
- O professor ABC desenvolveu parte de um programa de caça palavras, mas falta implementar duas classes: Tabuleiro e PalavraEncontrada. Neste exercício, você irá escrever essas duas classes para serem utilizadas pelo programa desenvolvido pelo professor ABC. As duas classes devem estar no pacote palavras.
+ O professor ABC desenvolveu parte de um programa de caça palavras, mas falta implementar duas classes: Tabuleiro e PalavraEncontrada. Neste exercício, você irá escrever essas duas classes para serem utilizadas pelo programa desenvolvido pelo professor ABC. As duas classes devem estar no pacote **palavras**.
 
 O tabuleiro lido tem o seguinte formato (os valores indicam os índices das linhas e colunas):
 
 
+![image](https://user-images.githubusercontent.com/57016670/150621111-b66c2072-3d0e-46a1-85c5-70bc578914f1.png)
 
 
+A classe **Tabuleiro** (pacote palavras) deve possuir dois *construtores*:
 
-A classe Tabuleiro (pacote palavras) deve possuir dois construtores:
+- public Tabuleiro(char[][] matriz): instancia o tabuleiro com uma matriz de caracteres.
+- public Tabuleiro(int qtdLinhas, int qtdColunas, char[] dadosMatriz): instancia o tabuleiro com os caracteres passados no parâmetro dadosMatriz; Neste caso, o vetor dadosMatriz possui todas as linhas da matriz do tabuleiro concatenadas em um mesmo vetor. Por essa razão, também são passadas duas informações adicionais: quantidade de linhas e quantidade de colunas. Assim é possível separar os dados recebidos no vetor.   
+A classe **Tabuleiro** (pacote palavras) deve possuir os métodos a seguir:   
 
-public Tabuleiro(char[][] matriz): instancia o tabuleiro com uma matriz de caracteres.
-public Tabuleiro(int qtdLinhas, int qtdColunas, char[] dadosMatriz): instancia o tabuleiro com os caracteres passados no parâmetro dadosMatriz; Neste caso, o vetor dadosMatriz possui todas as linhas da matriz do tabuleiro concatenadas em um mesmo vetor. Por essa razão, também são passadas duas informações adicionais: quantidade de linhas e quantidade de colunas. Assim é possível separar os dados recebidos no vetor.
-A classe Tabuleiro (pacote palavras) deve possuir os métodos a seguir:
-
-public PalavraEncontrada buscar(String palavra): recebe uma palavra e retorna uma instância da classe PalavraEncontrada caso a palavra passada no parâmetro seja encontrada na instância atual de Tabuleiro. Se a palavra não for encontrada, retorne null.
-public PalavraEncontrada[] buscar(String[] palavras): recebe um vetor de palavras e retorna uma instância da classe PalavraEncontrada para cada palavra encontrada na instância atual de Tabuleiro. As instâncias da classe PalavraEncontrada são retornadas como um vetor dessa classe. O vetor retornado deve ser do tamanho da quantidade de palavras encontradas (e não deve possuir elementos null). Por exemplo, se o método receber um vetor com 5 palavras para buscar, mas apenas 3 forem encontradas, o vetor de retorno possuirá tamanho 3. Caso nenhuma palavra seja encontrada, retorne null.
+- public PalavraEncontrada buscar(String palavra): recebe uma palavra e retorna uma instância da classe PalavraEncontrada caso a palavra passada no parâmetro seja encontrada na instância atual de Tabuleiro. Se a palavra não for encontrada, retorne null.
+- public PalavraEncontrada[] buscar(String[] palavras): recebe um vetor de palavras e retorna uma instância da classe PalavraEncontrada para cada palavra encontrada na instância atual de Tabuleiro. As instâncias da classe PalavraEncontrada são retornadas como um vetor dessa classe. O vetor retornado deve ser do tamanho da quantidade de palavras encontradas (e não deve possuir elementos null). Por exemplo, se o método receber um vetor com 5 palavras para buscar, mas apenas 3 forem encontradas, o vetor de retorno possuirá tamanho 3. Caso nenhuma palavra seja encontrada, retorne null.  
 
 
-A classe PalavraEncontrada (pacote palavras) deve possuir os métodos a seguir:
+A classe **PalavraEncontrada** (pacote palavras) deve possuir os métodos a seguir:   
 
-public String getPalavra(): retorna a palavra armazenada na instância da classe PalavraEncontrada
-public int[] getPosicao(): retorna a posição com um vetor de tamanho 2. No índice 0 está a linha e no índice 1 a coluna. A posição refere-se à localização do primeiro caractere da palavra no tabuleiro.
-public int getTipo(): retorna o tipo de acordo com a forma que a palavra foi encontrada no tabuleiro:
-tipo=1: linha
-tipo=2: coluna
-tipo=3: diagonal
-public int getDirecao(): retorna o código da direção. Este código pode ser 1 ou 2 para os tipos linha e coluna. Para o tipo diagonal, o código pode ser 1, 2, 3 ou 4. A figura a seguir ilustra os valores possíveis para o código de direção.
+- **public String getPalavra()**: retorna a palavra armazenada na instância da classe PalavraEncontrada
+- **public int[] getPosicao()**: retorna a posição com um vetor de tamanho 2. No índice 0 está a linha e no índice 1 a coluna. *A posição refere-se à localização do primeiro caractere da palavra no tabuleiro.*
+- **public int getTipo()**: retorna o tipo de acordo com a forma que a palavra foi encontrada no tabuleiro:
+    - tipo=1: linha
+    - tipo=2: coluna
+    - tipo=3: diagonal
+- **public int getDirecao()**: retorna o código da direção. Este código pode ser 1 ou 2 para os tipos linha e coluna. Para o tipo diagonal, o código pode ser 1, 2, 3 ou 4. A figura a seguir ilustra os valores possíveis para o código de direção.
 
 ![image](https://user-images.githubusercontent.com/57016670/150580809-18eb7e1a-795a-4b25-9dd3-72460e71004d.png)
 
  
-Importante: Submeta apenas o código das classes Tabuleiro e PalavraEncontrada (as duas classes devem estar no pacote palavras, portanto lembre-se de incluir package palavras na primeira linha de cada classe). As classes submetidas não podem realizar impressão na tela e utilizar import, java.util e System.out. O programa (com main) já existe no sistema de correção. O programa recebe entradas no seguinte formato:
+*Importante*: Submeta apenas o código das classes Tabuleiro e PalavraEncontrada (*as duas classes devem estar no **pacote palavras, portanto lembre-se de incluir package palavras na primeira linha de cada classe**). As classes submetidas não podem realizar impressão na tela e utilizar import, java.util e System.out.* O programa (com main) já existe no sistema de correção. O programa recebe entradas no seguinte formato:  
 
-5 6 (quantidade de linhas e de colunas do tabuleiro)
-Y T X W B I
-R E V P D F
-O S T H F I
-C T K M F P
-G E P W V L
-vetor (tipo de construtor usado para instanciar a classe Tabuleiro: matriz ou vetor)
-2 (quantidade de palavras a buscar)
-TESTE (palavra 1)
-PALAVRA (palavra 2)
-A saída para esta entrada é:
+5 6 (quantidade de linhas e de colunas do tabuleiro)  
+Y T X W B I  
+R E V P D F  
+O S T H F I  
+C T K M F P  
+G E P W V L  
+vetor (tipo de construtor usado para instanciar a classe Tabuleiro: matriz ou vetor)  
+2 (quantidade de palavras a buscar)  
+TESTE (palavra 1)  
+PALAVRA (palavra 2)  
 
-buscar palavras: 2
-palavras encontradas: 1
-TESTE(L=0 C=1: Coluna-1)
+A saída para esta entrada é:  
+
+buscar palavras: 2  
+palavras encontradas: 1  
+TESTE(L=0 C=1: Coluna-1)  
  
 ----------------------------------------------------------------------------------------------------
  
