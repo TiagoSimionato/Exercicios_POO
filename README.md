@@ -6,6 +6,8 @@ Repositório com os exercícios que fiz ao longo da disciplina de POO
 
 # Enunciados
 
+- [Semana 1]()
+- [Semana 2]()
 - [Semana 3](#semana-3---construtores-sobrecargas)
     - [Paralelogramo](#paralelogramo)
     - [Conta Corrente (contrutor 2)](#contacorrente-construtor-2)
@@ -46,11 +48,11 @@ Repositório com os exercícios que fiz ao longo da disciplina de POO
 
 ----------------------------------------------------------------------------------------------------
 
-## Semana 1
+## Semana 1 - Introdução ao Java
 
 ----------------------------------------------------------------------------------------------------
 
-## Potências de 2
+### Potências de 2
 
 Leia uma sequência de n inteiros e mostre quantos são potências de 2.
 
@@ -81,7 +83,7 @@ Saída:
 
 ----------------------------------------------------------------------------------------------------
 
-## Estatísticas
+### Estatísticas
 
 Faça um programa que fique lendo números do usuário até que seja digitado um valor negativo. Quando isso ocorrer, o programa deve imprimir os seguintes valores sobre a sequência de valores lidos (ignore o valor negativo lido, ele não faz parte da sequência de valores válidos):
 
@@ -107,7 +109,7 @@ Saída:
 
 ----------------------------------------------------------------------------------------------------
 
-## Pirâmide
+### Pirâmide
 
 Faça um programa que leia um valor inteiro N que representa a quantidade de linhas para impressão de uma pirâmide de números 1. A figura impressa é composta apenas pelos caracteres hífen (-) e o número 1. Por exemplo, uma pirâmide com altura 5 deve ser representada da seguinte forma:
 
@@ -136,7 +138,7 @@ Saída:
 
 ----------------------------------------------------------------------------------------------------
 
-## Comparação de vetores
+### Comparação de vetores
 
 Escreva um programa que leia dois vetores (A e B) de mesmo comprimento n. Para isso, o programa deve ler um valor inteiro n (comprimento), ler o n valores de um dos vetores e depois os n valores do outro vetor. Ao final, o programa deve imprimir "SIM" se um vetor for o resultado de uma multiplicação de todos os elementos do outro pelo mesmo valor, ou "NAO" caso contrário **(não há til ~ em NAO)**.
 
@@ -153,7 +155,7 @@ Saída
 
 ----------------------------------------------------------------------------------------------------
 
-## Campo minado
+### Campo minado
 
 Escreva um programa que leia uma matriz que contém o mapa de um campo minado. Nesta matriz, o valor 1 indica que há uma bomba na célula e o valor 0 indica que não há uma bomba na célula. A matriz é composta apenas pelos valores 0 e 1. Exemplo de mapa do campo minado seguindo esse formato:
 
@@ -181,7 +183,7 @@ Saída
 
 ----------------------------------------------------------------------------------------------------
 
-## Testes de discos voadores
+### Testes de discos voadores
 
 Os dados de discos voadores são organizados em uma matriz, em que cada linha é um disco voador e cada coluna é o resultado do teste. Um grupo de alienígenas gostaria de analisar esses dados, mas precisa de um programa para ordenar esses dados.
 
@@ -228,9 +230,201 @@ Coloque uma quebra de linha extra entre a impressão das duas matrizes ordenadas
 
 ----------------------------------------------------------------------------------------------------
 
-## Semana 2
+## Semana 2 - Classes, objetos, encapsulamento, UML
 
 ----------------------------------------------------------------------------------------------------
+
+### Menu de Operações 2
+
+Implemente a classe **Operacoes**, que possui os seguintes métodos:  
+
+- void setA(int a): guarda valor de A
+- void setB(int b): guarda valor de B
+- void setC(int c): guarda valor de C
+- int soma2(): retorna o valor de A + B
+- int soma3(): retorna o valor de A + B + C
+- int multiplica(): retorna o valor de A * B
+- int getMin(): dentre todas as operações executadas até o momento na instância atual, retorna o menor resultado obtido
+- int getMax(): dentre todas as operações executadas até o momento na instância atual, retorna o maior resultado obtido  
+
+**Importante**: Submeta apenas o código da classe **Operacoes**. *A classe Operacoes não pode realizar impressão na tela e utilizar import*. O programa (com main) já existe no sistema de correção. O programa fica lendo códigos de operação conforme descrito a seguir:
+
+- 1: soma dois números (a + b)
+- 2: soma três números (a + b + c)
+- 3: multiplicação de dois números (a * b)
+- 4: valor mínimo
+- 5: valor máximo
+- 99: instancia a classe Operacoes novamente
+- 0: imprime valor mínimo e máximo e depois encerra o programa
+
+----------------------------------------------------------------------------------------------------
+
+### Porta
+
+Exercício de programação orientada a objetos. Implementação de uma classe Porta, utilizando os conceitos de **modificadores de acesso e métodos modificadores.**
+
+#### Tarefa  
+Para esse exercício, queremos uma classe que represente uma porta da vida real, que pode ser aberta ou fechada. O objeto poderá ser instanciado diversas vezes.   
+
+Cada instância de porta pode ser aberta ou fechada, e deve ter um atributo interno que mantenha registro do estado da porta. O utilizador deve ser capaz de atribuir um nome para a porta, obter o nome da porta, obter o estado da porta (se está aberta ou não), abrir a porta e fechar a porta.
+
+|Porta                                                                                                                            |
+|---------------------------------------------------------------------------------------------------------------------------------|
+|- aberta : boolean = true <br> - nome : String = "Porta sem nome"                                                                |
+|+ setNome(nome: String) <br> <br> + getNome() : String <br> + estaAberta() : boolean <br> + abrir() : int <br> + fechar() : int  |
+
+Crie a classe pública **Porta** em um arquivo contendo apenas a implementação da classe (nomeie o arquivo como <**Porta.java**> para a submissão).
+
+**Importante**: O programa principal já existe no sistema de correção automática. Submeta apenas a classe Porta. A classe Porta não pode realizar impressão de dados ou utilizar import.
+
+O estado da porta e o seu nome não podem ser modificados diretamente, portanto devem ser variáveis privadas. Espera-se o seguinte comportamento das funções:
+
+- **setNome(nome : String)**
+    - Recebe um novo nome para a porta e salva internamente
+- **getNome(): String**
+    - Retorna o nome da porta
+- **estaAberta(): boolean**
+    - retorna verdadeiro caso a porta esteja aberta, e retorna falso caso esteja fechada
+- **abrir(): int**
+    - altera o estado da porta se estiver fechada, retornando 0 para indicar sucesso. Caso a porta esteja aberta, não altera o estado e retorna 1
+- **fechar(): int**
+    - análogo ao método anterior, sendo bem sucedida se a porta estiver aberta
+
+#### Exemplo de uso da classe
+
+    Porta portaSala = new Porta();
+    portaSala.setNome("Porta da sala");
+
+    Porta portaCozinha = new Porta();
+    portaCozinha.setNome("Porta da cozinha");
+
+    if (portaSala.estaAberta()) {
+        portaCozinha.fechar();
+    }
+
+----------------------------------------------------------------------------------------------------
+
+### Lâmpada Inteligente
+
+Uma empresa está desenvolvendo um aplicativo para gerenciar lâmpadas inteligentes. Cada lâmpada inteligente é representada por uma instância da classe **LampadaInteligente** (*essa classe já está implementada no sistema de correção automática e encontra-se no **pacote dispositivos***). Para este aplicativo, é necessário implementar a classe **GerenciadorLampadas**, que gerencia instâncias de lâmpadas inteligentes (ou seja, instâncias da classe LampadaInteligente).
+
+
+
+A classe **LampadaInteligente** *(que está no **pacote dispositivos**)* possui os seguintes métodos:  
+
+- public void ligar(): liga a lâmpada;
+- public void desligar(): desliga a lâmpada;
+- public boolean getEstado(): retorna o estado da lâmpada (true=ligada, false=desligada).
+
+
+A seguir são apresentados os métodos necessários na classe **GerenciadorLampadas**. Esses métodos podem ser usados pelo sistema de correção e por isso devem seguir a especificação apresentada no enunciado. Você pode incluir atributos e métodos auxiliares adicionais que considerar necessários durante a implementação.  
+
+Classe **GerenciadorLampadas**:  
+
+- public void adicionarLampada(): instancia uma nova lâmpada inteligente e adiciona a um vetor de LampadaInteligente. Considere que o tamanho máximo desse vetor é 10.
+- public void ligarLampada(int indiceLampada): liga a lâmpada instanciada no índice informado. Antes de ligar a lâmpada, o método deve verificar se a lâmpada já está ligada. Se já estiver ligada, a lâmpada não deve ser ligada novamente. É possível saber se a lâmpada está ligada por meio do método getEstado() presente na classe LampadaInteligente.
+- public void desligarLampada(int indiceLampada): desliga a lâmpada instanciada no índice informado. Antes de desligar a lâmpada, o método deve verificar se a lâmpada já está desligada. Se já estiver desligada, a lâmpada não deve ser desligada novamente. É possível saber se a lâmpada está ligada por meio do método getEstado() presente na classe LampadaInteligente.
+- public void ligarTodasLampadas(): liga todas as lampadas. Lâmpadas já ligadas não devem ser ligadas novamente.
+- public void desligarTodasLampadas(): desliga todas as lampadas. Lâmpadas já desligadas não devem ser desligadas novamente.
+
+
+**Importante**: *Submeta apenas a classe pública **GerenciadorLampadas** descrita no enunciado (a classe deve estar no pacote "sem nome", ou seja, não inclua a linha package no código)*. A classe submetida não pode realizar impressão de dados, utilizar java.util e System.out.
+
+
+
+#### Casos de teste  
+
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+
+Entrada:
+
+- operações no formato: [código operação] (índice lâmpada)
+    - operação 1: adicionar lâmpada
+    - operação 2: ligar lâmpada
+    - operação 3: desligar lâmpada
+    - operação 4: ligar todas as lâmpadas
+    - operação 5: desligar todas as lâmpadas  
+Saída:  
+
+- métodos executados e saídas obtidas
+
+----------------------------------------------------------------------------------------------------
+
+### Pedidos de produtos
+
+Uma empresa precisa de um sistema para gerenciamento de pedidos. Nessa empresa, há alguma restrições para os pedidos:
+
+- Os pedidos podem ter no máximo 5 códigos diferentes de produtos;
+- Um pedido entregue não pode ser cancelado;
+- Um pedido cancelado não pode ser entregue;
+- Novos produtos só podem ser adicionados a pedidos que ainda não tenham sido entregues ou cancelados (e que não tenham atingido o limite de 5 produtos);
+- Um pedido pode ser somado a outro. Por exemplo, o pedido B pode ser somado ao pedido A. Neste caso, todos os produtos do pedido B são incluídos no pedido A. Os códigos de produtos que estão no pedido B e já estavam em A, não são incluídos novamente (não pode ter códigos de produtos duplicados em um pedido). Por exemplo, pedido A = [11, 22, 33] e pedido B = [22, 44, 66]. Ao somar o pedido B em A, o resultado é [11, 22, 33, 44, 66] (o código 22 presente nos dois pedidos não foi duplicado).
+- A soma de pedidos só é permitida se, ao final da soma, o total de produtos diferentes ser no máximo 5 (que é o limite aplicado a qualquer pedido). Não há soma parcial de pedidos. Portanto, se um pedido B não pode ser integralmente somado ao pedido A, nenhuma alteração é realizada no pedido A.
+
+
+Implemente a classe **Pedido**, conforme especificado a seguir. Serão apresentados os métodos necessários na classe Pedido. Esses métodos podem ser usados pelo sistema de correção e por isso devem seguir a especificação apresentada no enunciado. Você pode incluir atributos e métodos auxiliares adicionais que considerar necessários durante a implementação.  
+
+
+Classe **Pedido** (deve ser implementada no **pacote empresa**):  
+
+- public boolean adicionarProduto(int codProduto): adiciona um produto com o código especificado conforme regras da empresa. O retorno do método é true se o produto for adicionado e false caso contrário.
+- public int[] entregar(): realiza a entrega de um pedido conforme regras da empresa. A empresa apenas realiza entregas de pedidos que não foram cancelados e que possuem pelo menos um produto. Caso a entrega seja realizada pela empresa, o retorno do método é um vetor com os códigos dos produtos do pedido. O tamanho do vetor deverá ser igual à quantidade de produtos no pedido. Dessa forma, o vetor não possuirá posições vazias. Caso a entrega não seja realizada, o método retorna null.
+- public boolean cancelar(): cancela um pedido de acordo com as regras da empresa. O retorno do método é true se o pedido for cancelado e false caso contrário.
+- public boolean somarPedido(Pedido p): soma o pedido no parâmetro p ao pedido da instância atual conforme regras da empresa. Se a soma não for possível, os pedidos não devem ser modificados. O retorno da função é true se a soma for realizada, ou false caso contrário.  
+
+
+
+
+**Importante**: *Submeta apenas a classe pública **Pedido** descrita no enunciado (a classe deve estar no **pacote "empresa"**)*. A classe submetida não pode utilizar import, realizar impressão de dados, utilizar java.util e System.out.
+
+
+
+#### Casos de teste  
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+
+Entrada:
+
+- operações no formato: [índice pedido] [código operação] (código do produto ou índice de outro pedido)
+    - operação 1: adicionar produto
+    - operação 2: entregar
+    - operação 3: cancelar
+    - operação 4: somar pedido
+
+
+Saída:  
+
+- métodos executados e saídas obtidas
+
+----------------------------------------------------------------------------------------------------
+
+### Operações com Strings
+
+Implemente a classe OperacoesStrings, que possui os seguintes métodos:
+
+- void setTexto(String texto): guarda uma String na instância
+- String getTexto(): retorna a String armazenada na instância
+- int contaPalavras(): retorna a quantidade de palavras na String armazenada por setTexto()
+- double comprimentoMedioPalavras(): retorna o comprimento médio das palavras na String armazenada por setTexto()
+- String maiorPalavra(): retorna uma String com a maior palavra na String armazenada por setTexto()
+- int comprimentoMaiorPalavra(): retorna o comprimento da maior palavra na String armazenada por setTexto()  
+**Observação**: a String de entrada pode ter mais de um espaço separando as palavras, além de possuir sinais de pontuação. Por exemplo: **"Esta      eh uma    frase de  teste.   "**
+
+**Dica**: para acessar um caractere específico em uma instância de String, pode usar o método charAt(). Por exemplo:
+
+``String texto = "ABCD";
+if (texto.charAt(0) == 'A') {
+   System.out.println("Letra A");
+}``
+
+
+
+**Importante**: Submeta apenas o código da classe pública **OperacoesStrings**. *A classe OperacoesStrings não pode realizar impressão na tela, utilizar import e usar funções prontas para separar as palavras (por exemplo, split ou expressão regular).* O programa (com main) já existe no sistema de correção. O programa lê uma String e fica lendo códigos de operação conforme descrito a seguir:
+
+- 1: Conta palavras
+- 2: Comprimento maior palavra
+- 3: Média do comprimento do palavra
+- 4: Maior palavra
+- 0: encerra o programa
 
 ----------------------------------------------------------------------------------------------------
 
