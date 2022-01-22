@@ -670,145 +670,149 @@ TESTE(L=0 C=1: Coluna-1)
  
  ### Vínculo com a Universidade
  
- Nesse exercício, você criará três classes pertencentes ao pacote universidade: Pessoa, Professor e Aluno.
+ Nesse exercício, você criará três classes pertencentes ao **pacote universidade: Pessoa, Professor e Aluno**.  
 
-Classe Pessoa:
+Classe **Pessoa:**  
 
-Construtor sem parâmetros: Pessoa();
-Métodos:
-void setNomeSobrenome(String nome, String sobrenome): recebe duas strings contendo nome e sobrenome, e guarda os valores em atributos na instância da classe.
-String getEmail(): retorna uma string com email no formato "<nome>.<sobrenome>@dominio.generico.com.br". 
-String getVinculo(): retorna uma string com o vínculo da pessoa com a UFABC (nesta classe Pessoa, retorna "Sem vinculo com a UFABC")
-Subclasses Professor e Aluno: estendem a classe Pessoa (herdam a classe Pessoa). Ambas as classes devem possui o construtor sem parâmetros. Essas subclasses devem sobrepor os métodos getEmail() e getVinculo() da classe Pessoa. O email de um professor tem o formato "<nome>.<sobrenome>@ufabc.edu.br", enquanto que o de um aluno tem o formato "<nome>.<sobrenome>@aluno.ufabc.edu.br". O método getVinculo() deve retornar, respectivamente, "Professor da UFABC" e "Aluno da UFABC" nas classes Professor e Aluno.
+- Construtor sem parâmetros: Pessoa();
+- Métodos:
+    - void setNomeSobrenome(String nome, String sobrenome): recebe duas strings contendo nome e sobrenome, e guarda os valores em atributos na instância da classe.
+    - String getEmail(): retorna uma string com email no formato "\<nome\>.\<sobrenome\>@dominio.generico.com.br". 
+    - String getVinculo(): retorna uma string com o vínculo da pessoa com a UFABC (nesta classe Pessoa, retorna "Sem vinculo com a UFABC")  
 
-Submeta apenas as classes Pessoa, Professor e Aluno. As classes devem ser públicas e estar no pacote universidade (incluir package universidade).
+Subclasses **Professor** e **Aluno**: estendem a classe Pessoa (herdam a classe Pessoa). Ambas as classes devem possui o construtor sem parâmetros. *Essas subclasses devem sobrepor os métodos getEmail() e getVinculo() da classe Pessoa*. O email de um professor tem o formato "\<nome\>.\<sobrenome\>@ufabc.edu.br", enquanto que o de um aluno tem o formato "\<nome\>.\<sobrenome\>@aluno.ufabc.edu.br". O método getVinculo() deve retornar, respectivamente, "Professor da UFABC" e "Aluno da UFABC" nas classes Professor e Aluno.
 
-Importante: O programa principal já existe no sistema de correção automática. As classes submetidas não pode realizar impressão de dados ou utilizar import. Todas as classes devem possuir o construtor sem parâmetros, que será usado pelo sistema de correção automática para instanciar as classes.
+**Submeta apenas as classes Pessoa, Professor e Aluno. As classes devem ser públicas e estar no pacote universidade (incluir package universidade).**
 
-Casos de teste
-Formato dos casos de teste (esse é o formato do que aparece ao avaliar o programa no sistema de correção automática; o código submetido não deve realizar leitura de dados ou impressão, isso já é realizado pelo sistema de correção).
+**Importante**: O programa principal já existe no sistema de correção automática. As classes submetidas não pode realizar impressão de dados ou utilizar import. Todas as classes devem possuir o construtor sem parâmetros, que será usado pelo sistema de correção automática para instanciar as classes.
 
-As classes serão instanciadas da seguinte forma pelo sistema de correção (observe que o tipo da variável é sempre Pessoa, isso é possível, pois as classes Aluno e Professor são subclasses de Pessoa):
+#### Casos de teste
+
+Formato dos casos de teste (esse é o formato do que aparece ao avaliar o programa no sistema de correção automática; o código submetido não deve realizar leitura de dados ou impressão, isso já é realizado pelo sistema de correção).  
+
+As classes serão instanciadas da seguinte forma pelo sistema de correção *(observe que o tipo da variável é sempre Pessoa, isso é possível, pois as classes Aluno e Professor são subclasses de Pessoa*):  
 
 Pessoa pe = new Pessoa();
 pe.setNomeSobrenome(nomePessoa, sobrenomePessoa);
 Pessoa al = new Aluno();
 al.setNomeSobrenome(nomeAluno, sobrenomeAluno);
 Pessoa pr = new Professor();
-pr.setNomeSobrenome(nomeProfessor, sobrenomeProfessor);
-Entrada:
+pr.setNomeSobrenome(nomeProfessor, sobrenomeProfessor);  
+
+Entrada:  
 NomePessoa SobrenomePessoa
 NomeAluno SobrenomeAluno
-NomeProfessor SobrenomeProfessor
-Saída:
-Saída dos métodos getEmail() e getVinculo() para uma instância de Pessoa
-Saída dos métodos getEmail() e getVinculo() para uma instância de Aluno
-Saída dos métodos getEmail() e getVinculo() para uma instância de Professor
+NomeProfessor SobrenomeProfessor  
+
+Saída:  
+Saída dos métodos getEmail() e getVinculo() para uma instância de Pessoa  
+Saída dos métodos getEmail() e getVinculo() para uma instância de Aluno  
+Saída dos métodos getEmail() e getVinculo() para uma instância de Professor  
  
 ----------------------------------------------------------------------------------------------------
  
  ### Veículos
  
- Crie uma superclasse Veiculo, que representa um veículo genérico, com o método getTipo que retorna uma String "Veiculo generico modelo <modelo>". Esse método será sobreposto pelas subclasses que herdam de Veiculo: Carro e Motocicleta, que retornam respectivamente "Carro modelo <modelo>" e "Motocicleta modelo <modelo>", onde <modelo> é uma String representando o modelo do veículo, passado no método setModelo. Adicionalmente, a classe Carro deve ter um atributo que guarde o número de portas, enquanto a classe Motocicleta tem um atributo informando se tem ou não um carro lateral acoplado.
+ Crie uma superclasse Veiculo, que representa um veículo genérico, com o método getTipo que retorna uma String "Veiculo generico modelo \<modelo\>". Esse método será sobreposto pelas subclasses que herdam de Veiculo: Carro e Motocicleta, que retornam respectivamente "Carro modelo <modelo>" e "Motocicleta modelo \<modelo\>", onde \<modelo\> é uma String representando o modelo do veículo, passado no método setModelo. Adicionalmente, a classe Carro deve ter um atributo que guarde o número de portas, enquanto a classe Motocicleta tem um atributo informando se tem ou não um carro lateral acoplado.
 
 ![image](https://user-images.githubusercontent.com/57016670/150581157-f9348d5d-37bf-464c-afd8-3e3b4c47ccae.png)
 
 
-Importante: submeta apenas as classes públicas Veiculo, Carro e Motocicleta. Todas as classes devem estar no pacote automotores. As classes não podem realizar impressão de dados ou utilizar import. Todas as classes devem possuir o construtor sem parâmetros, que será usado pelo sistema de correção automática para instanciar as classes.
+*Importante*: submeta apenas as classes públicas Veiculo, Carro e Motocicleta. Todas as classes devem estar no *pacote automotores*. As classes não podem realizar impressão de dados ou utilizar import. Todas as classes devem possuir o construtor sem parâmetros, que será usado pelo sistema de correção automática para instanciar as classes.
 
-Casos de teste (que aparecem ao avaliar o exercício no sistema de correção automática):
+**Casos de teste (que aparecem ao avaliar o exercício no sistema de correção automática)**:  
 
-Entrada:
-Modelo (para classe Veiculo)
-Modelo e número de portas (para classe Carro)
-Modelo e indicação se tem ou não carro lateral (parra classe Motocicleta)
-Saída:
-Resultado de getTipo() para o Veiculo
-Resultado de getTipo() para o Carro
-Resultado de getNumeroPortas() para o Carro
-Resultado de getTipo() para a Motocicleta
-Resultado de getTemCarroLateral para a Motocicleta
+**Entrada:**  
+Modelo (para classe Veiculo)  
+Modelo e número de portas (para classe Carro)  
+Modelo e indicação se tem ou não carro lateral (parra classe Motocicleta)  
+**Saída**:  
+Resultado de getTipo() para o Veiculo  
+Resultado de getTipo() para o Carro  
+Resultado de getNumeroPortas() para o Carro  
+Resultado de getTipo() para a Motocicleta  
+Resultado de getTemCarroLateral para a Motocicleta  
  
 ----------------------------------------------------------------------------------------------------
  
 ### Quadriláteros
  
-Nesse exercício você criará classes pertencentes ao pacote quadrilateros: Quadrilatero, Paralelogramo, Retangulo, Quadrado. Um quadrilátero é qualquer figura geométrica com quatro lados.
+Nesse exercício você criará classes pertencentes ao **pacote quadrilateros: Quadrilatero, Paralelogramo, Retangulo, Quadrado**. Um quadrilátero é qualquer figura geométrica com quatro lados.  
 
-A classe Quadrilatero armazena os tamanhos dos quatro lados da figura. Essa classe deve ter três métodos:
+A classe **Quadrilatero** armazena os tamanhos dos quatro lados da figura. Essa classe deve ter três métodos:  
 
-setLados(ladoAB: double, ladoBC: double, ladoCD: double, ladoDA: double) : armazena os tamanhos dos lados do quadrilátero;
-getPerimetro(): double : retorna o perímetro de um quadrilátero convexo genérico;
-getPropriedades(): String : retorna uma string com propriedades da figura. No caso da superclasse Quadrilátero, o retorno é "Figura de quatro lados.".
-Além da classe Quadrilatero, o pacote quadrilateros deve possuir algumas classes de quadriláteros notáveis, que são casos específicos (subclasses) de um quadrilátero:
+- setLados(ladoAB: double, ladoBC: double, ladoCD: double, ladoDA: double) : armazena os tamanhos dos lados do quadrilátero;
+- getPerimetro(): double : retorna o perímetro de um quadrilátero convexo genérico;
+- getPropriedades(): String : retorna uma string com propriedades da figura. No caso da superclasse Quadrilátero, o retorno é "Figura de quatro lados.".   
+ 
+ 
+Além da classe Quadrilatero, o **pacote quadrilateros** deve possuir algumas classes de quadriláteros notáveis, que são casos específicos (subclasses) de um quadrilátero:
 
-Paralelogramo (subclasse de Quadrilatero), em que os lados opostos são paralelos. Nesse caso, deve possuir uma sobrecarga do método setLados que recebe apenas dois argumentos (dois lados). O método getPropriedades() da superclasse imediata deve ser sobreposto para retornar uma string com as propriedades de um quadrilátero concatenada com "Lados opostos paralelos.". Ou seja, o retorno será "Figura de quatro lados. Lados opostos paralelos.".
-Retangulo (subclasse de Paralelogramo), em que os lados opostos são paralelos e todos os lados possuem um ângulo de 90° entre eles. O método getPropriedades() deve ser sobreposto, retornando a string obtida com getPropriedades() da superclasse Paralelogramo concatenada com "Angulo de 90 graus em todos os vertices.";
-Quadrado (subclasse de Retangulo), em que os lados opostos são paralelos, todos os lados possuem um ângulo de 90° entre eles, e todos os lados possuem o mesmo tamanho. Nesse caso, deve possuir uma sobrecarga do método setLados que recebe apenas um argumento (um lado).O método getPropriedades() deve ser sobreposto para retornar as propriedades da superclasse Retangulo concatenada com "Todos os lados tem o mesmo tamanho.".
-Note que cada classe é um caso cada vez mais específico da superclasse. Ao concatenar, adicione um espaço entre as strings da superclasse e da classe. Por exemplo, o método getPropriedades() de Retangulo deve retornar "Figura de quatro lados. Lados opostos paralelos. Angulo de 90 graus em todos os vertices.".
+- **Paralelogramo** (subclasse de Quadrilatero), em que os lados opostos são paralelos. Nesse caso, deve possuir uma sobrecarga do método setLados que recebe apenas dois argumentos (dois lados). O método getPropriedades() da superclasse imediata deve ser sobreposto para retornar uma string com as propriedades de um quadrilátero concatenada com "Lados opostos paralelos.". Ou seja, o retorno será "Figura de quatro lados. Lados opostos paralelos.".
+- **Retangulo** (subclasse de Paralelogramo), em que os lados opostos são paralelos e todos os lados possuem um ângulo de 90° entre eles. O método getPropriedades() deve ser sobreposto, retornando a string obtida com getPropriedades() da superclasse Paralelogramo concatenada com "Angulo de 90 graus em todos os vertices.";
+- **Quadrado** (subclasse de Retangulo), em que os lados opostos são paralelos, todos os lados possuem um ângulo de 90° entre eles, e todos os lados possuem o mesmo tamanho. Nesse caso, deve possuir uma sobrecarga do método setLados que recebe apenas um argumento (um lado).O método getPropriedades() deve ser sobreposto para retornar as propriedades da superclasse Retangulo concatenada com "Todos os lados tem o mesmo tamanho.".
 
-Importante: Submeta apenas as classes públicas Quadrilatero, Paralelogramo, Retangulo e Quadrado (todas devem estar no pacote quadrilateros). As classes não podem realizar impressão de dados ou utilizar import. Todas as classes devem possuir o construtor sem parâmetros, que será usado pelo sistema de correção automática para instanciar as classes.
+Note que cada classe é um caso cada vez mais específico da superclasse. *Ao concatenar, adicione um espaço entre as strings da superclasse e da classe*. Por exemplo, o método getPropriedades() de Retangulo deve retornar "Figura de quatro lados. Lados opostos paralelos. Angulo de 90 graus em todos os vertices.".  
 
-Casos de teste
-Formato dos casos de teste (que aparecem ao avaliar as classes no sistemas de correção automática):
+**Importante**: Submeta apenas as classes públicas Quadrilatero, Paralelogramo, Retangulo e Quadrado (todas devem estar no **pacote quadrilateros**). As classes não podem realizar impressão de dados ou utilizar import. Todas as classes devem possuir o construtor sem parâmetros, que será usado pelo sistema de correção automática para instanciar as classes.
 
-Entrada
-quantidade de quadriláteros
-lista com tipos dos quadriláterios a serem instanciados (quadrilatero, paralelogramo, retangulo, quadrado) seguido dos tamanhos dos lados
-operações no formato: [índice quadriláterro] [código operação]
-operação 1: getPerimetro()
-operação 2: getPropriedades()
-Saída
-classes instanciadas
-métodos executados e saídas obtidas (o caso de teste indica o índice do quadrilátero envolvido em cada operação)
+#### Casos de teste
+ 
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistemas de correção automática):  
+
+Entrada    
+ 
+- quantidade de quadriláteros
+- lista com tipos dos quadriláterios a serem instanciados (quadrilatero, paralelogramo, retangulo, quadrado) seguido dos tamanhos dos lados
+- operações no formato: [índice quadriláterro] [código operação]
+    - operação 1: getPerimetro()
+    - operação 2: getPropriedades()
+
+Saída  
+- classes instanciadas
+- métodos executados e saídas obtidas (o caso de teste indica o índice do quadrilátero envolvido em cada operação)
  
 ----------------------------------------------------------------------------------------------------
  
 ### Cartões
  
-Nesse exercício, você criará as classes CartaoDebito, CartaoCredito e CartaoLimitado, conforme diagrama a seguir (todas as classes devem estar no pacote cartoes):
+Nesse exercício, você criará as classes CartaoDebito, CartaoCredito e CartaoLimitado, conforme diagrama a seguir (**todas as classes devem estar no pacote cartoes**):
 
 ![image](https://user-images.githubusercontent.com/57016670/150581379-d11b58ed-eb5d-41d2-ab27-a64c78533462.png)
 
-Classe CartaoDebito:
+Classe **CartaoDebito**:
 
-<ul>
-<li>setTitular(titular: String): armazena o nome do titular do cartão</li>
-<li>adicionarSaldoDebito(valor: double): aumenta o saldo para débito. O saldo inicial é zero (quando o cartão é instanciado).</li>
-<li>verificarSaldoDebito(): double : retorna o saldo disponível</li>
-<li>pagarComDebito(valor: double): boolean : caso tenha saldo disponível, debita o valor passado no parâmetro. Quando o débito ocorre, retorna true, caso contrário, retorna false.</li>
-</ul>
+- setTitular(titular: String): armazena o nome do titular do cartão
+- adicionarSaldoDebito(valor: double): aumenta o saldo para débito. *O saldo inicial é zero (quando o cartão é instanciado).*
+- verificarSaldoDebito(): double : retorna o saldo disponível
+- pagarComDebito(valor: double): boolean : caso tenha saldo disponível, debita o valor passado no parâmetro. Quando o débito ocorre, retorna true, caso contrário, retorna false.
+
  
- Classe CartaoCredito:
+ Classe **CartaoCredito**:
 
-<ul>
-<li>pagarComCredito(valor: double): boolean : aumenta o valor devido com crédito e retorna true. Quando a classe é instanciada, o valor devido com crédito é zero.</li>
-<li>quitarCredito(valor: double): quita o valor devido com crédito (seria como pagar a fatura do cartão). Após pagar, o crédito devido é diminuido (dependendo do valor passado no parâmetro do método).</li>
-<li>verificarExtrato(): double : retorna o valor devido com crédito.</li>
-</ul>
+- pagarComCredito(valor: double): boolean : aumenta o valor devido com crédito e retorna true. *Quando a classe é instanciada, o valor devido com crédito é zero.*
+- quitarCredito(valor: double): quita o valor devido com crédito (seria como pagar a fatura do cartão). Após pagar, o crédito devido é diminuido (dependendo do valor passado no parâmetro do método).
+- verificarExtrato(): double : retorna o valor devido com crédito.
   
-Classe CartaoLimitado:
+Classe **CartaoLimitado**:
 
-<ul>
-<li>pagarComCredito(valor: double): boolean : funcionamento similar ao método da classe CartaoCredito, mas agora possui um limite de crédito de $200,00 (para pagamentos com crédito). Portanto, se o valor devido com crédito somado ao valor do pagamento passar do limite, o pagamento não é realizado. Nesse caso, o método retorna false. Caso contrário, retorna true.</li>
-</ul>
+- pagarComCredito(valor: double): boolean : funcionamento similar ao método da classe CartaoCredito, mas agora possui um limite de crédito de $200,00 (para pagamentos com crédito). *Portanto, se o valor devido com crédito somado ao valor do pagamento passar do limite, o pagamento não é realizado*. Nesse caso, o método retorna false. Caso contrário, retorna true.
 
-Importante: Submeta apenas as classes públicas CartaoDebito, CartaoCredito e CartaoLimitado (todas no pacote cartoes). O programa principal já existe no sistema de correção automática. As classes submetidas não podem realizar impressão de dados ou utilizar import. Todas as classes devem possuir o construtor sem parâmetros, que será usado pelo sistema de correção automática para instanciar as classes.
+**Importante**: Submeta apenas as classes públicas CartaoDebito, CartaoCredito e CartaoLimitado (todas no **pacote cartoes**). O programa principal já existe no sistema de correção automática. As classes submetidas não podem realizar impressão de dados ou utilizar import. Todas as classes devem possuir o construtor sem parâmetros, que será usado pelo sistema de correção automática para instanciar as classes.
 
-Casos de teste
+#### Casos de teste
+ 
 Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
 
 Entrada
-<ul>
-<li>quantidade de cartões</li>
-<li>lista com tipos dos cartões a serem instanciados (debito, credito, limitado)</li>
-<li>operações no formato: [índice cartão] [nome operação] (valor)</li>
- </ul>
-Saída
-<ul>
-<li>classes instanciadas</li>
-<li>métodos executados e saídas obtidas (o caso de teste indica o índice do cartão envolvido em cada operação)</li>
-</ul>
+ 
+- quantidade de cartões
+- lista com tipos dos cartões a serem instanciados \(debito, credito, limitado\)
+- operações no formato: \[índice cartão\] \[nome operação\] \(valor\)
+
+Saída  
+- classes instanciadas
+- métodos executados e saídas obtidas \(o caso de teste indica o índice do cartão envolvido em cada operação\)
  
 ----------------------------------------------------------------------------------------------------
  
