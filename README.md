@@ -822,71 +822,77 @@ Saída
  
 ### Cifra de César
  
- Nesse exercício, considere a interface Cifra (que já está implementada no sistema de correção). Essa interface define o mínimo que uma classe de criptografia deve ter: um método para receber uma mensagem e cifrá-la; e um método para receber uma mensagem cifrada e decifrá-la.
+Nesse exercício, considere a interface **Cifra** \(que já está implementada no sistema de correção). Essa interface define o mínimo que uma classe de criptografia deve ter: um método para receber uma mensagem e cifrá-la; e um método para receber uma mensagem cifrada e decifrá-la.
 
-Sua tarefa será escrever a classe CifraCesar (que implementa a interface Cifra), uma forma simples de esconder o conteúdo de mensagens. Considere o alfabeto como uma lista de 26 elementos, cada elemento seria uma letra na ordem alfabética. Aplicar um shift positivo nessa lista implica em mover todos os elementos 1 índice para frente, e o último passa a ser o primeiro (um valor negativo implica em um shift na direção contrária, e n pode ser qualquer valor inteiro).
+Sua tarefa será escrever a classe **CifraCesar \(que implementa a interface Cifra\)**, uma forma simples de esconder o conteúdo de mensagens. Considere o alfabeto como uma lista de 26 elementos, cada elemento seria uma letra na ordem alfabética. Aplicar um shift positivo nessa lista implica em mover todos os elementos 1 índice para frente, e o último passa a ser o primeiro \(um valor negativo implica em um shift na direção contrária, e n pode ser qualquer valor inteiro\).
 
-A cifra de César recebe uma mensagem e substitui cada letra pela letra correspondente à realização de n shifts. Por exemplo, para a mensagem "abc z" e n=2, a mensagem cifrada é "cde b". O processo de decifrar uma mensagem consiste em aplicar a quantidade de shifts na direção contrária (portanto o receptor da mensagem cifrada deve ter conhecimento de n), e então substituir as letras pelo mesmo esquema.
+A cifra de César recebe uma mensagem e substitui cada letra pela letra correspondente à realização de n shifts. Por exemplo, para a mensagem "abc z" e n=2, a mensagem cifrada é "cde b". O processo de decifrar uma mensagem consiste em aplicar a quantidade de shifts na direção contrária \(portanto o receptor da mensagem cifrada deve ter conhecimento de n\), e então substituir as letras pelo mesmo esquema.
 
 ![image](https://user-images.githubusercontent.com/57016670/150582534-c7e1c122-e715-45a3-be58-1e351e09887c.png)
-UML - Interface Cifra e classe CifraCesar
 
-Classe CifraCesar:
+Classe **CifraCesar**:
 
-CifraCesar(nShifts : int): Construtor que recebe o número de shifts que essa classe irá realizar ao cifrar/decifrar uma mensagem. O valor de n é secreto, portanto deve ser um atributo privado;
-cifrar(mensagem: String): String : Recebe uma mensagem (apenas caracteres alfabéticos e espaço, sem nenhum acento) e retorna a mensagem cifrada (usando o valor de n armazenado pelo construtor);
-decifrar(mensagem: String): String : Utiliza seu valor interno de n para decifrar a mensagem.
-Importante: Submeta apenas a classe pública CifraCesar (pacote criptografia). O programa principal e a interface Cifra já existem no sistema de correção automática (a interface Cifra já está no pacote criptografia). A classe submetida não pode realizar impressão de dados ou utilizar import.
+- CifraCesar(nShifts : int): Construtor que recebe o número de shifts que essa classe irá realizar ao cifrar/decifrar uma mensagem. O valor de n é secreto, portanto deve ser um atributo privado;
+- cifrar(mensagem: String): String : Recebe uma mensagem (apenas caracteres alfabéticos e espaço, sem nenhum acento) e retorna a mensagem cifrada (usando o valor de n armazenado pelo construtor);
+- decifrar(mensagem: String): String : Utiliza seu valor interno de n para decifrar a mensagem.  
 
-Casos de teste
+**Importante**: Submeta apenas a classe pública CifraCesar (**pacote criptografia**). O programa principal e a interface Cifra já existem no sistema de correção automática (a interface Cifra já está no **pacote criptografia**). A classe submetida não pode realizar impressão de dados ou utilizar import.
+
+#### Casos de teste
+ 
 Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
 
 Entrada:
 
-mensagem inicial
-valor n para a instância 1 de CifraCesar
-valor n para a instância 2 de CifraCesar
+- mensagem inicial
+- valor n para a instância 1 de CifraCesar
+- valor n para a instância 2 de CifraCesar  
+
 Saída:
 
-mensagem inicial
-instanciação de CifraCesar 1
-instanciação de CifraCesar 2
-cifrar usando instância 1
-decifrar usando instância 2
+- mensagem inicial
+- instanciação de CifraCesar 1
+- instanciação de CifraCesar 2
+- cifrar usando instância 1
+- decifrar usando instância 2
  
 ----------------------------------------------------------------------------------------------------
  
 ### ZENIT-POLAR
  
-Nesse exercício, considere a interface Cifra (que já está implementada no sistema de correção). Essa interface define o mínimo que uma classe de criptografia deve ter: um método para receber uma mensagem e cifrá-la; e um método para receber uma mensagem cifrada e decifrá-la. Considere o alfabeto como uma lista de 26 elementos, e que a mensagem é composta apenas de letras em mínusculo e espaço.
+Nesse exercício, considere a interface **Cifra** \(que já está implementada no sistema de correção\). Essa interface define o mínimo que uma classe de criptografia deve ter: um método para receber uma mensagem e cifrá-la; e um método para receber uma mensagem cifrada e decifrá-la. Considere o alfabeto como uma lista de 26 elementos, e que a mensagem é composta apenas de letras em mínusculo e espaço.
 
-Sua tarefa será implementar uma classe ZENITPOLAR, uma forma simples de esconder o conteúdo de mensagens. O processo de cifrar a mensagem consiste em substituir as letras da linha de cima pelas letras da linha de baixo (e vice versa):
+Sua tarefa será implementar uma classe **ZENITPOLAR**, uma forma simples de esconder o conteúdo de mensagens. O processo de cifrar a mensagem consiste em substituir as letras da linha de cima pelas letras da linha de baixo \(e vice versa\):
 
-Z	E	N	I	T
-P	O	L	A	R
+|**Z**	|**E**	|**N**	|**I**	|**T**|
+|------|------|------|------|-----|
+|P   	 |O	    |L	    |A	    |R    |  
+
 Por exemplo, todo 'z' é trocado 'p', assim como todo 'p' é trocado por 'z'. O processo de decifrar consiste em repetir o processo de cifrar sobre uma mensagem que já está cifrada.
 
 ![image](https://user-images.githubusercontent.com/57016670/150582632-45f34753-8ddc-4e5f-acfd-4a1a59b6a303.png)
-UML - Interface Cifra e classe ZenitPolar
 
-Classe ZenitPolar:
+Classe **ZenitPolar**:
 
-cifrar(mensagem: String): String : Recebe uma mensagem (apenas caracteres alfabéticos e espaço, sem nenhum acento), e retorna a mensagem cifrada;
-decifrar(mensagem: String): String : Decifra a mensagem.
-Importante: Submeta apenas a classe pública ZenitPolar (que deve pertencer ao pacote criptografia). O programa principal e a interface Cifra já existem no sistema de correção automática (a interface Cifra já está no pacote criptografia). A classe submetida não pode realizar impressão de dados ou utilizar import. A classe deve possuir o construtor sem parâmetros, que será usado pelo sistema de correção automática para instanciar as classes.
+- cifrar(mensagem: String): String : Recebe uma mensagem (apenas caracteres alfabéticos e espaço, sem nenhum acento), e retorna a mensagem cifrada;
+- decifrar(mensagem: String): String : Decifra a mensagem.  
 
-Casos de teste
+**Importante**: Submeta apenas a classe pública ZenitPolar (que deve pertencer ao pacote criptografia). O programa principal e a interface Cifra já existem no sistema de correção automática (a interface Cifra já está no **pacote criptografia**). A classe submetida não pode realizar impressão de dados ou utilizar import. A classe deve possuir o construtor sem parâmetros, que será usado pelo sistema de correção automática para instanciar as classes.
+
+#### Casos de teste
+ 
 Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
 
 Entrada:
 
-mensagem inicial
-Saída:
+- mensagem inicial  
 
-mensagem inicial
-instanciação de ZenitPolar
-cifrar
-decifrar
+Saída:  
+
+- mensagem inicial
+- instanciação de ZenitPolar
+- cifrar
+- decifrar
  
 ----------------------------------------------------------------------------------------------------
  
@@ -895,55 +901,56 @@ decifrar
 Implemente as classes Cracha, CrachaEstudante e CrachaFuncionario conforme apresentado no diagrama UML a seguir:
 
 ![image](https://user-images.githubusercontent.com/57016670/150582745-860beb79-e5d1-46f2-b3ff-dfc227a2275e.png)
-UML - Classe abstrata Cracha e suas duas subclasses: CrachaEstudante e CrachaFuncionario.
 
 A seguir, é apresentada uma descrição das classes apresentadas no diagrama UML.
 
-Classe abstrata Cracha:
+Classe *abstrata* Cracha:
 
-public void setNome(String nome): armazena o nome.
-public abstract void imprimir(): método abstrato que será implementado pelas subclasses.
-
-
-Classe CrachaEstudante (subclasse de Cracha):
-
-public void setCurso(String curso): armazena o nome do curso.
-public void imprimir(): sobrepõe o método imprimir da classe Cracha. Em CrachaEstudante, a impressão deve ser de acordo com o seguinte formato:
-ESTUDANTE
-Nome: <nome do estudante>
-Curso: <nome do curso>
+- public void setNome\(String nome\): armazena o nome.
+- public abstract void imprimir\(\): método abstrato que será implementado pelas subclasses.
 
 
-Classe CrachaFuncionario (subclasse de Cracha):
+Classe **CrachaEstudante** \(subclasse de Cracha\):  
 
-public void setCargo(String cargo): armazena o cargo.
-public void setDataAdmissao(int m, int a): armazena o mês (parâmetro m) e o ano (parâmetro a) de admissão.
-public void imprimir(): sobrepõe o método imprimir da classe Cracha. Em CrachaFuncionario, a impressão deve ser de acordo com o seguinte formato:
-FUNCIONARIO
-Nome: <nome do funcionário>
-Cargo: <cargo do funcionário>
-Admissao: <mes/ano de admissão do funcionário>
+- public void setCurso\(String curso\): armazena o nome do curso.
+- public void imprimir\(\): sobrepõe o método imprimir da classe Cracha. Em CrachaEstudante, a impressão deve ser de acordo com o seguinte formato:  
+``ESTUDANTE  
+Nome: <nome do estudante>  
+Curso: <nome do curso>  ``
+
+
+Classe **CrachaFuncionario** (subclasse de Cracha):  
+
+- public void setCargo(String cargo): armazena o cargo.
+- public void setDataAdmissao(int m, int a): armazena o mês (parâmetro m) e o ano (parâmetro a) de admissão.
+- public void imprimir(): sobrepõe o método imprimir da classe Cracha. Em CrachaFuncionario, a impressão deve ser de acordo com o seguinte formato:  
+``FUNCIONARIO  
+Nome: <nome do funcionário>  
+Cargo: <cargo do funcionário>  
+Admissao: <mes/ano de admissão do funcionário>  ``
 
 
 Para realizar a impressão, use Impressao.imprimirLinha(String texto), por exemplo:
 
-Impressao.imprimirLinha("FUNCIONARIO");
+``Impressao.imprimirLinha("FUNCIONARIO");  ``  
 A classe Impressao com o método static imprimirLinha já existe no sistema de correção automática.
 
 
 
-Importante: Submeta apenas as classes públicas Cracha, CrachaEstudante e CrachaFuncionario. O programa principal já existe no sistema de correção automática. As classes submetidas podem realizar impressão apenas por meio da classe Impressao.imprimirLinha(texto). Não é permitido utilizar import. Todas as classes devem possuir o construtor sem parâmetros, que será usado pelo sistema de correção automática para instanciar as classes.
+**Importante**: Submeta apenas as classes públicas Cracha, CrachaEstudante e CrachaFuncionario. O programa principal já existe no sistema de correção automática. As classes submetidas podem realizar impressão apenas por meio da classe Impressao.imprimirLinha(texto). Não é permitido utilizar import. Todas as classes devem possuir o construtor sem parâmetros, que será usado pelo sistema de correção automática para instanciar as classes.
 
-Casos de teste
+#### Casos de teste
+ 
 Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
 
-Entrada
-quantidade de crachás a serem instanciados
-tipos dos crachás a serem instanciados ("estudante" ou "funcionario")
-sequência de operações no formato: [índice do crachá] [método chamado] (parâmetros para o método)
-Saída
-verificação inicial das classes
-resultados obtidos após executar cada uma das operações
+Entrada  
+- quantidade de crachás a serem instanciados
+- tipos dos crachás a serem instanciados ("estudante" ou "funcionario")
+- sequência de operações no formato: [índice do crachá] [método chamado] (parâmetros para o método)  
+
+Saída  
+- verificação inicial das classes
+- resultados obtidos após executar cada uma das operações
  
 ----------------------------------------------------------------------------------------------------
  
@@ -951,62 +958,67 @@ resultados obtidos após executar cada uma das operações
  
 O professor ABC projetou um Navegador que possui diferentes tipos de abas. Cada tipo de aba será específico para um tipo de aplicação, como buscador e rede social.
 
-Neste exercício, deverão ser submetidos 4 arquivos (todas as classes a seguir são públicas e devem estar no pacote navegador):
+Neste exercício, deverão ser submetidos 4 arquivos (todas as classes a seguir são públicas e devem estar no **pacote navegador**): 
 
-Classe Navegador
-Classe abstrata AbaNavegador
-Classes AbaBuscador e AbaRedeSocial (ambas subclasses de AbaNavegador)
-A seguir são apresentados os métodos necessários em cada classe. Esses métodos podem ser usados pelo sistema de correção e por isso devem seguir a especificação apresentada no enunciado. Você pode incluir atributos e métodos auxiliares adicionais que considerar necessários durante a implementação.
+- Classe Navegador
+- Classe abstrata AbaNavegador
+- Classes AbaBuscador e AbaRedeSocial (ambas subclasses de AbaNavegador)
+A seguir são apresentados os métodos necessários em cada classe. Esses métodos podem ser usados pelo sistema de correção e por isso devem seguir a especificação apresentada no enunciado. Você pode incluir atributos e métodos auxiliares adicionais que considerar necessários durante a implementação. 
 
-Classe Navegador:
+**Classe Navegador**: 
 
-public Navegador(int limiteAbas): construtor que armazena a quantidade limite de abas que podem estar abertas simultaneamente.
-public AbaNavegador abrirAba(int tipo, String titulo): instancia uma nova aba no navegador, inclui na lista de abas abertas e retorna esta aba (se atingir o limite de abas, retorna null). A nova aba deve ser do tipo especificado no parâmetro tipo e com o título passado no parâmetro titulo.  Tipos de abas:
-tipo 1: AbaBuscador
-tipo 2: AbaRedeSocial
-public void fecharAba(AbaNavegador aba): rebece uma instância de AbaNavegador e fecha a aba (remove da lista de abas abertas). A instância recebida no parâmetro sempre será uma instância de AbaNavegador que foi instanciada em algum momento anterior pelo método abrirAba.
-public String[] getAbas(): retorna uma lista com os tipos e títulos de todas as abas abertas no formato "<tipo aba> <título aba>". A lista deve ser na ordem em que as abas foram abertas (iniciando com a aba aberta mais antiga).
-public String[] getHistorico(): retorna uma lista com o histórico do navegador. O histórico deve retornar uma lista com o que foi feito em cada aba em ordem cronológica (iniciando com a ocorrência mais antiga). O histórico deve considerar o que ocorreu em todas abas: tanto as abertas no momento como as que já foram fechadas. Neste exercícios, assuma que haverá no máximo 100 itens/ocorrências no histórico.
-Classe abstrata AbaNavegador:
+- public Navegador\(int limiteAbas\): construtor que armazena a quantidade limite de abas que podem estar abertas simultaneamente.
+- public AbaNavegador abrirAba\(int tipo, String titulo\): instancia uma nova aba no navegador, inclui na lista de abas abertas e retorna esta aba \(se atingir o limite de abas, retorna null\). A nova aba deve ser do tipo especificado no parâmetro tipo e com o título passado no parâmetro titulo.  Tipos de abas:
+    - tipo 1: AbaBuscador
+    - tipo 2: AbaRedeSocial
+- public void fecharAba\(AbaNavegador aba\): rebece uma instância de AbaNavegador e fecha a aba \(remove da lista de abas abertas\). A instância recebida no parâmetro sempre será uma instância de AbaNavegador que foi instanciada em algum momento anterior pelo método abrirAba.
+- public String\[\] getAbas\(\): retorna uma lista com os tipos e títulos de todas as abas abertas no formato "\<tipo aba\> \<título aba\>". A lista deve ser na ordem em que as abas foram abertas \(iniciando com a aba aberta mais antiga\).
+public String\[\] getHistorico\(\): retorna uma lista com o histórico do navegador. O histórico deve retornar uma lista com o que foi feito em cada aba em ordem cronológica \(iniciando com a ocorrência mais antiga\). **O histórico deve considerar o que ocorreu em todas abas: tanto as abertas no momento como as que já foram fechadas.* Neste exercícios, assuma que haverá no máximo 100 itens/ocorrências no histórico.  
+ 
+**Classe abstrata AbaNavegador**:
+ 
+- protected String titulo: atributo com o título da aba
+- public String getTitulo\(\): retorna o título da aba atual
+- public abstract String getTipo\(\): retorna uma string com o tipo da aba. O retorno depende da subclasse que implementar este método.  
+ 
+**Classe AbaBuscador: subclasse de AbaNavegador**  
 
-protected String titulo: atributo com o título da aba
-public String getTitulo(): retorna o título da aba atual
-public abstract String getTipo(): retorna uma string com o tipo da aba. O retorno depende da subclasse que implementar este método.
-Classe AbaBuscador: subclasse de AbaNavegador
+- public void buscar\(String expressao\): registra operação de busca como "Busca: \<expressao\>", em que \<expressao\> é o valor passado no parâmetro expressao. Esse registro vai para o histórico do navegador.
+- public String getTipo\(\): retorna a string "Buscador".  
+ 
+**Classe AbaRedeSocial: subclasse de AbaNavegador**  
 
-public void buscar(String expressao): registra operação de busca como "Busca: <expressao>", em que <expressao> é o valor passado no parâmetro expressao. Esse registro vai para o histórico do navegador.
-public String getTipo(): retorna a string "Buscador".
-Classe AbaRedeSocial: subclasse de AbaNavegador
-
-public void postar(String texto): registra operação de postar texto como "Post: <texto>", em que <texto> é o valor passado no parâmetro texto. Esse registro vai para o histórico do navegador.
-public String getTipo(): retorna a string "RedeSocial".
-
-
-Importante: Submeta apenas as classes públicas descritas no enunciado (todas devem estar no pacote navegador). O programa principal já existe no sistema de correção automática. As classes submetidas não podem realizar impressão de dados ou utilizar import.
-
-
-
-Casos de teste
-Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
-
-Entrada:
-
-limite de abas abertas simultaneamente no navegador
-operações no formato: [nome operação] (paramêtros da operação). Algumas operações utilizam um índice de aba. Esse índice é um controle interno do sistema de correção para identificar as abas, cada aba aberta tem a indicação de um índice, exibido na saída.
-operação: abrirAba (parâmetros: tipo e título)
-operação: buscar (parâmetros: índice da aba e expressão)
-operação: postar (parâmetros: índice da aba e texto)
-operação: fecharAba (parâmetros: índice da aba)
-operação: getAbas
-operação: getHistorico
-Saída:
-
-verificação das classes
-instanciação da classe Navegador
-métodos executados e saídas obtidas
+- public void postar\(String texto\): registra operação de postar texto como "Post: \<texto\>", em que \<texto\> é o valor passado no parâmetro texto. Esse registro vai para o histórico do navegador.
+- public String getTipo\(\): retorna a string "RedeSocial".  
 
 
-Exercício de Paulo H. Pisani - Programação Orientada a Objetos - 2020 (exercício atualizado em 2021)
+**Importante**: Submeta apenas as classes públicas descritas no enunciado (todas devem estar no **pacote navegador**). O programa principal já existe no sistema de correção automática. As classes submetidas não podem realizar impressão de dados ou utilizar import.
+
+
+
+#### Casos de teste
+ 
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):  
+
+Entrada:  
+
+- limite de abas abertas simultaneamente no navegador
+- operações no formato: [nome operação] (paramêtros da operação). Algumas operações utilizam um índice de aba. Esse índice é um controle interno do sistema de correção para identificar as abas, cada aba aberta tem a indicação de um índice, exibido na saída.
+    - operação: abrirAba (parâmetros: tipo e título)
+    - operação: buscar (parâmetros: índice da aba e expressão)
+    - operação: postar (parâmetros: índice da aba e texto)
+    - operação: fecharAba (parâmetros: índice da aba)
+    - operação: getAbas
+    - operação: getHistorico  
+
+Saída:  
+
+- verificação das classes
+- instanciação da classe Navegador
+- métodos executados e saídas obtidas
+
+
+*Exercício de Paulo H. Pisani - Programação Orientada a Objetos - 2020 (exercício atualizado em 2021)*
  
 ----------------------------------------------------------------------------------------------------
  
