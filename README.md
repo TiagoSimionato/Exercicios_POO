@@ -6,8 +6,19 @@ Repositório com os exercícios que fiz ao longo da disciplina de POO
 
 # Enunciados
 
-- [Semana 1]()
-- [Semana 2]()
+- [Semana 1](#semana-1---introdução-ao-java)
+    - [Potências de 2](#potências-de-2)
+    - [Estatísticas](#estatísticas)
+    - [Pirâmide](#pirâmide)
+    - [Comparação de Vetores](#comparação-de-vetores)
+    - [Campo Minado](#campo-minado)
+    - [Testes de Discos Voadores](#testes-de-discos-voadores)
+- [Semana 2](#semana-2---classes-objetos-encapsulamento-uml)
+    - [Menu de Operações 2](#menu-de-operações-2)
+    - [Porta](#porta)
+    - [Lâmpada Inteligente](#lâmpada-inteligente)
+    - [Pedidos de Produtos](#pedidos-de-produtos)
+    - [Operações com Strings](#operações-com-strings)
 - [Semana 3](#semana-3---construtores-sobrecargas)
     - [Paralelogramo](#paralelogramo)
     - [Conta Corrente (contrutor 2)](#contacorrente-construtor-2)
