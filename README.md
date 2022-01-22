@@ -1740,68 +1740,71 @@ Saída:
  
 ### Jogo da velha
  
-O funcionário de uma empresa escreveu um programa para o Jogo da Velha, mas gostaria de adicionar algumas estratégias de jogo automáticas. Para isso, outro funcionário sugeriu utilizar o padrão de projeto Strategy, de forma que a classe com o tabuleiro utilize um algoritmo por meio de uma interface que pode ser implementada de diversas formas diferentes. Cada implementação representaria uma estratégia de jogo.
+O funcionário de uma empresa escreveu um programa para o Jogo da Velha, mas gostaria de adicionar algumas estratégias de jogo automáticas. Para isso, outro funcionário sugeriu utilizar o **padrão de projeto Strategy**, de forma que a classe com o tabuleiro utilize um algoritmo por meio de uma interface que pode ser implementada de diversas formas diferentes. Cada implementação representaria uma estratégia de jogo.
 
 Um tabuleiro é representado por uma matriz de char conforme a seguir:
 
-![image](https://user-images.githubusercontent.com/57016670/150587512-e2adb4f7-264f-4bb4-8be3-38732097f012.png)
-Tabuleiro - jogo da velha.
+![image](https://user-images.githubusercontent.com/57016670/150587512-e2adb4f7-264f-4bb4-8be3-38732097f012.png)  
 
-Duas estratégias que devem ser implementadas são: Estratégia A e Estratégia B (há também uma Estratégia C que já está implementada no sistema de correção automática). As estratégias seguem a ideia de percorrer a matriz e retornam como próxima jogada a primeira célula que encontram livre. O percurso das estratégias A e B é apresentado a seguir:
+Duas estratégias que devem ser implementadas são: Estratégia A e Estratégia B (*há também uma Estratégia C que já está implementada no sistema de correção automática*). As estratégias seguem a ideia de percorrer a matriz e retornam como próxima jogada a primeira célula que encontram livre. O percurso das estratégias A e B é apresentado a seguir:
 
-![image](https://user-images.githubusercontent.com/57016670/150587558-60e651d9-9bcf-432b-85e6-7cd5b4902223.png)
-Estratégias A e B para o jogo da velha.
+![image](https://user-images.githubusercontent.com/57016670/150587558-60e651d9-9bcf-432b-85e6-7cd5b4902223.png)  
 
 
 
-A classe Tabuleiro e a interface EstrategiaJogo já estão implementadas no sistema de correção automática (o código pode ser consultado na aba Editar).
+A classe Tabuleiro e a interface EstrategiaJogo já estão implementadas no sistema de correção automática (o código pode ser consultado na aba Editar).  
 
-Classe Tabuleiro:
+Classe **Tabuleiro**:  
 
-public Tabuleiro() - construtor da classe Tabuleiro. Inicializa todas as posições do tabuleiro com o caractere ponto: '.'
-public char[][] getTabuleiro() - retorna uma cópia dos dados do tabuleiro (matriz 3x3)
-public char getJogadorVencedor() - returna o jogador vencedor: 'X' ou 'O'. Se não existir vencedor, retorna ponto '.'. Caso seja empate, retorna hífen '-'.
-public void jogar(char jogador, int linha, int coluna) - recebe o jogador (pode ser 'X' ou 'O') e joga na posição informada. O método também imprime o tabuleiro depois de realizar a jogada.
-Interface EstrategiaJogo:
+- **public Tabuleiro()** - construtor da classe Tabuleiro. Inicializa todas as posições do tabuleiro com o caractere ponto: '.'
+- **public char\[\]\[\] getTabuleiro()** - retorna uma cópia dos dados do tabuleiro (matriz 3x3)
+- **public char getJogadorVencedor()** - returna o jogador vencedor: 'X' ou 'O'. Se não existir vencedor, retorna ponto '.'. Caso seja empate, retorna hífen '-'.
+- **public void jogar(char jogador, int linha, int coluna)** - recebe o jogador (pode ser 'X' ou 'O') e joga na posição informada. O método também imprime o tabuleiro depois de realizar a jogada.  
 
-int[] getProximaJogada(char[][] dadosTabuleiro, char jogador) - a implementação deve retornar as coordenadas da próxima jogada. O retorno é um vetor de duas posições, em que a posição 0 representa a linha e a posição 1 a coluna.
+Interface **EstrategiaJogo**:  
 
-
-Tarefa
-Escreva as classes TabuleiroEstrategia, EstrategiaA e EstrategiaB conforme descrito a seguir (todas as classes devem estar no pacote jogo):
-
-[acesso public] Classe TabuleiroEstrategia (estende a classe Tabuleiro)
-
-public void setStrategyJogador1(EstrategiaJogo jogador1) - armazena uma referência para a implementação de EstrategiaJogo para o jogador 1.
-public void setStrategyJogador2(EstrategiaJogo jogador2) - armazena uma referência para a implementação de EstrategiaJogo para o jogador 2.
-public void jogarPartida() - executa uma partida de jogo da velha completa. A cada jogada, o método getProximaJogada da estratégia correspondente é chamado e ele retorna as coordenadas para a próxima jogada. Ao receber as coordenadas, deve ser chamado o método jogar (herdado da classe Tabuleiro) passando as coordenadas e o jogador ('X' ou 'O'). O método jogarPartida deve intercalar jogadas do jogador 1 e do jogador 2 até o jogo terminar. Para saber se o jogo terminou, use o método getJogadorVencedor (herdado da classe Tabuleiro). Considere que sempre o jogador 1 começa e que ele utiliza 'X', portanto, o jogador 2 utiliza 'O'.
-[acesso package] Classe EstrategiaA (implementa a interface EstrategiaJogo)
-
-public int[] getProximaJogada(char[][] dadosTabuleiro, char jogador) - retorna as coordenadas da próxima jogada seguindo a estratégia A.
-[acesso package] Classe EstrategiaB (implementa a interface EstrategiaJogo)
-
-public int[] getProximaJogada(char[][] dadosTabuleiro, char jogador) - retorna as coordenadas da próxima jogada seguindo a estratégia B.
+- **int\[\] getProximaJogada(char\[\]\[\] dadosTabuleiro, char jogador)** - a implementação deve retornar as coordenadas da próxima jogada. O retorno é um vetor de duas posições, em que a posição 0 representa a linha e a posição 1 a coluna.  
 
 
-Importante: O programa principal já existe no sistema de correção automática. Submeta apenas as classes especificadas (pacote jogo): TabuleiroEstrategia, EstrategiaA e EstrategiaB.
+#### Tarefa
 
-A classes submetidas não podem realizar impressão de dados, java.util ou utilizar import (observação: a única forma de impressão permitida é por meio do método jogar da classe Tabuleiro, que imprime o tabuleiro a cada jogada realizada).
-A classe Tabuleiro e a interface EstrategiaJogo já estão prontos (não altere o código desses arquivos).
-O sistema de correção também possui uma estratégia já implementada (a EstrategiaC) que é usada apenas para testar o código submetido. Não é necessário conhecer o funcionamento da estratégia C para realizar este exercício. Ao utilizar o padrão de projeto Strategy, a classe TabuleiroEstrategia deve funcionar para qualquer implementação da interface EstrategiaJogo.
+**Escreva as classes TabuleiroEstrategia, EstrategiaA e EstrategiaB** conforme descrito a seguir (todas as classes devem estar no **pacote jogo**):
+
+\[acesso public\] Classe **TabuleiroEstrategia** (*estende a classe Tabuleiro*)
+
+- **public void setStrategyJogador1(EstrategiaJogo jogador1)** - armazena uma referência para a implementação de EstrategiaJogo para o jogador 1.
+- **public void setStrategyJogador2(EstrategiaJogo jogador2)** - armazena uma referência para a implementação de EstrategiaJogo para o jogador 2.
+- **public void jogarPartida()** - *executa uma partida de jogo da velha completa*. A cada jogada, o método getProximaJogada da estratégia correspondente é chamado e ele retorna as coordenadas para a próxima jogada. Ao receber as coordenadas, deve ser chamado o método jogar (herdado da classe Tabuleiro) passando as coordenadas e o jogador ('X' ou 'O'). O método jogarPartida deve intercalar jogadas do jogador 1 e do jogador 2 até o jogo terminar. Para saber se o jogo terminou, use o método getJogadorVencedor (herdado da classe Tabuleiro). Considere que sempre o jogador 1 começa e que ele utiliza 'X', portanto, o jogador 2 utiliza 'O'.  
+
+\[acesso package\] Classe **EstrategiaA** (*implementa a interface EstrategiaJogo*)  
+
+- **public int\[\] getProximaJogada(char\[\]\[\] dadosTabuleiro, char jogador)** - retorna as coordenadas da próxima jogada seguindo a estratégia A.  
+
+\[acesso package\] Classe **EstrategiaB** (*implementa a interface EstrategiaJogo*)  
+
+- **public int\[\] getProximaJogada(char\[\]\[\] dadosTabuleiro, char jogador)** - retorna as coordenadas da próxima jogada seguindo a estratégia B.  
 
 
-Casos de teste
+**Importante**: O programa principal já existe no sistema de correção automática. Submeta apenas as classes especificadas (**pacote jogo**): **TabuleiroEstrategia, EstrategiaA e EstrategiaB**.
 
-Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+- A classes submetidas não podem realizar impressão de dados, java.util ou utilizar import (observação: a única forma de impressão permitida é por meio do método jogar da classe Tabuleiro, que imprime o tabuleiro a cada jogada realizada).
+- A classe Tabuleiro e a interface EstrategiaJogo já estão prontos (não altere o código desses arquivos).
+- O sistema de correção também possui uma estratégia já implementada (a EstrategiaC) que é usada apenas para testar o código submetido. Não é necessário conhecer o funcionamento da estratégia C para realizar este exercício. Ao utilizar o padrão de projeto Strategy, a classe TabuleiroEstrategia deve funcionar para qualquer implementação da interface EstrategiaJogo.
 
-Entrada:
 
-estratégia para o jogador 1 ('X')
-estratégia para o jogador 2 ('O')
-Saída:
+#### Casos de teste
 
-verificação das classes
-comandos executados e saídas obtidas
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):  
+
+Entrada:  
+
+- estratégia para o jogador 1 ('X')
+- estratégia para o jogador 2 ('O')  
+
+Saída:  
+
+- verificação das classes
+- comandos executados e saídas obtidas
  
 ----------------------------------------------------------------------------------------------------
  
@@ -1813,49 +1816,49 @@ comandos executados e saídas obtidas
  
 Nesta primeira parte do exercício, deve ser implementada uma lista de exemplos. A lista de exemplos neste exercício é um conjunto de dados formado por uma tabela. Cada linha da tabela é um exemplo.
 
-A figura a seguir mostra uma lista de exemplos:
+A figura a seguir mostra uma lista de exemplos:  
 
-![image](https://user-images.githubusercontent.com/57016670/150592012-7e2dcf2c-3723-4bf5-afba-71d0c90bd649.png)
-Lista de exemplos
+![image](https://user-images.githubusercontent.com/57016670/150592012-7e2dcf2c-3723-4bf5-afba-71d0c90bd649.png)  
 
-Nessa tabela, cada linha é um exemplo. Os atributos a1, a2 e a3 serão chamados de atributos de entrada e o último atributo (última coluna) será chamado de rótulo da classe. Neste exercício, todos os atributos de entrada são do tipo double e o rótulo da classe será representado por um número inteiro.
+Nessa tabela, cada linha é um exemplo. *Os atributos a1, a2 e a3 serão chamados de atributos de entrada e o último atributo (última coluna) será chamado de rótulo da classe*. Neste exercício, todos os atributos de entrada são do tipo double e o rótulo da classe será representado por um número inteiro.  
 
-Esses dados da lista de exemplos serão usados em [Bonus] Parte 2 - Algoritmo de classificação para que um algoritmo possa predizer o rótulo da classe ao receber novos valores dos atributos de entrada (dados de teste).
-
+Esses dados da lista de exemplos serão usados em [\[Bonus\] Parte 2 - Algoritmo de classificação](#bonus-parte-2---algoritmo-de-classificação) para que um algoritmo possa predizer o rótulo da classe ao receber novos valores dos atributos de entrada (dados de teste).  
 
 
-Ordenação pela distância
-Conforme será descrito mais a frente, uma funcionalidade que deverá ser implementada neste exercício é a ordenação dos exemplos pela distância com relação a um determinado conjunto de valores de atributos de entrada.
 
-No caso deste exercício, a distância utilizada será a distância Euclidiana, que é calculada de acordo com a fórmula a seguir:
+#### Ordenação pela distância  
+ 
+Conforme será descrito mais a frente, uma funcionalidade que deverá ser implementada neste exercício é a ordenação dos exemplos pela distância com relação a um determinado conjunto de valores de atributos de entrada.  
+
+No caso deste exercício, a distância utilizada será a distância Euclidiana, que é calculada de acordo com a fórmula a seguir:  
 
 ∑i=1n(xi−yi)2−−−−−−−−−−√
 
-Cálculo da distância Euclidiana entre x=[1,2,1] e y=[3,0,9]
+Cálculo da distância Euclidiana entre x=[1,2,1] e y=[3,0,9]  
 
-(1−3)2+(2−0)2+(1−9)2−−−−−−−−−−−−−−−−−−−−−−−√=4+4+64−−−−−−−−√=8,49
+(1−3)2+(2−0)2+(1−9)2−−−−−−−−−−−−−−−−−−−−−−−√=4+4+64−−−−−−−−√=8,49  
 
-No caso da lista de exemplos, é possível calcular a distância de cada exemplo na tabela com relação um determinado conjunto de valores de atributos de entrada (o cálculo da distância considera apenas os atributos de entrada, no caso a1, a2 e a3). A tabela a seguir, mostra a distância entre cada exemplo na lista e os valores [5, 7, 1]:
+No caso da lista de exemplos, é possível calcular a distância de cada exemplo na tabela com relação um determinado conjunto de valores de atributos de entrada (***o cálculo da distância considera apenas os atributos de entrada, no caso a1, a2 e a3***). A tabela a seguir, mostra a distância entre cada exemplo na lista e os valores \[5, 7, 1\]:  
 
 ![image](https://user-images.githubusercontent.com/57016670/150592061-8505d104-f3c5-4cde-b893-e1eb9967581e.png)
-Lista de exemplos e distâncias
 
 A partir das distâncias, os exemplos podem ser ordenados pela distância (ordem crescente), conforme apresentado a seguir:
 
 ![image](https://user-images.githubusercontent.com/57016670/150592235-090b1322-923d-447d-8ded-25428566cff7.png)
-Lista de exemplos ordenada pela distância
 
 
 
-Classes a serem implementadas
-Duas classes devem ser implementadas nesta parte 1 do exercício: Exemplo e ListaExemplos (as duas classes devem estar no pacote classificacao). A seguir, são apresentados os métodos necessários em cada uma das classes.
+#### Classes a serem implementadas  
 
-[acesso package] Classe Exemplo
+Duas classes devem ser implementadas nesta parte 1 do exercício: Exemplo e ListaExemplos (as duas classes devem estar no pacote classificacao). A seguir, são apresentados os métodos necessários em cada uma das classes.  
 
-public Exemplo(double[] atributosEntrada, int rotuloClasse) - construtor que inicializa o exemplo com os valores dos atributos de entrada e o rótulo da classe.
-public double[] getAtributosEntrada() - retorna os valores dos atributos de entrada.
-public int getRotuloClasse() - retorna o valor do rótulo da classe.
-[acesso public] Classe ListaExemplos
+\[acesso package\] Classe **Exemplo**  
+
+- public Exemplo(double[] atributosEntrada, int rotuloClasse) - construtor que inicializa o exemplo com os valores dos atributos de entrada e o rótulo da classe.
+- public double[] getAtributosEntrada() - retorna os valores dos atributos de entrada.
+- public int getRotuloClasse() - retorna o valor do rótulo da classe.  
+
+\[acesso public\] Classe **ListaExemplos**
 
 public ListaExemplos(int maxQtd) - construtor que recebe como parâmetro a quantidade máxima (maxQtd) de exemplos que a lista pode possuir.
 public void adicionarExemplo(Exemplo exemplo) - adiciona um exemplo ao final da lista de exemplos.
@@ -1866,27 +1869,29 @@ public Exemplo[] getPrimeirosExemplos(int n) - retorna os primeiros n exemplos n
 public Exemplo[] getUltimosExemplos(int n) - retorna os últimos n exemplos na lista.
 
 
-Observação: Não é permitido o uso de funções de ordenação prontas (por exemplo, sort). Implemente um algoritmo de ordenação. Também não use o termo "sort" em nenhuma parte do código.
+**Observação: Não é permitido o uso de funções de ordenação prontas (por exemplo, sort). Implemente um algoritmo de ordenação. Também não use o termo "sort" em nenhuma parte do código.**  
 
 
 
-Importante: Submeta apenas as classes Exemplo e ListaExemplos descritas no enunciado (todas as classes devem estar no pacote classificacao). As classes submetidas não podem realizar impressão de dados, utilizar import e java.util.
+**Importante**: Submeta apenas as classes Exemplo e ListaExemplos descritas no enunciado (todas as classes devem estar no **pacote classificacao**). As classes submetidas não podem realizar impressão de dados, utilizar import e java.util.  
 
 
 
-Casos de teste
-Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+#### Casos de teste  
 
-Entrada
-Sequência de operações no formato:
-instanciarListaExemplos [qtdMax]
-lista [índice lista] adicionarExemplo [qtd_atributos_entrada] (valores dos atributos de entrada) [rótulo da classe]
-lista [índice lista] ordenarPelaDistancia [qtd_atributos_entrada] (valores dos atributos de entrada) [rótulo da classe]
-lista [índice lista] getExemplos
-lista [índice lista] getPrimeirosExemplos [n]
-lista [índice lista] getUltimosExemplos [n]
-Saída
-Operações executadas e saídas obtidas
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):  
+
+Entrada  
+- Sequência de operações no formato:
+    - instanciarListaExemplos [qtdMax]
+    - lista [índice lista] adicionarExemplo [qtd_atributos_entrada] (valores dos atributos de entrada) [rótulo da classe]
+    - lista [índice lista] ordenarPelaDistancia [qtd_atributos_entrada] (valores dos atributos de entrada) [rótulo da classe]
+    - lista [índice lista] getExemplos
+    - lista [índice lista] getPrimeirosExemplos [n]
+    - lista [índice lista] getUltimosExemplos [n]  
+
+Saída  
+- Operações executadas e saídas obtidas
  
 ----------------------------------------------------------------------------------------------------
  
@@ -1894,26 +1899,25 @@ Operações executadas e saídas obtidas
  
 Na área de Aprendizado de Máquina (Faceli et al., 2021), um algoritmo que pode ser usado para classificação e regressão é o k-Vizinhos mais próximos (k-Nearest Neighbours - k-NN). Neste exercício, deverá ser implemetada uma versão para classificação, conforme descrito a seguir.
 
-k-NN
+#### k-NN
+
 Antes de ser utilizado para classificação, o algoritmo precisa de dados de treinamento. Os dados de treinamento serão representados por uma lista de exemplos, como exemplificado a seguir. Cada exemplo possui atributos de entrada e um rótulo de classe correspondente.
 
 ![image](https://user-images.githubusercontent.com/57016670/150592621-2e564460-061d-4b66-880f-e134fa9074bf.png)
-Lista de exemplos de treinamento
 
-A partir dos dados de treinamento, o algoritmo realizará predições dos rótulos de classe para novos dados. Para os valores de atributos de entrada [5, 7, 1], um algoritmo de classificação poderia predizer o rótulo de classe 2. Essa predição será o resultado da classificação realizada pelo algoritmo.
+A partir dos dados de treinamento, o algoritmo realizará predições dos rótulos de classe para novos dados. Para os valores de atributos de entrada \[5, 7, 1\], um algoritmo de classificação poderia predizer o rótulo de classe 2. Essa predição será o resultado da classificação realizada pelo algoritmo.
 
-No k-NN, a predição do rótulo de classe para novos valores de atributos de entrada (dados de teste) é realizada da seguinte forma:
-Calcule a distância entre os valores dos atributos de entrada passados (dados de teste) e cada um dos exemplos nos dados de treinamento (utilize distância Euclidiana);
-Determine quais são os k exemplos mais próximos (ou seja, os que tem as k menores distâncias). O valor de k é definido previamente.
-O rótulo de classe predito (resultado da classificação) será aquele mais frequente dentre os rótulos dos k exemplos mais próximos.
+No k-NN, a predição do rótulo de classe para novos valores de atributos de entrada (dados de teste) é realizada da seguinte forma:  
+1. Calcule a distância entre os valores dos atributos de entrada passados (dados de teste) e cada um dos exemplos nos dados de treinamento (utilize distância Euclidiana);
+2. Determine quais são os k exemplos mais próximos (ou seja, os que tem as k menores distâncias). O valor de k é definido previamente.
+3. O rótulo de classe predito (resultado da classificação) será aquele mais frequente dentre os rótulos dos k exemplos mais próximos.  
 
 
-Demonstração de classificação considerando os dados de treinamento da tabela anterior e os valores de atributos de entrada [5, 7, 1]
+#### Demonstração de classificação considerando os dados de treinamento da tabela anterior e os valores de atributos de entrada \[5, 7, 1\]  
 
-1. Distância entre os valores dos atributos de entrada de teste [5, 7, 1] e cada um dos exemplos de treinamento (o cálculo da distância considera apenas os atributos de entrada, no caso a1, a2 e a3):
+1. Distância entre os valores dos atributos de entrada de teste \[5, 7, 1\] e cada um dos exemplos de treinamento (**o cálculo da distância considera apenas os atributos de entrada, no caso a1, a2 e a3**):
 
 ![image](https://user-images.githubusercontent.com/57016670/150592649-a3b9598c-117b-4d84-8df8-ac7a105d21dc.png)
-Lista de exemplos com distâncias
 
 2. Para k=3, os k mais próximos são destacados a seguir:
 
@@ -1923,37 +1927,43 @@ Lista de exemplos ordenada pela distância e com destaque aos 3 mais próximos.
 3. Entre os k=3 exemplos mais próximos, o rótulo de classe mais frequente é o 2 . Portanto, o resultado da predição é 2.
 
 
-Classes a serem implementadas
-Devem ser implementadas as classes KNN e ExcecaoDadosInvalidos. Além disso, também submeta o código das classes Exemplo e ListaExemplos. Essas duas classes foram descritas em [Bonus] Parte 1 - Lista de exemplos e são necessárias para a implementação da classe KNN.
+#### Classes a serem implementadas  
 
-[acesso package] Classe ExcecaoDadosInvalidos (subclasse de Exception - não é RuntimeException): esta exceção é lançada pelo método predizer quando a quantidade de atributos de entrada é inválida (mais detalhes na descrição do método predizer da classe KNN).
-public int getQtdAtributosTreinamento() - retorna a quantidade de atributos de entrada nos dados de treinamento. Esse valor deve ser sido armazenado dentro da instância da exceção no momento em que a exceção é criada.
-public int getQtdAtributosPredizer() - retorna a quantidade de atributos de entrada do parâmetro passado ao método predizer. Esse valor deve ser sido armazenado dentro da instância da exceção no momento em que a exceção é criada.
+Devem ser implementadas as classes KNN e ExcecaoDadosInvalidos. Além disso, também submeta o código das classes Exemplo e ListaExemplos. Essas duas classes foram descritas em [\[Bonus\] Parte 1 - Lista de exemplos](#bonus-parte-1---lista-de-exemplos) e são necessárias para a implementação da classe KNN.
 
-[acesso public] Classe KNN:
-public KNN(int k) - construtor que recebe k e armazena na instância da classe.
-public void setDadosTreinamento(ListaExemplos lista) - armazena uma lista de exemplos como conjunto de dados de treinamento.
-public int predizer(double[] atributosEntrada) - recebe valores dos atributos de entrada (dados de teste) e retorna o rótulo de classe predito pelo algoritmo k-NN, conforme procedimento descrito no início do enunciado deste exercício. Esse método predizer deve lançar exceção em algumas situações:
-Chamar o método predizer sem possuir dados de treinamento: deve ser lançada uma exceção do tipo Exception com o texto "Dados de treinamento - nao inicializado" (observe que não há acento na mensagem). Use o seguinte construtor, já existente na classe Exception: Exception(String message).
-Chamar o método predizer com um exemplo que possui quantidade de atributos diferente da quantidade de atributos dos exemplos de treinamento: deve ser lançada uma exceção do tipo ExcecaoDadosInvalidos informado a quantidade de atributos de entrada nos exemplos de treinamento e nos dados passados para o método predizer.
+\[acesso package\] Classe **ExcecaoDadosInvalidos** (subclasse de Exception - não é RuntimeException): esta exceção é lançada pelo método predizer quando a quantidade de atributos de entrada é inválida (mais detalhes na descrição do método predizer da classe KNN).  
+- public int getQtdAtributosTreinamento() - retorna a quantidade de atributos de entrada nos dados de treinamento. Esse valor deve ser sido armazenado dentro da instância da exceção no momento em que a exceção é criada.
+- public int getQtdAtributosPredizer() - retorna a quantidade de atributos de entrada do parâmetro passado ao método predizer. Esse valor deve ser sido armazenado dentro da instância da exceção no momento em que a exceção é criada.  
 
-
-Importante: O programa principal já existe no sistema de correção automática. Submeta apenas as classes especificadas (todas devem estar no pacote classificacao). A classes não podem realizar impressão de dados, java.util ou utilizar import. Os códigos submetidos não podem utilizar métodos prontos para ordenação (por exemplo, sort). Para ordenação, implemente um método e inclua na submissão. Também não use o termo "sort" em nenhuma parte do código.
+\[acesso public\] Classe **KNN**:  
+- public KNN(int k) - construtor que recebe k e armazena na instância da classe.
+- public void setDadosTreinamento(ListaExemplos lista) - armazena uma lista de exemplos como conjunto de dados de treinamento.
+- public int predizer(double[] atributosEntrada) - recebe valores dos atributos de entrada (dados de teste) e retorna o rótulo de classe predito pelo algoritmo k-NN, conforme procedimento descrito no início do enunciado deste exercício. Esse método predizer deve lançar exceção em algumas situações:
+    - Chamar o método predizer sem possuir dados de treinamento: deve ser lançada uma exceção do tipo Exception com o texto "Dados de treinamento - nao inicializado" (observe que não há acento na mensagem). Use o seguinte construtor, já existente na classe Exception: Exception(String message).
+    - Chamar o método predizer com um exemplo que possui quantidade de atributos diferente da quantidade de atributos dos exemplos de treinamento: deve ser lançada uma exceção do tipo ExcecaoDadosInvalidos informado a quantidade de atributos de entrada nos exemplos de treinamento e nos dados passados para o método predizer.
 
 
+**Importante**: O programa principal já existe no sistema de correção automática. Submeta apenas as classes especificadas (todas devem estar no **pacote classificacao**). A classes não podem realizar impressão de dados, java.util ou utilizar import. Os códigos submetidos não podem utilizar métodos prontos para ordenação (por exemplo, sort). Para ordenação, implemente um método e inclua na submissão. Também não use o termo "sort" em nenhuma parte do código.  
 
-Casos de teste
-Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
 
-Entrada
-Sequência de operações no formato:
-instanciarListaExemplos [qtdMax]
-lista [índice lista] adicionarExemplo [qtd_atributos_entrada] (valores dos atributos de entrada) [rótulo da classe]
-instanciarKNN [k]
-knn setDadosTreinamento [índice da lista de exemplos]
-knn predizer [qtd_atributos_entrada] (valores dos atributos de entrada)
-Saída
-Verificação das classes
-Operações executadas e saídas obtidas
- 
- 
+
+#### Casos de teste
+
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):  
+
+Entrada  
+- Sequência de operações no formato:
+    - instanciarListaExemplos [qtdMax]
+    - lista [índice lista] adicionarExemplo [qtd_atributos_entrada] (valores dos atributos de entrada) [rótulo da classe]
+    - instanciarKNN [k]
+    - knn setDadosTreinamento [índice da lista de exemplos]
+    - knn predizer [qtd_atributos_entrada] (valores dos atributos de entrada)  
+
+Saída  
+- Verificação das classes
+- Operações executadas e saídas obtidas
+
+
+**Referências**:
+Faceli , K., Lorena, A. C., Gama, J., Almeida, T. A., Carvalho, A. C. P. L. F. (2021). Inteligência Artificial Uma Abordagem de Aprendizado de Máquina, 2a edição, LTC.
+Um dos testes é realizado com parte do conjunto de dados Iris: https://archive.ics.uci.edu/ml/datasets/Iris
