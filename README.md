@@ -2,19 +2,235 @@
  
 Repositório com os exercícios que fiz ao longo da disciplina de POO
 
+----------------------------------------------------------------------
+
 # Enunciados
 
-
 - [Semana 3](#semana-3---construtores-sobrecargas)
+    - [Paralelogramo](#paralelogramo)
+    - [Conta Corrente (contrutor 2)](#contacorrente-construtor-2)
+    - [Frações (construtor) 2](#frações-construtor-2)
+    - [Caça Palavras](#caça-palavras)
 - [Semana 4](#semana-4---herança-polimorfismo)
+    - [Vínculo com a Universidade](#vínculo-com-a-universidade)
+    - [Veículos](#veículos)
+    - [Quadriláteros](#quadriláteros)
+    - [Cartões](#cartões)
 - [Semana 5](#semana-5---interfaces-polimorfismo)
+    - [Cifra De César](#cifra-de-césar)
+    - [Zenit-Polar](#zenit-polar)
+    - [Crachá](#crachá)
+    - [Navegador](#navegador)
 - [Semana 6](#semana-6---construtores-cópia-de-objetos-final)
+    - [Arquivos Multimídia](#arquivos-multimídia)
+    - [Perfil de Usuário](#perfil-de-usuário)
+    - [Playlist](#playlist)
+    - [Relatório com Plugins](#relatório-com-plugins)
 - [Semana 7](#semana-7---estruturas-lineares-no-contexto-de-orientação-a-objetos)
+    - [Dispositivos Inteligentes](#dispositivos-inteligentes)
+    - [Conjuntos](#conjuntos)
+    - [Lista De Mensagens](#lista-de-mensagens)
 - [Semana 8](#semana-8---tratamento-de-exceções)
+    - [Lâmpada Inteligente com Exceções](#lâmpada-inteligente-com-exceções)
+    - [Autenticação Usuário](#autenticação-usuário)
+    - [Playlist com Exceções](#playlist-com-exceções)
 - [Semana 9](#semana-9---generics)
+    - [Pasta Compactada](#pasta-compactada)
+    - [Fila de Arquivos](#fila-de-arquivos)
+    - [Maior e Menor Elemento](#maior-e-menor-elemento)
 - [Semana 10](#semana-10---padrões-de-projeto-de-software)
+    - [Jogo da Velha](#jogo-da-velha)
 - [Bonus](#bonus)
+    - [Bonus Parte 1 - Lista de Exemplos](#bonus-parte-1---lista-de-exemplos)
+    - [Bonus Parte 2 - Algoritmo de Classificação](#bonus-parte-2---algoritmo-de-classificação)
 
+----------------------------------------------------------------------------------------------------
+
+## Semana 1
+
+----------------------------------------------------------------------------------------------------
+
+## Potências de 2
+
+Leia uma sequência de n inteiros e mostre quantos são potências de 2.
+
+
+**Observação 1**: crie um método que, dado um número inteiro, retorne se ele é ou não potência de 2.
+
+**Observação 2**: não utilize Math.
+
+
+
+Entrada (o primeiro número lido é o comprimento do vetor, que no caso é 5):
+
+5
+
+2
+
+8
+
+9
+
+10
+
+16
+
+Saída:
+
+3
+
+----------------------------------------------------------------------------------------------------
+
+## Estatísticas
+
+Faça um programa que fique lendo números do usuário até que seja digitado um valor negativo. Quando isso ocorrer, o programa deve imprimir os seguintes valores sobre a sequência de valores lidos (ignore o valor negativo lido, ele não faz parte da sequência de valores válidos):
+
+- Soma
+- Média (imprima com duas casas decimais após a vírgula)
+- Mínimo
+- Máximo
+
+**Dica**: para formatar um número fracionário, use **String.format**. Por exemplo:
+
+`double n = 10 / 3;
+
+System.out.println(**String.format("%.2f", n)**); // Imprime o valor de n com duas casas decimais após a vírgula`
+
+Entrada:
+- Sequência de números inteiros de tamanho indefinido
+
+Saída:
+- Soma
+- Média (imprima com **duas casas decimais** após a vírgula)
+- Mínimo
+- Máximo
+
+----------------------------------------------------------------------------------------------------
+
+## Pirâmide
+
+Faça um programa que leia um valor inteiro N que representa a quantidade de linhas para impressão de uma pirâmide de números 1. A figura impressa é composta apenas pelos caracteres hífen (-) e o número 1. Por exemplo, uma pirâmide com altura 5 deve ser representada da seguinte forma:
+
+----1----  
+---111---  
+--11111--  
+-1111111-   
+111111111    
+
+
+**Dica (Java)**: é possível imprimir sem quebrar linha usando o método System.out.**print**() ao invés de System.out.**println**(). Veja nos exemplos a seguir (observação: apenas os comandos de impressão são mostrados na tabela, mas o programa em Java precisa incluir outros componentes, como declaração da classe, método main, etc).
+
+|Programa 1	                                                                         | Programa 2                                                                        |
+|------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
+|System.out.println("1"); <br> System.out.println("1"); <br> System.out.println("1");| System.out.print("1"); <br> System.out.print("1"); <br> System.out.println("1");  |
+|Saída do programa 1                                                                 |	Saída do programa 2                                                               |
+|1 <br> 1 <br> 1                                                                     |111                                                                                |
+
+
+Entrada:
+- Quantidade de linhas (altura) da pirâmide
+
+Saída:
+
+- Pirâmide
+
+----------------------------------------------------------------------------------------------------
+
+## Comparação de vetores
+
+Escreva um programa que leia dois vetores (A e B) de mesmo comprimento n. Para isso, o programa deve ler um valor inteiro n (comprimento), ler o n valores de um dos vetores e depois os n valores do outro vetor. Ao final, o programa deve imprimir "SIM" se um vetor for o resultado de uma multiplicação de todos os elementos do outro pelo mesmo valor, ou "NAO" caso contrário **(não há til ~ em NAO)**.
+
+Por exemplo, considere os vetores A = [1, 2, 5, 10] e B = [3, 6, 15, 30]. Neste caso, o programa deve imprimir "SIM", pois o vetor B é resultado da multiplicação de todos os elementos de A por 3.
+
+Outro exemplo: considere os vetores A = [1, 2, 5, 10] e B = [3, 6, 15, 90]. Neste caso, o programa deve imprimir "NAO", pois o vetor B não é resultado da multiplicação de todos os elementos de A por um mesmo valor. Os três primeiros números foram multiplicados por 3, mas o quarto foi multiplicado por 9.
+
+Entrada
+- Comprimento (n)
+- n elementos do primeiro vetor
+- n elementos do segundo vetor  
+Saída  
+- SIM/NAO (dependendo se um vetor for o resultado de uma múltiplicação de todos os exemplos do outro por um mesmo valor)
+
+----------------------------------------------------------------------------------------------------
+
+## Campo minado
+
+Escreva um programa que leia uma matriz que contém o mapa de um campo minado. Nesta matriz, o valor 1 indica que há uma bomba na célula e o valor 0 indica que não há uma bomba na célula. A matriz é composta apenas pelos valores 0 e 1. Exemplo de mapa do campo minado seguindo esse formato:
+
+|1	|1	|0	|0	|0	|1	|0|
+|--|--|--|--|--|--|-|
+|0	|0	|0	|1	|1	|0	|0|
+|0	|1	|0	|0	|1	|1	|0|
+|1	|0	|0	|0	|0	|1	|1|
+|1	|1	|1	|0	|1	|0	|0|
+
+Após ler a matriz com o mapa, o programa irá ler as coordenadas de uma célula (linha e coluna) e então deverá imprimir quantas bombas há na vizinhança da célula (desconsiderando a própria célula). Por exemplo, para o mapa apresentado anteriormente, na célula (linha=2; coluna=3), há 3 bombas na vizinhança. Portanto, o programa deverá imprimir o valor 3 neste caso.
+
+**Importante**: *considere que os índices das linhas e colunas iniciam no zero*. Portanto, a coluna 2 é a terceira coluna na matriz, assim como a linha 3 é a quarta linha na matriz.
+
+
+
+Entrada  
+- Quantidade de linhas na matriz
+- Quantidade de colunas na matriz
+- Valores da matriz (mapa do campo minado)
+- Linha da célula a ser consultada
+- Coluna da célula a ser consultada
+Saída  
+- Quantidade de bombas na vizinhança da célula
+
+----------------------------------------------------------------------------------------------------
+
+## Testes de discos voadores
+
+Os dados de discos voadores são organizados em uma matriz, em que cada linha é um disco voador e cada coluna é o resultado do teste. Um grupo de alienígenas gostaria de analisar esses dados, mas precisa de um programa para ordenar esses dados.
+
+Escreva um programa que leia uma matriz de inteiros (com os dados dos discos voadores) e então ordene a matriz por linhas (ordem crescente lexicográfica) e depois por colunas (ordem crescente lexicográfica), conforme descrito a seguir:
+
+**1)** Leia dois valores inteiros com dimensões da matriz: n_linhas e n_colunas  
+
+**2)** Leia os dados da matriz  
+
+**3)** Ordene a matriz por linhas de acordo com a ordem crescente lexicográfica. Por exemplo:  
+
+Para a matriz:
+
+![image](https://user-images.githubusercontent.com/57016670/150615188-d8053cc9-8d70-4da8-b6d9-2993001511ba.png)
+
+A ordenação por linhas com ordem crescente lexicográfica é:
+
+![image](https://user-images.githubusercontent.com/57016670/150615198-4ffe0814-c11c-40d8-83ae-ad787b53a1d5.png)
+
+Na ordem adotada neste exercício, a linha [2 6 2 1] vem antes da linha [2 7 2 8]. A comparação é realizada elemento a elemento, da esquerda para a direita. O primeiro elemento de cada linha é comparado. Como há empate (2 == 2), o segundo é comparado (6 < 7). Caso tivesse ocorrido novo empate, a comparação seguiria para o próximo elemento, até o final da linha.
+
+**4)** Após a ordenação, imprima a matriz (detalhes sobre a impressão mais a frente).  
+
+**5)** Sobre o resultado da ordenação anterior, ordene a matriz por colunas de acordo com a ordem crescente lexicográfica. Por exemplo:  
+
+Para a matriz (que é o resultado da ordenação anterior):
+
+![image](https://user-images.githubusercontent.com/57016670/150615256-5f8ea676-c84f-4004-a671-1f6608a8fe41.png)
+
+A ordenação por colunas com ordem crescente lexicográfica é:
+
+![image](https://user-images.githubusercontent.com/57016670/150615266-68d9e919-23c2-44f1-ac23-d08112be6be8.png)
+
+Na ordem adotada neste exercício, a coluna [2 2 3] vem antes da coluna [2 2 5]. A comparação é realizada elemento a elemento, de cima para baixo. O primeiro elemento de cada linha é comparado. Como há empate (2 == 2), o segundo é comparado (3 < 5). Caso tivesse ocorrido novo empate, a comparação seguiria para o próximo elemento, até o final da coluna.
+
+**6)** Após a ordenação, imprima a matriz  (detalhes sobre a impressão mais a frente).
+
+
+**Observação: não use variáveis globais. Não é permitido o uso de funções de ordenação prontas (por exemplo, sort). Implemente um algoritmo de ordenação. Também não use o termo "sort" em nenhuma parte do código.**
+
+**Sobre a impressão da matriz:** A matriz é impressa, linha por linha, com um caractere espaço entre cada número. Não há espaço ao final do último número. Quebre uma linha após a impressão de cada linha.  
+
+Coloque uma quebra de linha extra entre a impressão das duas matrizes ordenadas.
+
+----------------------------------------------------------------------------------------------------
+
+## Semana 2
+
+----------------------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------------
 
