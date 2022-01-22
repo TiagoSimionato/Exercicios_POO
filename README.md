@@ -1433,38 +1433,41 @@ Saída:
  
 ### Lâmpada Inteligente com exceções
  
-Uma empresa está desenvolvendo um aplicativo para gerenciar lâmpadas inteligentes. Cada lâmpada inteligente é representada por uma instância da classe LampadaInteligente (essa classe já está implementada no sistema de correção automática e encontra-se no pacote dispositivos). 
+Uma empresa está desenvolvendo um aplicativo para gerenciar lâmpadas inteligentes. Cada lâmpada inteligente é representada por uma instância da classe **LampadaInteligente** (*essa classe já está implementada no sistema de correção automática e encontra-se no pacote dispositivos*). 
 
-A classe LampadaInteligente possui os seguintes métodos:
+A classe **LampadaInteligente** possui os seguintes métodos:
 
-public void ligar(): liga a lâmpada;
-public void desligar(): desliga a lâmpada;
-public boolean getEstado(): retorna o estado da lâmpada (true=ligada, false=desligada).
-Para este aplicativo, é necessário implementar a classe GerenciadorLampadas, que gerencia instâncias de lâmpadas inteligentes (ou seja, instâncias da classe LampadaInteligente). A seguir são apresentados os métodos necessários na classe GerenciadorLampadas. Esses métodos podem ser usados pelo sistema de correção e por isso devem seguir a especificação apresentada no enunciado. Você pode incluir atributos e métodos auxiliares adicionais que considerar necessários durante a implementação.
+- public void ligar(): liga a lâmpada;
+- public void desligar(): desliga a lâmpada;
+- public boolean getEstado(): retorna o estado da lâmpada (true=ligada, false=desligada).  
 
-Classe GerenciadorLampadas:
+Para este aplicativo, é necessário implementar a classe **GerenciadorLampadas**, que gerencia instâncias de lâmpadas inteligentes (ou seja, instâncias da classe LampadaInteligente). A seguir são apresentados os métodos necessários na classe **GerenciadorLampadas**. Esses métodos podem ser usados pelo sistema de correção e por isso devem seguir a especificação apresentada no enunciado. Você pode incluir atributos e métodos auxiliares adicionais que considerar necessários durante a implementação.  
 
-public void adicionarLampada(): instancia uma nova lâmpada inteligente e adiciona a um vetor de LampadaInteligente. Considere que o tamanho máximo desse vetor é 10.
-public void ligarLampada(int indiceLampada): liga a lâmpada instanciada no índice informado. Antes de ligar a lâmpada, o método deve verificar se a lâmpada já está ligada. É possível saber se a lâmpada está ligada por meio do método getEstado() presente na classe LampadaInteligente. Se a lâmpada já estiver ligada, a lâmpada não deve ser ligada novamente e o método deve lançar a exceção LampadaEstaLigada. A exceção LampadaEstaLigada é subclasse de Exception (mas não de RuntimeException). A exceção LampadaEstaLigada deve chamar o construtor da superclasse Exception com a seguinte mensagem: "A lampada ja esta ligada." (observe que não há acento na mensagem).
-public void desligarLampada(int indiceLampada): desliga a lâmpada instanciada no índice informado. Antes de desligar a lâmpada, o método deve verificar se a lâmpada já está desligada. É possível saber se a lâmpada está ligada por meio do método getEstado() presente na classe LampadaInteligente.  Se a lâmpada já estiver desligada, a lâmpada não deve ser desligada novamente e o método deve lançar a exceção LampadaEstaDesligada. A exceção LampadaEstaDesligada é subclasse de Exception (mas não de RuntimeException). A exceção LampadaEstaDesligada deve chamar o construtor da superclasse Exception com a seguinte mensagem: "A lampada ja esta desligada." (observe que não há acento na mensagem).
+Classe **GerenciadorLampadas**:
 
-
-Importante: A classe GerenciadorLampadas possui acesso público, as exceções LampadaEstaLigada e LampadaEstaDesligada possuem acesso package (sem modificador de acesso). Submeta as classes  LampadaEstaLigada, LampadaEstaDesligada e GerenciadorLampadas conforme descrito no enunciado (todas as classes submetidas devem estar no pacote "sem nome", ou seja, não inclua a linha package no código). A classe submetida não pode realizar impressão de dados, utilizar java.util e System.out.
+- **public void adicionarLampada()**: instancia uma nova lâmpada inteligente e adiciona a um vetor de LampadaInteligente. Considere que o tamanho máximo desse vetor é 10.
+- **public void ligarLampada(int indiceLampada)**: liga a lâmpada instanciada no índice informado. Antes de ligar a lâmpada, o método deve verificar se a lâmpada já está ligada. É possível saber se a lâmpada está ligada por meio do método getEstado() presente na classe LampadaInteligente. Se a lâmpada já estiver ligada, a lâmpada não deve ser ligada novamente e o método deve lançar a exceção LampadaEstaLigada. A exceção ***LampadaEstaLigada** é subclasse de Exception (mas não de RuntimeException)*. A exceção LampadaEstaLigada deve chamar o construtor da superclasse Exception com a seguinte mensagem: "A lampada ja esta ligada." (observe que não há acento na mensagem).
+- **public void desligarLampada(int indiceLampada)**: desliga a lâmpada instanciada no índice informado. Antes de desligar a lâmpada, o método deve verificar se a lâmpada já está desligada. É possível saber se a lâmpada está ligada por meio do método getEstado() presente na classe LampadaInteligente.  Se a lâmpada já estiver desligada, a lâmpada não deve ser desligada novamente e o método deve lançar a exceção LampadaEstaDesligada. A exceção ***LampadaEstaDesligada** é subclasse de Exception (mas não de RuntimeException)*. A exceção LampadaEstaDesligada deve chamar o construtor da superclasse Exception com a seguinte mensagem: "A lampada ja esta desligada." (observe que não há acento na mensagem).  
 
 
+**Importante**: A classe GerenciadorLampadas possui acesso público, as exceções LampadaEstaLigada e LampadaEstaDesligada possuem acesso package (sem modificador de acesso). *Submeta as classes  LampadaEstaLigada, LampadaEstaDesligada e GerenciadorLampadas conforme descrito no enunciado (todas as classes submetidas devem estar no pacote "sem nome", ou seja, não inclua a linha package no código)*. A classe submetida não pode realizar impressão de dados, utilizar java.util e System.out.
 
-Casos de teste
+
+
+#### Casos de teste
+
 Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
 
-Entrada:
+Entrada:  
 
-operações no formato: [código operação] (índice lâmpada)
-operação 1: adicionar lâmpada
-operação 2: ligar lâmpada
-operação 3: desligar lâmpada
-Saída:
+- operações no formato: [código operação] (índice lâmpada)
+    - operação 1: adicionar lâmpada
+    - operação 2: ligar lâmpada
+    - operação 3: desligar lâmpada  
 
-métodos executados e saídas obtidas
+Saída:  
+
+- métodos executados e saídas obtidas
  
 ----------------------------------------------------------------------------------------------------
  
@@ -1473,113 +1476,122 @@ métodos executados e saídas obtidas
 Neste exercício, será usada a classe Usuario. Essa classe guarda o login e senha de um Usuario.
 
 
-Classe Usuario (esta classe já está implementada no pacote acesso no sistema de correção automática):
+Classe **Usuario** (esta classe já está implementada no **pacote acesso** no sistema de correção automática):  
 
-Usuario(login: String, senha: String) - construtor de Usuario que armazena o login e a senha.
-getLogin(): String - retorna o login da instância atual da classe Usuario.
-autenticar(senha: String) - verifica se a senha passada é correta e, caso não seja, lança a exceção SenhaInvalida ou UsuarioBloqueado.
-
-
-Escreva um programa para autenticar usuários com login e senha que use a classe Usuario, conforme descrito a seguir (o programa deverá ser implementado na classe AutenticacaoUsuario):
-
-Lê um inteiro n, que é a quantidade de usuários a serem cadastrados.
-Depois o programa receberá uma sequência de n pares "login senha". O programa deve instanciar a classe Usuario uma vez para cada usuário. O construtor de Usuario recebe o login e senha como argumentos, por exemplo: new Usuario("login", "senha");
-Após instanciar todos os usuários, o programa recebe mais um inteiro (k), que representa a quantidade de tentativas de autenticação a serem realizadas.
-Depois o programa receberá uma sequência de k pares "login senha". Desta vez, o programa deverá chamar o método autenticar do usuário correspondente ao login e, para esse usuário, passar a senha lida como argumento (assuma que sempre será passado um login de um usuário que existe). Após chamar o método autenticar, o programa deverá imprimir o resultado usando a classe Impressao de acordo com o caso (os três métodos são static na classe Impressao):
-Impressao.imprimirUsuarioAutenticado(login: String): quando o método autenticar não lança exceção
-Impressao.imprimirSenhaInvalida(login: String): quando o método autenticar lançar a exceção SenhaInvalida (ocorre se a senha passada é incorreta)
-Impressao.imprimirUsuarioBloqueado(login: String): quando o método autenticar lançar a exceção UsuarioBloqueado (essa exceção é lançada se a senha é incorreta 3 ou mais vezes seguidas)
-Observação: as classes das exceções SenhaInvalida e UsuarioBloqueado possuem um método chamado getLogin(): String, que pode ser usado para obter o login do usuário de onde a exceção foi lançada.
+- **Usuario(login: String, senha: String)** - construtor de Usuario que armazena o login e a senha.
+- **getLogin(): String** - retorna o login da instância atual da classe Usuario.
+- **autenticar(senha: String)** - verifica se a senha passada é correta e, caso não seja, lança a exceção SenhaInvalida ou UsuarioBloqueado.  
 
 
+**Escreva um programa** para autenticar usuários com login e senha que use a classe Usuario, conforme descrito a seguir (o programa deverá ser implementado na classe **AutenticacaoUsuario**):
 
-As classes Usuario, SenhaInvalida, UsuarioBloqueado e Impressao estão no pacote acesso e já existem no sistema de correção automática (portanto, não devem ser submetidas). Na aba Editar, há uma implementação inicial do programa com os imports necessários já incluídos.
+1. Lê um inteiro *n*, que é a quantidade de usuários a serem cadastrados.
+2. Depois o programa receberá uma sequência de *n* pares "login senha". O programa deve instanciar a classe Usuario uma vez para cada usuário. O construtor de Usuario recebe o login e senha como argumentos, por exemplo: new Usuario("login", "senha");
+3. Após instanciar todos os usuários, o programa recebe mais um inteiro (k), que representa a quantidade de tentativas de autenticação a serem realizadas.
+4. Depois o programa receberá uma sequência de k pares "login senha". Desta vez, o programa deverá chamar o método autenticar do usuário correspondente ao login e, para esse usuário, passar a senha lida como argumento (assuma que sempre será passado um login de um usuário que existe). Após chamar o método autenticar, o programa deverá imprimir o resultado usando a classe Impressao de acordo com o caso (os três métodos são static na classe Impressao):
+    1. Impressao.imprimirUsuarioAutenticado(login: String): quando o método autenticar não lança exceção
+    2. Impressao.imprimirSenhaInvalida(login: String): quando o método autenticar lançar a exceção SenhaInvalida (ocorre se a senha passada é incorreta)
+    3. Impressao.imprimirUsuarioBloqueado(login: String): quando o método autenticar lançar a exceção UsuarioBloqueado (essa exceção é lançada se a senha é incorreta 3 ou mais vezes seguidas)  
+
+*Observação*: as classes das exceções SenhaInvalida e UsuarioBloqueado possuem um método chamado getLogin(): String, que pode ser usado para obter o login do usuário de onde a exceção foi lançada.
 
 
 
-
-Importante: Submeta apenas o programa principal (o programa deve estar no pacote sem nome, ou seja, sem a linha package). A impressão de dados é permitida apenas com a classe Impressao, usando os três métodos static especificados.
-
+As classes Usuario, SenhaInvalida, UsuarioBloqueado e Impressao estão no **pacote acesso** e já existem no sistema de correção automática (portanto, não devem ser submetidas). *Na aba Editar, há uma implementação inicial do programa com os imports necessários já incluídos.*  
 
 
-Casos de teste
-Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
 
-Entrada:
 
-n (quantidade de usuários)
-sequência de "login senha" (para cadastro dos usuários)
-k (quantidade de tentativas)
-sequência de "login senha" (para chamar o método autenticar)
-Saída:
+**Importante**: Submeta apenas o programa principal (o programa deve estar no **pacote sem nome**, *ou seja, sem a linha package*). A impressão de dados é permitida apenas com a classe Impressao, usando os três métodos static especificados.  
 
-dados impressos pelas classes Usuario, SenhaInvalida e UsuarioBloqueado ao longo do programa
-saída dos métodos da classe Impressao
+
+
+#### Casos de teste
+
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):  
+
+Entrada:  
+
+- n (quantidade de usuários)
+- sequência de "login senha" (para cadastro dos usuários)
+- k (quantidade de tentativas)
+- sequência de "login senha" (para chamar o método autenticar)  
+
+Saída:  
+
+- dados impressos pelas classes Usuario, SenhaInvalida e UsuarioBloqueado ao longo do programa
+- saída dos métodos da classe Impressao
  
 ----------------------------------------------------------------------------------------------------
  
 ### Playlist com exceções
  
- Neste exercício, deve ser implementada uma classe chamada Playlist, que irá armazenar uma playlist de arquivos multimídia. Para isso, neste exercício, devem ser implementadas as classes públicas Playlist, ArquivoMultimidia, ArquivoVideo e ArquivoAudio (todas as classes devem estar no pacote multimidia). Além disso, também podem ser lançadas dois tipos de exceções e as classes para essas exceções devem ser implementadas também: IndiceArquivoInvalido e QuantidadeLimiteArquivos. A seguir são descritos detalhes sobre as situações em que essas exceções são lançadas e o que essas classes com as exceções devem conter.
+Neste exercício, deve ser implementada uma classe chamada Playlist, que irá armazenar uma playlist de arquivos multimídia. Para isso, neste exercício, devem ser implementadas as classes públicas **Playlist, ArquivoMultimidia, ArquivoVideo e ArquivoAudio** (todas as classes devem estar no **pacote multimidia**). Além disso, também podem ser lançadas dois tipos de exceções e as classes para essas exceções devem ser implementadas também: **IndiceArquivoInvalido** e **QuantidadeLimiteArquivos**. A seguir são descritos detalhes sobre as situações em que essas exceções são lançadas e o que essas classes com as exceções devem conter.
 
 
 
-Classe abstrata ArquivoMultimidia:
+Classe abstrata **ArquivoMultimidia**:  
 
-Construtor: public ArquivoMultimidia(String nomeArquivo, int tamanho) - construtor que inicializa o nome do arquivo e o tamanho.
-Métodos:
-public final String getNomeArquivo() - retorna o nome do arquivo.
-public final int getTamanhoArquivo() - retorna o tamanho do arquivo.
-public final void setNomeArquivo(String nomeArquivo) - alterna o nome do arquivo.
-Classe ArquivoVideo (subclasse de ArquivoMultimidia):
+- Construtor: public ArquivoMultimidia(String nomeArquivo, int tamanho) - construtor que inicializa o nome do arquivo e o tamanho.
+- Métodos:
+    - public final String getNomeArquivo() - retorna o nome do arquivo.
+    - public final int getTamanhoArquivo() - retorna o tamanho do arquivo.
+    - public final void setNomeArquivo(String nomeArquivo) - alterna o nome do arquivo.  
 
-Construtor: public ArquivoVideo(String nomeArquivo, int tamanho, int largura, int altura) - instancia um ArquivoVideo especificando o nome do arquivo, o tamanho e a resolução (largura e altura).
-Método: public String toString() - sobrescreve o método toString() de Object. O retorno do método deve ser no formato "Video: %s (%d)" (observe que não há acento), em que %s é o nome do arquivo e o inteiro indicado com %d é o tamanho do arquivo.
-Classe ArquivoAudio (subclasse de ArquivoMultimidia):
+Classe **ArquivoVideo** (subclasse de ArquivoMultimidia):  
 
-Construtor: public ArquivoAudio(String nomeArquivo, int tamanho, boolean audioHD) - instancia um ArquivoAudio especificando o nome do arquivo, o tamanho e se este arquivo tem áudio HD ou não.
-Método: public String toString() - sobrescreve o método toString() de Object. O retorno do método deve ser no formato "Audio: %s (%d)" (observe que não há acento), em que %s é o nome do arquivo e o inteiro indicado com %d é o tamanho do arquivo.
+- Construtor: public ArquivoVideo(String nomeArquivo, int tamanho, int largura, int altura) - instancia um ArquivoVideo especificando o nome do arquivo, o tamanho e a resolução (largura e altura).
+- Método: public String toString() - sobrescreve o método toString() de Object. O retorno do método deve ser no formato "Video: %s (%d)" (observe que não há acento), em que %s é o nome do arquivo e o inteiro indicado com %d é o tamanho do arquivo.  
 
-Classe Playlist:
+Classe **ArquivoAudio** (subclasse de ArquivoMultimidia):  
 
-Construtor: esta classe deve possuir apenas o construtor sem parâmetros, que inicializa a playlist sem nenhum arquivo. Uma playlist pode ter no máximo 10 arquivos.
-Métodos:
-public void adicionarItem(ArquivoMultimidia arquivo) - adiciona um arquivo mulmídia no final da lista de arquivos. Se, ao adicionar um arquivo, a playlist já estava com 10 arquivos (limite máximo), deve ser lançada a exceção QuantidadeLimiteArquivos e o arquivo não é adicionado. A exceção QuantidadeLimiteArquivos é subclasse de Exception (mas não de RuntimeException) e seu construtor deve chamar o construtor da superclasse Exception com a mensagem "Quantidade limite de arquivos foi atingida.".
-public void renomearItem(int indiceArquivo, String novoNomeArquivo) - altera o nome de um arquivo na lista de arquivos da playlist. Se o índice especificado não for válido (não há arquivo no índice especificado), deve ser lançada a exceção IndiceArquivoInvalido. A exceção IndiceArquivoInvalido é subclasse de Exception (mas não de RuntimeException) e seu construtor deve chamar o construtor da superclasse Exception com a mensagem "Indice de arquivo invalido = %d" (observe que não há acento na mensagem), em que o inteiro representado por %d é o valor do índice inválido que foi passado como argumento no método.
-public void moverParaInicio(int indiceArquivo) - move o arquivo especificado para o início da lista. Se o índice especificado não for válido (não há arquivo no índice especificado), deve ser lançada a exceção IndiceArquivoInvalido. A exceção IndiceArquivoInvalido é a mesma que o método renomearItem pode lançar e que foi descrita anteriormente.
-public String[] listarArquivos() - retorna um vetor de String com os retornos do método toString() dos arquivos na playlist. O comprimento desse vetor é a quantidade de arquivos adicionados na playlist.
-public void ordenarArquivos(int tipo) - ordena os arquivos da playlist de acordo com o tipo de ordenação especificado no parâmetro tipo.
-tipo=1 - Ordena os arquivos em ordem alfabética (lexicográfica) de nome. Caso a lista tenha mais de um arquivo com o mesmo nome, use a ordem crescente do tamanho do arquivo para desempate.
-tipo=2 - Ordena os arquivos em ordem crescente de tamanho do arquivo. Caso a lista tenha mais de um arquivo com o mesmo tamanho, use a ordem alfabética (lexicográfica) para desempate.
-Dica: para comparar duas Strings, é possível usar o método compareTo da classe String. Por exemplo:
+- Construtor: public ArquivoAudio(String nomeArquivo, int tamanho, boolean audioHD) - instancia um ArquivoAudio especificando o nome do arquivo, o tamanho e se este arquivo tem áudio HD ou não.
+- Método: public String toString() - sobrescreve o método toString() de Object. O retorno do método deve ser no formato "Audio: %s (%d)" (observe que não há acento), em que %s é o nome do arquivo e o inteiro indicado com %d é o tamanho do arquivo.  
 
-String str1 = "ABC";
+Classe **Playlist**:  
+
+- Construtor: esta classe deve possuir apenas o construtor sem parâmetros, que inicializa a playlist sem nenhum arquivo. Uma playlist pode ter no máximo 10 arquivos.
+- Métodos:
+    - **public void adicionarItem(ArquivoMultimidia arquivo)** - adiciona um arquivo mulmídia no final da lista de arquivos. Se, ao adicionar um arquivo, a playlist já estava com 10 arquivos (limite máximo), deve ser lançada a exceção QuantidadeLimiteArquivos e o arquivo não é adicionado. *A exceção QuantidadeLimiteArquivos é subclasse de Exception (mas não de RuntimeException)* e seu construtor deve chamar o construtor da superclasse Exception com a mensagem "Quantidade limite de arquivos foi atingida.".
+    - **public void renomearItem(int indiceArquivo, String novoNomeArquivo)** - altera o nome de um arquivo na lista de arquivos da playlist. Se o índice especificado não for válido (não há arquivo no índice especificado), deve ser lançada a exceção IndiceArquivoInvalido. *A exceção IndiceArquivoInvalido é subclasse de Exception (mas não de RuntimeException)* e seu construtor deve chamar o construtor da superclasse Exception com a mensagem "Indice de arquivo invalido = %d" (observe que não há acento na mensagem), em que o inteiro representado por %d é o valor do índice inválido que foi passado como argumento no método.
+    - **public void moverParaInicio(int indiceArquivo)** - move o arquivo especificado para o início da lista. Se o índice especificado não for válido (não há arquivo no índice especificado), deve ser lançada a exceção IndiceArquivoInvalido. A exceção IndiceArquivoInvalido é a mesma que o método renomearItem pode lançar e que foi descrita anteriormente.
+    - **public String[] listarArquivos()** - retorna um vetor de String com os retornos do método toString() dos arquivos na playlist. O comprimento desse vetor é a quantidade de arquivos adicionados na playlist.
+    - **public void ordenarArquivos(int tipo)** - ordena os arquivos da playlist de acordo com o tipo de ordenação especificado no parâmetro tipo.
+        - *tipo=1* - Ordena os arquivos em ordem alfabética (lexicográfica) de nome. Caso a lista tenha mais de um arquivo com o mesmo nome, use a ordem crescente do tamanho do arquivo para desempate.
+        - *tipo=2* - Ordena os arquivos em ordem crescente de tamanho do arquivo. Caso a lista tenha mais de um arquivo com o mesmo tamanho, use a ordem alfabética (lexicográfica) para desempate.  
+
+**Dica**: para comparar duas Strings, é possível usar o método compareTo da classe String. Por exemplo:  
+
+``String str1 = "ABC";
 String str2 = "DEF";
-int comparacao = str1.compareTo(str2);
+int comparacao = str1.compareTo(str2);``  
+
 O retorno pode ser um valor negativo (quando str1 vem antes de str2 na ordem lexicográfica), positivo (quando str2 vem antes de str1 na ordem lexicográfica) ou zero (quando str1 é igual a str2). Mais detalhes em: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#compareTo(java.lang.String)
 
 
 
-Observação: Não é permitido o uso de funções de ordenação prontas (por exemplo, sort). Implemente um algoritmo de ordenação. Também não use o termo "sort" em nenhuma parte do código.
+**Observação: Não é permitido o uso de funções de ordenação prontas (por exemplo, sort). Implemente um algoritmo de ordenação. Também não use o termo "sort" em nenhuma parte do código.**  
 
 
 
-Importante: Submeta apenas as classes públicas descritas no enunciado (todas devem estar no pacote multimidia) e também as classes das duas exceções: IndiceArquivoInvalido e QuantidadeLimiteArquivos (as duas classes das exceções tem acesso package). O programa principal já existe no sistema de correção automática. As classes submetidas não podem realizar impressão de dados, utilizar import e java.util.
+**Importante**: Submeta apenas as classes públicas descritas no enunciado (todas devem estar no **pacote multimidia**) e também as classes das duas exceções: IndiceArquivoInvalido e QuantidadeLimiteArquivos (as duas classes das exceções tem acesso package). O programa principal já existe no sistema de correção automática. As classes submetidas não podem realizar impressão de dados, utilizar import e java.util.  
 
 
 
-Casos de teste
+#### Casos de teste
+
 Para realizar os testes, o programa de correção instancia um objeto Playlist (playlist1). Após isso, diversos métodos são chamados ao longo do teste. Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
 
-Entrada
-quantidade de arquivos a serem instanciados
-lista de arquivos a serem instanciados no formato [tipo] [nome do arquivo] [valores de atributos]
-métodos chamados
-Saída
-verificação da classe ArquivoMultimidia e das classes das exceções QuantidadeLimiteArquivos e IndiceArquivoInvalido
-arquivos instanciados
-instanciação da classe Playlist
-métodos chamados
+Entrada   
+- quantidade de arquivos a serem instanciados
+- lista de arquivos a serem instanciados no formato [tipo] [nome do arquivo] [valores de atributos]
+- métodos chamados  
+
+Saída  
+- verificação da classe ArquivoMultimidia e das classes das exceções QuantidadeLimiteArquivos e IndiceArquivoInvalido
+- arquivos instanciados
+- instanciação da classe Playlist
+- métodos chamados
  
 ----------------------------------------------------------------------------------------------------
  
