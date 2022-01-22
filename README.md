@@ -1967,3 +1967,5 @@ Saída
 **Referências**:
 Faceli , K., Lorena, A. C., Gama, J., Almeida, T. A., Carvalho, A. C. P. L. F. (2021). Inteligência Artificial Uma Abordagem de Aprendizado de Máquina, 2a edição, LTC.
 Um dos testes é realizado com parte do conjunto de dados Iris: https://archive.ics.uci.edu/ml/datasets/Iris
+ 
+ [Voltar ao começo](#)
