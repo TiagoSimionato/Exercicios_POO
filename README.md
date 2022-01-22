@@ -1028,30 +1028,32 @@ Saída:
  
 ### Arquivos multimídia 
  
-Neste exercício, serão utilizadas classes para representar arquivos multimídia. Haverá uma classe abstrata chamada ArquivoMultimidia e essa classe possui duas subclasses: ArquivoVideo e ArquivoAudio. A classe ArquivoMultimidia já está implementada na atividade e pode ser acessada na aba Editar (o código desta classe não pode ser modificado). Portanto, neste exercício, devem ser implementadas apenas as subclasses ArquivoVideo e ArquivoAudio, conforme definido a seguir (todas as classes devem estar no pacote multimidia):
+Neste exercício, serão utilizadas classes para representar arquivos multimídia. Haverá uma classe abstrata chamada ArquivoMultimidia e essa classe possui duas subclasses: ArquivoVideo e ArquivoAudio. *A classe **ArquivoMultimidia** já está implementada na atividade e pode ser acessada na **aba Editar (o código desta classe não pode ser modificado).*** Portanto, neste exercício, devem ser implementadas apenas as subclasses ArquivoVideo e ArquivoAudio, conforme definido a seguir (todas as classes devem estar no **pacote multimidia**):
 
-Classe ArquivoVideo (subclasse de ArquivoMultimidia):
+Classe **ArquivoVideo** (subclasse de ArquivoMultimidia):
 
-Construtor: public ArquivoVideo(String nomeArquivo, int largura, int altura) - instancia um ArquivoVideo especificando o nome do arquivo e a resolução (largura e altura).
-Método: public String toString() - sobrescreve o método toString() de Object. O retorno do método deve ser no formato "Video: %s (%d x %d)" (observe que não há acento), em que %s é o nome do arquivo e os dois inteiros indicados com %d são respectivamente largura e altura do vídeo.
-Classe ArquivoAudio (subclasse de ArquivoMultimidia):
+- Construtor: public ArquivoVideo(String nomeArquivo, int largura, int altura) - instancia um ArquivoVideo especificando o nome do arquivo e a resolução (largura e altura).
+- Método: public String toString() - sobrescreve o método toString() de Object. O retorno do método deve ser no formato "Video: %s (%d x %d)" (observe que não há acento), em que %s é o nome do arquivo e os dois inteiros indicados com %d são respectivamente largura e altura do vídeo.  
+Classe **ArquivoAudio** (subclasse de ArquivoMultimidia):  
 
-Construtor: public ArquivoAudio(String nomeArquivo, boolean audioHD) - instancia um ArquivoAudio especificando o nome do arquivo e se este arquivo tem áudio HD ou não.
-Método: public String toString() - sobrescreve o método toString() de Object. O retorno do método deve ser no formato "Audio: %s (HD = %s)" (obseve que não há acento), em que o primeiro %s é o nome do arquivo e o segundo %s pode assumir o valor "true" ou "false" (true se o arquivo tem áudio HD e false caso contrário).
-
-
-Importante: Submeta apenas as classes públicas descritas no enunciado (todas devem estar no pacote multimidia). O programa principal já existe no sistema de correção automática. As classes submetidas não podem realizar impressão de dados ou utilizar import.
+- Construtor: public ArquivoAudio(String nomeArquivo, boolean audioHD) - instancia um ArquivoAudio especificando o nome do arquivo e se este arquivo tem áudio HD ou não.
+- Método: public String toString() - sobrescreve o método toString() de Object. O retorno do método deve ser no formato "Audio: %s (HD = %s)" (obseve que não há acento), em que o primeiro %s é o nome do arquivo e o segundo %s pode assumir o valor "true" ou "false" (true se o arquivo tem áudio HD e false caso contrário).  
 
 
+**Importante**: Submeta apenas as classes públicas descritas no enunciado (todas devem estar no **pacote multimidia**). O programa principal já existe no sistema de correção automática. As classes submetidas não podem realizar impressão de dados ou utilizar import.
 
-Casos de teste
+
+
+#### Casos de teste
+ 
 Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
 
-Entrada
-quantidade de arquivos a serem instanciados
-lista de arquivos a serem instanciados no formato [tipo] [nome do arquivo] [valores de atributos]
-Saída
-resultado da chamada ao método toString() de cada arquivo instanciado
+Entrada   
+- quantidade de arquivos a serem instanciados
+- lista de arquivos a serem instanciados no formato [tipo] [nome do arquivo] [valores de atributos]  
+
+Saída  
+- resultado da chamada ao método toString() de cada arquivo instanciado
  
 ----------------------------------------------------------------------------------------------------
  
@@ -1061,89 +1063,95 @@ Escreva as classes PerfilRedeSocial e PerfilAnonimo (pacote usuarios) conforme d
 
 
 
-Classe PerfilUsuario: o código desta classe está pronto e foi disponibilizado na aba Editar. O código desta classe não pode ser modificado.
+Classe **PerfilUsuario**: *o código desta classe está pronto e foi disponibilizado na aba Editar. O código desta classe não pode ser modificado*.
 
 
 
-Classe PerfilRedeSocial (subclasse de PerfilUsuario):
+Classe **PerfilRedeSocial** (subclasse de PerfilUsuario):
 
-PerfilRedeSocial(String nome, String login): construtor que inicializa nome e login. Esses atributos devem ser atribuídos na superclasse PerfilUsuario.
-PerfilRedeSocial(String nome, String login, String mensagemPaginaInicial): construtor que inicializa nome e login. Esses atributos devem ser atribuídos na superclasse PerfilUsuario. Esse construtor recebe também uma mensagem para a página inicial.
-String getPerfil(): retorna uma string no formato: "<nome> <mensagemPaginaInicial>"
-
-
-Classe PerfilAnonimo (subclasse de PerfilUsuario):
-
-PerfilAnonimo(): construtor que inicializa o nome com a string "Anonimo". Esse atributo deve ser atribuído na superclasse PerfilUsuario.
+- PerfilRedeSocial(String nome, String login): construtor que inicializa nome e login. Esses atributos devem ser atribuídos na superclasse PerfilUsuario.
+- PerfilRedeSocial(String nome, String login, String mensagemPaginaInicial): construtor que inicializa nome e login. Esses atributos devem ser atribuídos na superclasse PerfilUsuario. Esse construtor recebe também uma mensagem para a página inicial.
+- String getPerfil(): retorna uma string no formato: "\<nome\> \<mensagemPaginaInicial\>"  
 
 
-Importante: O programa principal já existe no sistema de correção automática, assim como a classe PerfilUsuario. Submeta apenas as duas classes públicas especificadas (que pertencem ao pacote usuarios). As classes não pode realizar impressão de dados ou utilizar import.
+Classe **PerfilAnonimo** (subclasse de PerfilUsuario):  
+
+- PerfilAnonimo(): construtor que inicializa o nome com a string "Anonimo". Esse atributo deve ser atribuído na superclasse PerfilUsuario.
+
+
+**Importante**: O programa principal já existe no sistema de correção automática, assim como a classe PerfilUsuario. Submeta apenas as duas classes públicas especificadas (que pertencem ao **pacote usuarios**). As classes não pode realizar impressão de dados ou utilizar import.
 
 
 
-Casos de teste
-Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+#### Casos de teste
+ 
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):  
 
-Entrada:
+Entrada:  
 
-nome
-login
-mensagem página inicial
-Saída:
+- nome
+- login
+- mensagem página inicial  
+ 
+Saída:  
 
-verificação das classes
-métodos executados e saídas obtidas
+- verificação das classes
+- métodos executados e saídas obtidas
  
 ----------------------------------------------------------------------------------------------------
  
 ### Playlist
  
-Neste exercício, deve ser implementada uma classe chamada Playlist, que irá armazenar uma playlist de arquivos multimídia. Para isso, neste exercício, devem ser implementadas as classes Playlist, ArquivoMultimidia, ArquivoVideo e ArquivoAudio (todas as classes devem estar no pacote multimidia).
+Neste exercício, deve ser implementada uma classe chamada Playlist, que irá armazenar uma playlist de arquivos multimídia. Para isso, neste exercício, devem ser implementadas as classes **Playlist, ArquivoMultimidia, ArquivoVideo e ArquivoAudio** (todas as classes devem estar no **pacote multimidia**).
 
 
 
-Classe abstrata ArquivoMultimidia:
+Classe abstrata **ArquivoMultimidia**:
 
-Construtor: public ArquivoMultimidia(String nomeArquivo) - construtor que inicializa o nome do arquivo
-Métodos:
-public final String getNomeArquivo() - retorna o nome do arquivo
-public final void setNomeArquivo(String nomeArquivo) - alterna o nome do arquivo
-Classe ArquivoVideo (subclasse de ArquivoMultimidia):
+- Construtor: public ArquivoMultimidia(String nomeArquivo) - construtor que inicializa o nome do arquivo
+- Métodos:
+    - public final String getNomeArquivo() - retorna o nome do arquivo
+    - public final void setNomeArquivo(String nomeArquivo) - alterna o nome do arquivo  
 
-Construtor: public ArquivoVideo(String nomeArquivo, int largura, int altura) - instancia um ArquivoVideo especificando o nome do arquivo e a resolução (largura e altura).
-Método: public String toString() - sobrescreve o método toString() de Object. O retorno do método deve ser no formato "Video: %s (%d x %d)" (observe que não há acento), em que %s é o nome do arquivo e os dois inteiros indicados com %d são respectivamente largura e altura do vídeo.
-Classe ArquivoAudio (subclasse de ArquivoMultimidia):
+Classe **ArquivoVideo** (subclasse de ArquivoMultimidia):
 
-Construtor: public ArquivoAudio(String nomeArquivo, boolean audioHD) - instancia um ArquivoAudio especificando o nome do arquivo e se este arquivo tem áudio HD ou não.
-Método: public String toString() - sobrescreve o método toString() de Object. O retorno do método deve ser no formato "Audio: %s (HD = %s)" (observe que não há acento), em que o primeiro %s é o nome do arquivo e o segundo %s pode assumir o valor "true" ou "false" (true se o arquivo tem áudio HD e false caso contrário).
+- Construtor: public ArquivoVideo(String nomeArquivo, int largura, int altura) - instancia um ArquivoVideo especificando o nome do arquivo e a resolução (largura e altura).
+- Método: public String toString() - sobrescreve o método toString() de Object. O retorno do método deve ser no formato "Video: %s (%d x %d)" (observe que não há acento), em que %s é o nome do arquivo e os dois inteiros indicados com %d são respectivamente largura e altura do vídeo. 
 
-Classe Playlist:
+Classe **ArquivoAudio** (subclasse de ArquivoMultimidia):  
 
-Construtor: esta classe deve possuir apenas o construtor sem parâmetros, que inicializa a playlist sem nenhum arquivo. Uma playlist pode ter no máximo 100 arquivos.
-Métodos:
-public void adicionarItem(ArquivoMultimidia arquivo) - adiciona um arquivo mulmídia no final da lista de arquivos.
-public void renomearItem(int indiceArquivo, String novoNomeArquivo) - altera o nome de um arquivo na lista de arquivos da playlist.
-public void moverParaInicio(int indiceArquivo) - move o arquivo especificado para o início da lista.
-public String[] listarArquivos() - retorna um vetor de String com os nomes dos arquivos na playlist. O comprimento desse vetor é a quantidade de arquivos adicionados na playlist.
-public Playlist clone() - sobrescreve o método clone de Object. Esse método deve realizar uma cópia profunda do objeto Playlist. Nessa cópia profunda, inclusive as instâncias dos arquivos devem ser copiadas na nova instância retornada.
+- Construtor: public ArquivoAudio(String nomeArquivo, boolean audioHD) - instancia um ArquivoAudio especificando o nome do arquivo e se este arquivo tem áudio HD ou não.
+- Método: public String toString() - sobrescreve o método toString() de Object. O retorno do método deve ser no formato "Audio: %s (HD = %s)" (observe que não há acento), em que o primeiro %s é o nome do arquivo e o segundo %s pode assumir o valor "true" ou "false" (true se o arquivo tem áudio HD e false caso contrário).  
 
+Classe **Playlist**:  
 
-Importante: Submeta apenas as classes públicas descritas no enunciado (todas devem estar no pacote multimidia). O programa principal já existe no sistema de correção automática. As classes submetidas não podem realizar impressão de dados ou utilizar import.
-
+- Construtor: esta classe deve possuir apenas o construtor sem parâmetros, que inicializa a playlist sem nenhum arquivo. Uma playlist pode ter no máximo 100 arquivos.
+- Métodos:
+    - public void adicionarItem(ArquivoMultimidia arquivo) - adiciona um arquivo mulmídia no final da lista de arquivos.
+    - public void renomearItem(int indiceArquivo, String novoNomeArquivo) - altera o nome de um arquivo na lista de arquivos da playlist.
+    - public void moverParaInicio(int indiceArquivo) - move o arquivo especificado para o início da lista.
+    - public String[] listarArquivos() - retorna um vetor de String com os nomes dos arquivos na playlist. O comprimento desse vetor é a quantidade de arquivos adicionados na playlist.
+    - public Playlist clone() - sobrescreve o método clone de Object. Esse método deve realizar uma cópia profunda do objeto Playlist. Nessa cópia profunda, inclusive as instâncias dos arquivos devem ser copiadas na nova instância retornada.  
 
 
-Casos de teste
+**Importante**: Submeta apenas as classes públicas descritas no enunciado (todas devem estar no **pacote multimidia**). O programa principal já existe no sistema de correção automática. As classes submetidas não podem realizar impressão de dados ou utilizar import.
+
+
+
+#### Casos de teste
+ 
 Para realizar os testes, o programa de correção instancia um objeto Playlist (playlist1). Ao longo do teste, o programa chama o método clone de playlist1 e assim obtêm uma instância que é armazenada em playlist2. Além disso, diversos métodos são chamados ao longo do teste. Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
 
-Entrada
-quantidade de arquivos a serem instanciados
-lista de arquivos a serem instanciados no formato [tipo] [nome do arquivo] [valores de atributos]
-métodos chamados
-Saída
-verificação da classe ArquivoMultimidia
-arquivos instanciados
-instanciação da classe Playlist
-métodos chamados
+Entrada  
+- quantidade de arquivos a serem instanciados
+- lista de arquivos a serem instanciados no formato [tipo] [nome do arquivo] [valores de atributos]
+- métodos chamados  
+
+Saída  
+- verificação da classe ArquivoMultimidia
+- arquivos instanciados
+- instanciação da classe Playlist
+- métodos chamados
  
 ----------------------------------------------------------------------------------------------------
  
@@ -1153,89 +1161,100 @@ O diretor de uma empresa projetou uma classe para produzir relatórios. A classe
 
 O diretor já implementou uma classe abstrata para o relatório e também duas interfaces (uma para plugin de texto e outra para plugin de impressão). Essa classe e as duas interfaces estão prontas e disponíveis na aba Editar (esses três arquivos não podem ser modificados).
 
-Classe abstrata Relatorio
-Interface PluginTexto
-Interface PluginImpressao
+- Classe abstrata Relatorio
+- Interface PluginTexto
+- Interface PluginImpressao  
+
 Entretanto, ainda falta implementar diversas partes para viabilizar o uso dessa classe para produzir relatórios com plugins. Neste exercício, deverão ser submetidos 5 arquivos (todas as classes descritas a seguir são públicas e devem estar no pacote relatorio):
 
-Classe RelatorioComPlugins
-Classes TextoTitulo e TextoData (implementações de plugin de processamento de texto)
-Classes ImpressaoSimples e ImpressaoLimiteLargura (implementações de plugin de impressão)
+- Classe RelatorioComPlugins
+- Classes TextoTitulo e TextoData (implementações de plugin de processamento de texto)
+- Classes ImpressaoSimples e ImpressaoLimiteLargura (implementações de plugin de impressão)  
+
 A seguir são apresentados os métodos necessários em cada classe. Esses métodos podem ser usados pelo sistema de correção e por isso devem seguir a especificação apresentada no enunciado. Você pode incluir atributos e métodos auxiliares adicionais que considerar necessários durante a implementação.
 
 
 
-Classe RelatorioComPlugins
+#### Classe RelatorioComPlugins
+ 
 Essa classe deve ser subclasse da classe Relatorio e possuir os métodos a seguir:
 
-public RelatorioComPlugins(String autor): construtor que armazena o texto passado no parâmetro autor.
-public void aplicarPluginTexto(PluginTexto plugin): aplica o plugin de processamento sobre o texto armazenado na instância de RelatorioComPlugins e substitui o texto armazenado pelo obtido após a aplicação do plugin.
-public void setPluginImpressao(PluginImpressao p) : armazena uma referência a uma instância de um plugin de impressão. Essa instância será usada posteriormente pelo método imprimirRelatorio.
-public void imprimirRelatorio(): imprime o texto armazenado na instância de RelatorioComPlugins usando o plugin de impressão especificado por setPluginImpressao.
+- public RelatorioComPlugins(String autor): construtor que armazena o texto passado no parâmetro autor.
+- public void aplicarPluginTexto(PluginTexto plugin): aplica o plugin de processamento sobre o texto armazenado na instância de RelatorioComPlugins e substitui o texto armazenado pelo obtido após a aplicação do plugin.
+- public void setPluginImpressao(PluginImpressao p) : armazena uma referência a uma instância de um plugin de impressão. Essa instância será usada posteriormente pelo método imprimirRelatorio.
+- public void imprimirRelatorio(): imprime o texto armazenado na instância de RelatorioComPlugins usando o plugin de impressão especificado por setPluginImpressao.  
 
 
-Plugins de processamento de texto
+#### Plugins de processamento de texto
+ 
 Os plugins de processamento de texto devem implementar a interface PluginTexto. Essa interface já está pronta e pode ser encontrada na aba Editar. Há apenas um método nessa interface:
 
-String aplicar(String texto): método que recebe um texto e retorna uma nova string com o resultado do processamento de texto aplicado. A regra de processamento de texto dependerá de cada classe que implementar este método.
+- String aplicar(String texto): método que recebe um texto e retorna uma nova string com o resultado do processamento de texto aplicado. A regra de processamento de texto dependerá de cada classe que implementar este método.  
 Neste exercício, devem ser implementados dois plugins de processamento de texto:
 
-Classe TextoTitulo: implementação de PluginTexto que adiciona um título ao texto do relatório.
+**Classe TextoTitulo**: implementação de PluginTexto que adiciona um título ao texto do relatório.  
 
-public TextoTitulo(String titulo): construtor que instancia um plugin e armazena um título na instância de TextoTitulo.
-public String aplicar(String texto): adiciona um título no início do texto no formato: "(TITULO: %s>) ", em que %s é o título do relatório (observe que não há acento). Por exemplo, para o texto "Este eh um teste." e título "Relatorio1", o retorno do método aplicar seria "(TITULO: Relatorio1) Este eh um teste."
-Classe TextoData: implementação de PluginTexto que adiciona uma data ao texto do relatório.
+- public TextoTitulo(String titulo): construtor que instancia um plugin e armazena um título na instância de TextoTitulo.
+- public String aplicar(String texto): adiciona um título no início do texto no formato: "(TITULO: %s>) ", em que %s é o título do relatório (observe que não há acento). Por exemplo, para o texto "Este eh um teste." e título "Relatorio1", o retorno do método aplicar seria "(TITULO: Relatorio1) Este eh um teste."  
 
-public TextoData(int dia, int mes, int ano): construtor que instancia um plugin e armazena a data (dia, mês e ano).
-public String aplicar(String texto): adiciona a data ao final do texto no formato " (DATA: %d/%d/%d)", em que cada um dos inteiros %d são respectivamente dia, mês e ano. Por exemplo, para o texto "Este eh um teste." e data 10/10/1000, o retorno do método aplicar seria "Este eh um teste. (DATA: 10/10/1000)".
+**Classe TextoData**: implementação de PluginTexto que adiciona uma data ao texto do relatório.  
+
+- public TextoData(int dia, int mes, int ano): construtor que instancia um plugin e armazena a data (dia, mês e ano).
+- public String aplicar(String texto): adiciona a data ao final do texto no formato " (DATA: %d/%d/%d)", em que cada um dos inteiros %d são respectivamente dia, mês e ano. Por exemplo, para o texto "Este eh um teste." e data 10/10/1000, o retorno do método aplicar seria "Este eh um teste. (DATA: 10/10/1000)".  
 
 
-Plugins de impressão
+#### Plugins de impressão
+ 
 Os plugins de impressão devem implementar a interface PluginImpressao. Essa interface já está pronta e pode ser encontrada na aba Editar. Há apenas um método nessa interface:
 
-void imprimir(Relatorio r): método que recebe uma instância de Relatorio e imprime o texto do relatório (observe que RelatorioComPlugins é subclasse de Relatorio e, portanto, o argumento passado pode ser uma instância de RelatorioComPlugins). A regra de impressão dependerá de cada classe que implementar este método. Importante: para impressão use apenas o método Impressao.imprimirLinha(String textoLinha). A classe Impressao e este método imprimirLinha já existem no sistema de correção automática.
-Neste exercício, devem ser implementados dois plugins de impressão:
+- void imprimir(Relatorio r): método que recebe uma instância de Relatorio e imprime o texto do relatório (*observe que RelatorioComPlugins é subclasse de Relatorio e, portanto, o argumento passado pode ser uma instância de RelatorioComPlugins*). A regra de impressão dependerá de cada classe que implementar este método. **Importante**: para impressão use apenas o método **Impressao.imprimirLinha(String textoLinha)**. A classe Impressao e este método imprimirLinha já existem no sistema de correção automática.  
+Neste exercício, devem ser implementados dois plugins de impressão:  
 
-Classe ImpressaoSimples: implementação de PluginImpressao que faz uma impressão simples.
-public ImpressaoSimples(): essa classe deve possuir apenas o construtor sem parâmetros (esse construtor é implicitamente criado se nenhum outro construtor for implementado na classe).
-void imprimir(Relatorio r): faz uma impressão simples, ou seja, apenas chama o método imprimirLinha com o texto do relatório.
-Classe ImpressaoLimiteLargura: implementação de PluginImpressao que imprime o texto considerando que há uma largura limite para impressão.
+**Classe ImpressaoSimples**: implementação de PluginImpressao que faz uma impressão simples.  
 
-public ImpressaoLimiteLargura(int largura): construtor que armazena a largura máxima de linha passada no parâmetro largura.
-void imprimir(Relatorio r): imprime o texto considerando que há uma largura limite para impressão, ou seja, nenhuma linha impressa pode passar de um determinado número caracteres. Ao realizar esse tipo de impressão, algumas regras devem ser observadas:
-as palavras não podem ser separadas. Portanto, se não tiver espaço disponível para incluir uma palavra em uma linha, ela deverá ser incluída na próxima. Por exemplo, para o texto "Frase teste" e largura de linha 8, a divisão seria em duas linhas "Frase" e "teste" (não há espaço na primeira linha para incluir "Frase teste". Se a largura de linha for 11, apenas uma linha é suficiente.
-datas não podem ser separadas: a regra anterior se aplica a datas também (e.g. 10/10/1000).
-toda linha deve iniciar com uma letra, ou seja, nenhuma linha deve iniciar com o caractere espaço ou com pontuação (ponto, vírgula, etc). Se algum sinal de pontuação ficar exatamente após uma quebra de linha, a palavra que precede o sinal deve ser passada para a próxima linha, de forma que nenhuma linha inicie com pontuação. Por exemplo, para o texto "Neste teste, a frase possui pontuacao." e largura de linha 11, a divisão seria em cinco linhas: "Neste", "teste, a", "frase", "possui", "pontuacao."
-um caractere espaço que fique exatamente após uma quebra de linha deve ser suprimido, de forma que a próxima linha inicie com uma palavra (e não com um caractere espaço). Por exemplo, para o texto "Texto para teste ABCD" e largura 10, a divisão seria em duas linhas: "Texto para" e "teste ABCD".
+- public ImpressaoSimples(): essa classe deve possuir apenas o construtor sem parâmetros (esse construtor é implicitamente criado se nenhum outro construtor for implementado na classe).
+- void imprimir(Relatorio r): faz uma impressão simples, ou seja, apenas chama o método imprimirLinha com o texto do relatório.  
+ 
+**Classe ImpressaoLimiteLargura**: implementação de PluginImpressao que imprime o texto considerando que há uma largura limite para impressão.  
 
-Arquivos a serem submetidos
-Neste exercício, deverão ser submetidos 5 arquivos:
+- public ImpressaoLimiteLargura(int largura): construtor que armazena a largura máxima de linha passada no parâmetro largura.
+- void imprimir(Relatorio r): imprime o texto considerando que há uma largura limite para impressão, ou seja, nenhuma linha impressa pode passar de um determinado número caracteres. Ao realizar esse tipo de impressão, algumas regras devem ser observadas:
+    - *as palavras não podem ser separadas*. Portanto, se não tiver espaço disponível para incluir uma palavra em uma linha, ela deverá ser incluída na próxima. Por exemplo, para o texto "Frase teste" e largura de linha 8, a divisão seria em duas linhas "Frase" e "teste" (não há espaço na primeira linha para incluir "Frase teste". Se a largura de linha for 11, apenas uma linha é suficiente.
+    - *datas não podem ser separadas*: a regra anterior se aplica a datas também (e.g. 10/10/1000).
+    - *toda linha deve iniciar com uma letra*, ou seja, nenhuma linha deve iniciar com o caractere espaço ou com pontuação (ponto, vírgula, etc). Se algum sinal de pontuação ficar exatamente após uma quebra de linha, a palavra que precede o sinal deve ser passada para a próxima linha, de forma que nenhuma linha inicie com pontuação. Por exemplo, para o texto "Neste teste, a frase possui pontuacao." e largura de linha 11, a divisão seria em cinco linhas: "Neste", "teste, a", "frase", "possui", "pontuacao."
+    - *um caractere espaço que fique exatamente após uma quebra de linha deve ser suprimido*, de forma que a próxima linha inicie com uma palavra (e não com um caractere espaço). Por exemplo, para o texto "Texto para teste ABCD" e largura 10, a divisão seria em duas linhas: "Texto para" e "teste ABCD".  
 
-Classe RelatorioComPlugins
-Classes TextoTitulo e TextoData
-Classes ImpressaoSimples e ImpressaoLimiteLargura
+#### Arquivos a serem submetidos
+ 
+Neste exercício, deverão ser submetidos 5 arquivos:  
+
+- Classe RelatorioComPlugins
+- Classes TextoTitulo e TextoData
+- Classes ImpressaoSimples e ImpressaoLimiteLargura  
+ 
 Essa atividade disponibiliza também outros 3 arquivos com código pronto: Relatorio.java, PluginTexto.java e PluginImpressao.java. Não altere o conteúdo desses três arquivos.
 
-Importante: Não é permitido o uso de expressão regular, assim como dos métodos indexOf, join, lastIndexOf, replace, replaceAll, replaceFirst, split, startsWith, trim. O programa principal já existe no sistema de correção automática. As classes submetidas não podem realizar impressão de dados ou utilizar import (apenas os plugins de impressão podem imprimir dados, mas devem usar Impressao.imprimirLinha(texto), método que já existe no sistema de correção).
+**Importante**: Não é permitido o uso de expressão regular, assim como dos métodos indexOf, join, lastIndexOf, replace, replaceAll, replaceFirst, split, startsWith, trim. O programa principal já existe no sistema de correção automática. As classes submetidas não podem realizar impressão de dados ou utilizar import **(apenas os plugins de impressão podem imprimir dados, mas devem usar Impressao.imprimirLinha(texto), método que já existe no sistema de correção)**.  
 
+#### Casos de teste
+ 
+O programa de correção mantém um vetor com diversas instâncias de plugins e usa essas instâncias para realizar os testes (mais detalhes podem ser observados na sáida produzida pela correção automática). Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):  
 
-Casos de teste
-O programa de correção mantém um vetor com diversas instâncias de plugins e usa essas instâncias para realizar os testes (mais detalhes podem ser observados na sáida produzida pela correção automática). Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+Entrada  
+- texto do relatório
+- quantidade de plugins de processamento de texto a serem instanciados
+- nomes das classes dos plugins de processamento de texto a serem instanciados (e seus parâmetros para inicialização)
+- quantidade de plugins de impressão a serem instanciados
+- nomes das classes dos plugins de impressão a serem instanciados (e seus parâmetros para inicialização)
+- operações:
+    - aplicarPluginTexto \[índice plugin\]: chama o método aplicarPluginTexto de RelatorioComPlugins e passa o plugin de texto especificado.
+    - setPluginImpressao \[índice plugin\]: chama o método aplicarPluginTexto de RelatorioComPlugins e passa o plugin de impressão especificado.
+    - imprimirRelatorio: chama o método imprimirRelatorio de Relatorio
+    - aplicar \[índice plugin\] \[texto\]: chama o método aplicar de uma instância de plugin de processamento de texto (faz uma chamada direta ao plugin sem usar a classe RelatorioComPlugins).  
 
-Entrada
-texto do relatório
-quantidade de plugins de processamento de texto a serem instanciados
-nomes das classes dos plugins de processamento de texto a serem instanciados (e seus parâmetros para inicialização)
-quantidade de plugins de impressão a serem instanciados
-nomes das classes dos plugins de impressão a serem instanciados (e seus parâmetros para inicialização)
-operações:
-aplicarPluginTexto [índice plugin]: chama o método aplicarPluginTexto de RelatorioComPlugins e passa o plugin de texto especificado.
-setPluginImpressao [índice plugin]: chama o método aplicarPluginTexto de RelatorioComPlugins e passa o plugin de impressão especificado.
-imprimirRelatorio: chama o método imprimirRelatorio de Relatorio
-aplicar [índice plugin] [texto]: chama o método aplicar de uma instância de plugin de processamento de texto (faz uma chamada direta ao plugin sem usar a classe RelatorioComPlugins).
-Saída
-classes instanciadas
-métodos executados e saídas obtidas
+Saída  
+- classes instanciadas
+- métodos executados e saídas obtidas
  
 ----------------------------------------------------------------------------------------------------
  
@@ -1251,151 +1270,160 @@ Neste exercício, implemente as 5 classes a seguir (todas as classes devem estar
 
 
 
-Classe abstrata DispositivoInteligente: essa classe possui um atributo do tipo boolean para armazenar o estado, que indica se o dispositivo está ligado (true) ou desligado (false). Todo dispositivo criado inicia desligado (estado = false).
+Classe abstrata **DispositivoInteligente**: essa classe possui um atributo do tipo boolean para armazenar o estado, que indica se o dispositivo está ligado (true) ou desligado (false). Todo dispositivo criado inicia desligado (estado = false).
 
-public void ligar(): liga o dispositivo (muda o estado para true).
-public void desligar(): desliga o dispositivo (muda o estado para false).
-public boolean getEstado(): retorna o valor do atributo estado.
-Classe LampadaInteligente (subclasse de DispositivoInteligente):
+- public void ligar(): liga o dispositivo (muda o estado para true).
+- public void desligar(): desliga o dispositivo (muda o estado para false).
+- public boolean getEstado(): retorna o valor do atributo estado.  
 
-public void ligar(): liga o dispositivo (muda o estado para true).
-public void desligar(): desliga o dispositivo (muda o estado para false).
-public boolean getEstado(): retorna o valor do atributo estado.
-Classe TomadaInteligente (subclasse de DispositivoInteligente):
+Classe **LampadaInteligente** (subclasse de DispositivoInteligente):  
 
-public void ligar(): liga o dispositivo (muda o estado para true).
-public void desligar(): desliga o dispositivo (muda o estado para false).
-public boolean getEstado(): retorna o valor do atributo estado.
-Classe InterruptorInteligente (subclasse de DispositivoInteligente):
-public void ligar(): liga o dispositivo (muda o estado para true).
-public void desligar(): desliga o dispositivo (muda o estado para false).
-public boolean getEstado(): retorna o valor do atributo estado.
+- public void ligar(): liga o dispositivo (muda o estado para true).
+- public void desligar(): desliga o dispositivo (muda o estado para false).
+- public boolean getEstado(): retorna o valor do atributo estado.  
 
-Classe Gerenciador: armazena uma lista de dispositivos inteligentes. A classe pode ter no máximo 10 dispositivos nesta lista.
+Classe **TomadaInteligente** (subclasse de DispositivoInteligente):  
 
-public void adicionarDispositivo(DispositivoInteligente d): adiciona o dispositivo d (armazena uma referência ao dispositivo d) na lista de dispositivos armazenados no gerenciador.
-public void ligarTodosDispositivos(): liga todos os dispositivos.
-public void desligarTodosDispositivos(): desliga todos os dispositivos.
+- public void ligar(): liga o dispositivo (muda o estado para true).
+- public void desligar(): desliga o dispositivo (muda o estado para false).
+- public boolean getEstado(): retorna o valor do atributo estado.  
 
+Classe **InterruptorInteligente** (subclasse de DispositivoInteligente):  
+- public void ligar(): liga o dispositivo (muda o estado para true).
+- public void desligar(): desliga o dispositivo (muda o estado para false).
+- public boolean getEstado(): retorna o valor do atributo estado.  
 
-Observação: apenas a classe Gerenciador é pública. Todas as demais tem acesso package.
+Classe **Gerenciador**: armazena uma lista de dispositivos inteligentes. A classe pode ter no máximo 10 dispositivos nesta lista.  
 
-Importante: Submeta apenas as classes descritas no enunciado (todas devem estar no pacote dispositivos). O programa principal já existe no sistema de correção automática. As classes submetidas não podem realizar impressão de dados, utilizar import ou java.util. Todas as classes devem possuir o construtor sem parâmetros.
+- public void adicionarDispositivo(DispositivoInteligente d): adiciona o dispositivo d (armazena uma referência ao dispositivo d) na lista de dispositivos armazenados no gerenciador.
+- public void ligarTodosDispositivos(): liga todos os dispositivos.
+- public void desligarTodosDispositivos(): desliga todos os dispositivos.
 
 
+**Observação**: *apenas a classe Gerenciador é pública*. Todas as demais tem acesso package.
 
-Casos de teste
-O programa de correção mantém uma lista com diversas instâncias de dispositivos inteligentes e também mantém uma instância da classe Gerenciador. Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+**Importante**: Submeta apenas as classes descritas no enunciado (todas devem estar no **pacote dispositivos**). O programa principal já existe no sistema de correção automática. As classes submetidas não podem realizar impressão de dados, utilizar import ou java.util. Todas as classes devem possuir o construtor sem parâmetros.
 
-Entrada
-adicionar [tipo do dispositivo]
-ligar [índice do dispositivo]
-desligar [índice do dispositivo]
-ligarTodosDispositivos
-desligarTodosDispositivos
-Saída
-verificação das classes
-operações executas e saídas obtidas
+
+
+#### Casos de teste
+
+O programa de correção mantém uma lista com diversas instâncias de dispositivos inteligentes e também mantém uma instância da classe Gerenciador. Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):  
+
+Entrada  
+- adicionar [tipo do dispositivo]
+- ligar [índice do dispositivo]
+- desligar [índice do dispositivo]
+- ligarTodosDispositivos
+- desligarTodosDispositivos  
+
+Saída 
+- verificação das classes
+- operações executas e saídas obtidas
  
 ----------------------------------------------------------------------------------------------------
  
 ### Conjuntos
  
-Escreva a classe Conjunto que implementa a interface Lista, conforme indicado no diagrama a seguir (a classe deve estar no pacote estruturas, a interface Lista está no mesmo pacote).
+Escreva a classe Conjunto que implementa a interface Lista, conforme indicado no diagrama a seguir (a classe deve estar no **pacote estruturas**, a interface Lista está no mesmo pacote).
 
-![image](https://user-images.githubusercontent.com/57016670/150584454-e5e48155-cefc-4b08-866c-10ec678631b4.png)
-Interface Lista e Classe Conjunto, que implementa a interface Lista
+![image](https://user-images.githubusercontent.com/57016670/150584454-e5e48155-cefc-4b08-866c-10ec678631b4.png)  
 
-Classe Conjunto: classe que gerencia um conjunto de números (em um conjunto, não há números repetidos).
+Classe **Conjunto**: classe que gerencia um conjunto de números (em um conjunto, não há números repetidos).
 
-getQtd(): int - retorna a quantidade de itens/números no conjunto;
-adicionar(numero: int) - adiciona um número no conjunto de números
-remover(numero: int) - remove um número do conjunto de números.
-buscar(numero: int): int - busca um número e retorna o índice (o primeiro item deve ter índice 0). Se o número não for encontrado, o método retorna -1. O índice corresponde à ordem em que o número foi adicionado no conjunto.
-toString(): String - retorna uma String com os números do conjunto na ordem em que foram adicionados. Coloque um espaço entre cada número (não há espaço após o último número).
-uniao(a: Conjunto, b: Conjunto): Conjunto - retorna uma nova instância de Conjunto com a união dos conjuntos a e b. A ordem dos elementos no novo conjunto deve ser a mesma do conjunto a, com os elementos exclusivos de b adicionados ao final na mesma ordem que aparecem em b. Por exemplo, para os conjuntos a={2, 9, 1} e b={3, 8, 9, 5}, o resultado da união seria {2, 9, 1, 3, 8, 5}.
-intersecao(a: Conjunto, b: Conjunto): Conjunto - retorna uma nova instância de Conjunto com a interseção dos conjuntos a e b. A ordem dos elementos no novo conjunto deve ser a mesma do conjunto a. Por exemplo, para os conjuntos a={2, 9, 1} e b={1, 8, 9, 5}, o resultado da interseção seria {9, 1}.
+- **getQtd()**: int - retorna a quantidade de itens/números no conjunto;
+- **adicionar(numero: int)** - adiciona um número no conjunto de números
+- **remover(numero: int)** - remove um número do conjunto de números.
+- **buscar(numero: int)**: int - busca um número e retorna o índice (o primeiro item deve ter índice 0). Se o número não for encontrado, o método retorna -1. O índice corresponde à ordem em que o número foi adicionado no conjunto.
+- **toString(): String** - retorna uma String com os números do conjunto na ordem em que foram adicionados. Coloque um espaço entre cada número (não há espaço após o último número).
+- ***uniao(a: Conjunto, b: Conjunto): Conjunto*** - retorna uma nova instância de Conjunto com a união dos conjuntos a e b. A ordem dos elementos no novo conjunto deve ser a mesma do conjunto a, com os elementos exclusivos de b adicionados ao final na mesma ordem que aparecem em b. Por exemplo, para os conjuntos a={2, 9, 1} e b={3, 8, 9, 5}, o resultado da união seria {2, 9, 1, 3, 8, 5}.
+- ***intersecao(a: Conjunto, b: Conjunto): Conjunto*** - retorna uma nova instância de Conjunto com a interseção dos conjuntos a e b. A ordem dos elementos no novo conjunto deve ser a mesma do conjunto a. Por exemplo, para os conjuntos a={2, 9, 1} e b={1, 8, 9, 5}, o resultado da interseção seria {9, 1}.  
 Observação: os métodos uniao e intersecao são static.
 
-Importante: Submeta apenas a classe pública Conjunto (pacote estruturas). O programa principal já existe no sistema de correção automática, assim como a interface Lista. A classe submetida não pode realizar impressão de dados, java.util ou utilizar import.
+**Importante**: Submeta apenas a classe pública Conjunto (**pacote estruturas**). O programa principal já existe no sistema de correção automática, assim como a interface Lista. A classe submetida não pode realizar impressão de dados, java.util ou utilizar import.  
 
-Casos de teste
+#### Casos de teste
+
 Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
 
-Entrada:
+Entrada:  
 
-[operação] (índice) (número)
-Operação 1: adicionar
-Operação 2: remover
-Operação 3: buscar
-Operação 4: união
-Operação 5: interseção
-Operação 9: getQtd
-Saída:
-métodos executados e saídas obtidas
+- \[operação\] \(índice\) \(número\)
+    - Operação 1: adicionar
+    - Operação 2: remover
+    - Operação 3: buscar
+    - Operação 4: união
+    - Operação 5: interseção
+    - Operação 9: getQtd  
+
+Saída: 
+- métodos executados e saídas obtidas
  
 ----------------------------------------------------------------------------------------------------
  
 ### Lista de mensagens
  
-O professor ABC está desenvolvendo um programa de chat, mas falta implementar algumas classes. Neste exercício, implemente as classes ListaMensagens, Mensagem, MensagemTexto e MensagemImagem (todas as classes são do pacote chat).
+O professor ABC está desenvolvendo um programa de chat, mas falta implementar algumas classes. Neste exercício, implemente as classes ListaMensagens, Mensagem, MensagemTexto e MensagemImagem (todas as classes são do pacote **chat**).
 
-[acesso public] classe abstrata Mensagem:
+\[acesso public\] classe abstrata **Mensagem**:
 
-like() - incrementa em uma unidade a quantidade de likes (quando a classe é instanciada, a quantidade de likes é inicializada com zero).
-responder(resposta: Mensagem) - recebe uma instância de Mensagem e faz uma ligação entre a mensagem atual e a resposta de forma que seja possível identificar que a mensagem é resposta da mensagem atual.
-Por exemplo, assuma que há uma instância de mensagem A com o texto "Quanto eh 1 + 1?" e outra instância de mensagem B com o texto "O resultado eh 2.". Nesse caso, a mensagem B será a resposta de A. Então, o programa poderia realizar a seguinte chamada: msgA.responder(msgB); // Nesse caso msgA e msgB seriam as instâncias com as mensagens A e B respectivamente. Dessa forma, msgA foi respondida com msgB.
-getRepresentacao(): String - método abstrato que retorna uma representação em String da mensagem (a representação depende da subclasse)
-[acesso package] classe MensagemTexto (subclasse de Mensagem):
+- **like()** - incrementa em uma unidade a quantidade de likes (quando a classe é instanciada, a quantidade de likes é inicializada com zero).
+- **responder(resposta: Mensagem)** - recebe uma instância de Mensagem e faz uma ligação entre a mensagem atual e a resposta de forma que seja possível identificar que a mensagem é resposta da mensagem atual.
+    - Por exemplo, assuma que há uma instância de mensagem A com o texto "Quanto eh 1 + 1?" e outra instância de mensagem B com o texto "O resultado eh 2.". Nesse caso, a mensagem B será a resposta de A. Então, o programa poderia realizar a seguinte chamada: msgA.responder(msgB); // Nesse caso msgA e msgB seriam as instâncias com as mensagens A e B respectivamente. Dessa forma, msgA foi respondida com msgB.
+- **getRepresentacao(): String** - método abstrato que retorna uma representação em String da mensagem \(a representação depende da subclasse\)  
+\[acesso package\] classe **MensagemTexto** \(subclasse de Mensagem\):  
 
-MensagemTexto(texto: String) - construtor que armazena o texto da mensagem na instância atual.
-getRepresentacao(): String - retorna uma String no seguinte formato: "<texto> (likes=<qtd>)"
-Se a mensagem atual for uma resposta a outra mensagem, a String deve ter o seguinte formato: "<texto> RESPOSTA A [<getRepresentacao() da mensagem respondida sem a parte dos likes>] (likes=<qtd>)"
-Observações: <texto> é o texto da mensagem, <qtd> é a quantidade de likes da resposta.
-Exemplo 1: para o texto "teste2" que é uma resposta à mensagem "teste1", a representação será: "teste2 RESPOSTA A [teste1] (likes=0)" (a quantidade de likes é a referente à resposta, nesse exemplo, "teste2" é o texto da resposta).
-Exemplo 2: para o texto "teste2" que é uma resposta à imagem "figura1 10x10", a representação será: "teste2 RESPOSTA A [figura1 10x10] (likes=0)" (a quantidade de likes é a referente à resposta, nesse exemplo, "teste2" é o texto da resposta).
-[acesso package] classe MensagemImagem (subclasse de Mensagem):
+- **MensagemTexto\(texto: String\)** - construtor que armazena o texto da mensagem na instância atual.
+- **getRepresentacao\(\)**: String - retorna uma String no seguinte formato: "\<texto\> \(likes=\<qtd\>\)"
+    - Se a mensagem atual for uma resposta a outra mensagem, a String deve ter o seguinte formato: "<texto> RESPOSTA A \[\<getRepresentacao\(\) da mensagem respondida sem a parte dos likes\>\] \(likes=\<qtd\>\)"
+    - Observações: <texto> é o texto da mensagem, <qtd> é a quantidade de likes da resposta.
+    - Exemplo 1: para o texto "teste2" que é uma resposta à mensagem "teste1", a representação será: "teste2 RESPOSTA A [teste1] (likes=0)" (a quantidade de likes é a referente à resposta, nesse exemplo, "teste2" é o texto da resposta).
+    - Exemplo 2: para o texto "teste2" que é uma resposta à imagem "figura1 10x10", a representação será: "teste2 RESPOSTA A [figura1 10x10] (likes=0)" (a quantidade de likes é a referente à resposta, nesse exemplo, "teste2" é o texto da resposta).  
 
-MensagemImagem(arquivoImagem: String, largura: int, altura: int) - construtor que armazena o arquivo da imagem e suas dimensões (largura e altura) na instância atual.
-getRepresentacao(): String - retorna uma String no seguinte formato: "<arqImg> <largura>x<altura> (likes=<qtd>)"
-Se a mensagem atual for uma resposta a outra mensagem, a String deve ter o seguinte formato: "<arqImg> <largura>x<altura>  RESPOSTA A [<getRepresentacao() da mensagem respondida sem a parte dos likes>] (likes=<qtd>)"
-Observações: <arqImg> é o arquivo da imagem, <largura> é a largura da imagem, <altura> é a altura da imagem, <qtd> é a quantidade de likes da resposta.
-Exemplo 1: para a imagem "img2 20x20" que é uma resposta à mensagem "teste1", a representação será: "img2 20x20 RESPOSTA A [teste1] (likes=0)" (a quantidade de likes é a referente à resposta).
-Exemplo 2: para a imagem "img2 20x20" que é uma resposta à imagem "figura1 10x10", a representação será: "img2 20x20 RESPOSTA A [figura1 10x10] (likes=0)" (a quantidade de likes é a referente à resposta).
+\[acesso package\] classe **MensagemImagem** \(subclasse de Mensagem\):  
 
-[acesso public] classe ListaMensagens: essa classe gerencia uma lista de mensagens
+- **MensagemImagem(arquivoImagem: String, largura: int, altura: int)** - construtor que armazena o arquivo da imagem e suas dimensões (largura e altura) na instância atual.
+- **getRepresentacao(): String** - retorna uma String no seguinte formato: "\<arqImg\> \<largura\>x\<altura\> \(likes=\<qtd\>\)"
+Se a mensagem atual for uma resposta a outra mensagem, a String deve ter o seguinte formato: "<arqImg> <largura>x<altura>  RESPOSTA A \[\<getRepresentacao\(\) da mensagem respondida sem a parte dos likes\>\] \(likes=\<qtd\>\)"
+Observações: \<arqImg\> é o arquivo da imagem, \<largura\> é a largura da imagem, \<altura\> é a altura da imagem, \<qtd\> é a quantidade de likes da resposta.
+Exemplo 1: para a imagem "img2 20x20" que é uma resposta à mensagem "teste1", a representação será: "img2 20x20 RESPOSTA A \[teste1\] \(likes=0\)" \(a quantidade de likes é a referente à resposta\).
+Exemplo 2: para a imagem "img2 20x20" que é uma resposta à imagem "figura1 10x10", a representação será: "img2 20x20 RESPOSTA A \[figura1 10x10\] \(likes=0\)" \(a quantidade de likes é a referente à resposta\).
 
-ListaMensagens() - construtor sem parâmetros da classe ListaMensagens.
-adicionarMensagem(mensagem: Mensagem) - adiciona mensagem ao final da lista de mensagens.
-responderMensagem(indiceMensagemOriginal: int, resposta: Mensagem) - responde a mensagem no índice especificado e adiciona a resposta ao final da lista de mensagens. 
-getMensagens(): Mensagem[] - retorna vetor com as mensagens da lista. O comprimento do vetor retornado deve ser igual à quantidade de mensagens adicionadas na lista. Observe que a lista de mensagens é composta pelas pelas mensagens originais, assim como pelas mensagens resposta.
-getMensagensString(): String[] - funciona da mesma forma que o método getMensagens, mas ao invés de retornar instâncias de Mensagem, retorna uma lista de Strings. Cada String é o retorno obtido por getRepresentacao() de cada mensagem.
-like(indiceMensagem: int) - aumenta a quantidade de likes da mensagem no índice especificado.
+\[acesso public\] classe **ListaMensagens**: essa classe gerencia uma lista de mensagens  
 
-
-Observação: as classes Mensagem e ListaMensagem são públicas, e as classes MensagemTexto e MensagemImagem tem acesso package. Todos os métodos apresentados devem ter acesso público.
-
-Importante: O programa principal já existe no sistema de correção automática. Submeta apenas as classes especificadas (pacote chat). A classes não podem realizar impressão de dados, java.util ou utilizar import.
+- **ListaMensagens()** - construtor sem parâmetros da classe ListaMensagens.
+- **adicionarMensagem(mensagem: Mensagem)** - adiciona mensagem ao final da lista de mensagens.
+- **responderMensagem(indiceMensagemOriginal: int, resposta: Mensagem)** - responde a mensagem no índice especificado e adiciona a resposta ao final da lista de mensagens. 
+- **getMensagens(): Mensagem\[\]** - retorna vetor com as mensagens da lista. O comprimento do vetor retornado deve ser igual à quantidade de mensagens adicionadas na lista. Observe que a lista de mensagens é composta pelas pelas mensagens originais, assim como pelas mensagens resposta.
+- **getMensagensString(): String\[\]** - funciona da mesma forma que o método getMensagens, mas ao invés de retornar instâncias de Mensagem, retorna uma lista de Strings. Cada String é o retorno obtido por getRepresentacao() de cada mensagem.
+- **like(indiceMensagem: int)** - aumenta a quantidade de likes da mensagem no índice especificado.  
 
 
+Observação: as classes Mensagem e ListaMensagem são públicas, e as classes MensagemTexto e MensagemImagem tem acesso package. Todos os métodos apresentados devem ter acesso público.  
 
-Casos de teste
-Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):
+**Importante**: O programa principal já existe no sistema de correção automática. Submeta apenas as classes especificadas (pacote **chat**). A classes não podem realizar impressão de dados, java.util ou utilizar import.  
 
-Entrada:
 
-[operação] (índice da mensagem) (dados da mensagem)
-operação 1: adicionar mensagem de texto
-operação 2: adicionar mensagem de imagem
-operação 3: responder com mensagem de texto
-operação 4: responder com mensagem de imagem
-operação 9: like
-operação 10: getMensagens
-operação 11: getMensagensString
-Saída:
 
-verificação das classes
-métodos executados e saídas obtidas
+#### Casos de teste
+
+Formato dos casos de teste (que aparecem ao avaliar as classes no sistema de correção automática):  
+
+Entrada:  
+
+- \[operação\] \(índice da mensagem\) \(dados da mensagem\)
+    - operação 1: adicionar mensagem de texto
+    - operação 2: adicionar mensagem de imagem
+    - operação 3: responder com mensagem de texto
+    - operação 4: responder com mensagem de imagem
+    - operação 9: like
+    - operação 10: getMensagens
+    - operação 11: getMensagensString  
+
+Saída:  
+
+- verificação das classes
+- métodos executados e saídas obtidas
  
 ----------------------------------------------------------------------------------------------------
  
